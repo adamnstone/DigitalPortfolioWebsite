@@ -1,0 +1,10 @@
+site_name: Adam Stone Digital Portfoio
+nav:
+    - Home: index.md
+    - About: about.md
+theme: readthedocs
+markdown_extensions:
+  - attr_list
+plugins:
+    - search
+    - mermaid2
