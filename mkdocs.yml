@@ -2,7 +2,9 @@ site_name: Adam Stone Digital Portfoio
 nav:
     - Home: index.md
     - About: about.md
-theme: readthedocs
+theme: 
+  name: material
+  custom_dir: overrides
 markdown_extensions:
   - attr_list
 plugins:
