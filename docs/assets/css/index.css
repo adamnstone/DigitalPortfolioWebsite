@@ -86,3 +86,19 @@ scrollbar-width: none;  /* Firefox */
   from{transform: translateY(0px);}
   to{transform: translateY(10px);}
 }
+
+#name-1, #name-2 {
+  font-family: serif;
+  position: absolute;
+  font-size: 8rem;
+  top: 40%;
+  font-weight: bolder;
+}
+
+#name-1 {
+  left: 15%;
+}
+
+#name-2 {
+  right: 15%;
+}
