@@ -2,9 +2,15 @@ site_name: Adam Stone Digital Portfoio
 nav:
     - Home: index.md
     - About: about.md
+    - Projects:
+      - RhythmLink:
+        - Overview: projects/rhythm-link/rhythm-link.md
+        - "EEG Testing Device":
+          - Overview: projects/rhythm-link/eeg-testing-device/overview.md
 theme: 
   name: material
   custom_dir: overrides
+  favicon: assets/images/favicon/favicon.ico
 markdown_extensions:
   - attr_list
 plugins:
