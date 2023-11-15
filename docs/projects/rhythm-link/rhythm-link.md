@@ -1,0 +1,3 @@
+# RhythmLink Internship
+
+[RhythmLink® International](https://rhythmlink.com/), LLC designs, manufactures and distributes medical devices and provides custom packaging, private labeling, custom products and contract manufacturing to its customers. Rhythmlink is recognized as a leader within its field at providing the important physical connection between patients and the diagnostic equipment to record or elicit neurophysiologic biopotentials.
