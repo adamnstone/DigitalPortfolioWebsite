@@ -46,7 +46,7 @@ I watched [this two-minute summary](https://www.youtube.com/watch?v=tZcKT4l_JZk)
     - Cannot pinpoint activity to specific brain regions
     - Cannot record activity deeper than the cortex
 
-I also skimmed [this article](https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/eeg-test#:~:text=EEG%20is%20a,help%20in%20diagnosis.)) which revealed that an EEG has no side-effects or complications for the vast majority of patients.
+I also skimmed [this article](https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/eeg-test#:~:text=EEG%20is%20a,help%20in%20diagnosis.) which revealed that an EEG has no side-effects or complications for the vast majority of patients.
 
 ### RhythmLink® Products
 
