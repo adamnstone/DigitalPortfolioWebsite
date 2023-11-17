@@ -35,6 +35,19 @@ Here's a diagram of the waveforms of different types of brain waves.
 
 ![Article Pic 3](../../../assets/images/projects/rhythm-link/eeg-testing-machine/research/article-pic-3.png)
 
+### EEG Pros & Cons
+
+I watched [this two-minute summary](https://www.youtube.com/watch?v=tZcKT4l_JZk) of an EEG and the pros and cons of the technology.
+
+- **Advantages**
+    - Low cost
+    - Can measure brain activity on the order of milliseconds
+- **Disadvantages**
+    - Cannot pinpoint activity to specific brain regions
+    - Cannot record activity deeper than the cortex
+
+I also skimmed [this article](https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/eeg-test) which revealed that an EEG has no side-effects or complications for the vast majority of patients.
+
 ### RhythmLink® Products
 
 [Here](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf) is a link to the RhythmLink® October 2023 Digital Catalog. It includes information about their different electrode products. I was especially interested by their [PressOn™ electrode](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf#page=5) design. To see these in action, watch [this video](https://rhythmlink.com/videos/brainhealth-headset-application-training/) explaning how to apply the [BrainHealth Headset™](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf#page=21).
