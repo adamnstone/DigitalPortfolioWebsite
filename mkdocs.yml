@@ -5,7 +5,7 @@ nav:
     - Projects:
       - RhythmLink:
         - Overview: projects/rhythm-link/rhythm-link.md
-        - "EEG Testing Device":
+        - "EEGs":
           - Overview: projects/rhythm-link/eeg-testing-device/overview.md
 theme: 
   name: material
