@@ -1,8 +1,8 @@
-# EEG Testing Device
+# EEGs
 
 According to [Johns Hopkins Medicine](https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/electroencephalogram-eeg), an EEG, or *electroencephalogram*, is a test that detects abnormalities in your brain waves, or in the electrical activity of your brain. During the procedure, electrodes consisting of small metal discs with thin wires are pasted onto your scalp. The electrodes detect tiny electrical charges that result from the activity of your brain cells.
 
-To see a video of the application of RhythmLink©'s PressOn™ EEG Electrodes, [click here](https://rhythmlink.com/videos/presson-eeg-electrode/).
+To see a video of the application of RhythmLink®'s PressOn™ EEG Electrodes, [click here](https://rhythmlink.com/videos/presson-eeg-electrode/).
 
 ## Research
 
