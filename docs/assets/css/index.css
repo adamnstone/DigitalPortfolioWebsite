@@ -137,7 +137,6 @@ body::-webkit-scrollbar {
 
   
 .project-divider {
-  height: 100vh;
   width: 4px;
   color: black;
   border-left: 1px solid grey;
