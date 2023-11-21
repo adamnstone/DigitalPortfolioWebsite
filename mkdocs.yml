@@ -13,7 +13,6 @@ theme:
   favicon: assets/images/favicon/favicon.ico
   palette:
     primary: blue
-    accent: orange
 markdown_extensions:
   - attr_list
 plugins:
