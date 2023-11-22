@@ -21,22 +21,22 @@ span {
 
 @keyframes fade-to-black-1 {
   from{
-    color: white;
+    /*color: white;*/
     transform: translateX(calc(-100% - 2vw)) translateY(calc(-50% - 8vh));
   }
   to{
-    color: black;
+    /*color: black;*/
     transform: translateX(calc(-50% - 23vw)) translateY(calc(-50% - 8vh));
   }
 }
 
 @keyframes fade-to-black-2 {
   from{
-    color: white;
+    /*color: white;*/
     transform: translateX(2vw) translateY(calc(-50% - 8vh));
   }
   to{
-    color: black;
+    /*color: black;*/
     transform: translateX(calc(-50% + 23vw)) translateY(calc(-50% - 8vh));
   }
 }
@@ -61,7 +61,7 @@ span {
 
 #name-1, #name-2 {
     z-index: 3;
-    color: white;
+    color: black;
     font-size: 8.5vw;
     font-weight: bolder;
     position: absolute;
@@ -177,6 +177,11 @@ body::-webkit-scrollbar {
     /*height: 80vh;*/
   }
 
+  .card-img-top {
+    object-fit: cover;
+    height: 80%;
+  }
+
   .project-rounded {
     border-radius: 4rem;
   }
@@ -202,8 +207,8 @@ body::-webkit-scrollbar {
 #loading-screen { 
   width:100vw;
   height:100vh;
-  background-color: blue;
-  position:absolute;
+  background-color: white;
+  position:fixed;
   z-index:2;
   left:0;
   top:0;

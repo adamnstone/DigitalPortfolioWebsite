@@ -3,10 +3,14 @@ nav:
     - Home: index.md
     - About: about.md
     - Projects:
+      - "Fab Academy":
+        - "Disability Forewarning System": projects/fab-academy/disability-forewarning-system.md
       - "RhythmLink®": 
         - Overview: projects/rhythm-link/rhythm-link.md
         - "EEGs":
           - Overview: projects/rhythm-link/eeg-testing-device/overview.md
+    - Arts:
+      - "Lord Farquaad": arts/farquaad.md
 theme: 
   name: material
   custom_dir: overrides
