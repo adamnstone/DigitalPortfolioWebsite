@@ -3,7 +3,7 @@ nav:
     - Home: index.md
     - About: about.md
     - Projects:
-      - "RhythmLink®":
+      - "RhythmLink®": 
         - Overview: projects/rhythm-link/rhythm-link.md
         - "EEGs":
           - Overview: projects/rhythm-link/eeg-testing-device/overview.md
@@ -13,6 +13,9 @@ theme:
   favicon: assets/images/favicon/favicon.ico
   palette:
     primary: blue
+    accent: orange
+  features:
+    - navigation.tabs
 markdown_extensions:
   - attr_list
 plugins:

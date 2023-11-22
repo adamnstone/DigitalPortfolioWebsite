@@ -19,17 +19,62 @@ span {
   font-family: serif;
 }
 
+@keyframes fade-to-black-1 {
+  from{
+    color: white;
+    transform: translateX(calc(-100% - 2vw)) translateY(calc(-50% - 8vh));
+  }
+  to{
+    color: black;
+    transform: translateX(calc(-50% - 23vw)) translateY(calc(-50% - 8vh));
+  }
+}
+
+@keyframes fade-to-black-2 {
+  from{
+    color: white;
+    transform: translateX(2vw) translateY(calc(-50% - 8vh));
+  }
+  to{
+    color: black;
+    transform: translateX(calc(-50% + 23vw)) translateY(calc(-50% - 8vh));
+  }
+}
+
+@keyframes loading-rotate-1 {
+  50% {
+    transform: translateX(calc(-100% - 2vw)) translateY(calc(-50% - 8vh)) rotate(0deg);
+  }
+  100% {
+    transform: translateX(calc(-100% - 2vw)) translateY(calc(-50% - 8vh)) rotate(360deg);
+  }
+}
+
+@keyframes loading-rotate-2 {
+  50% {
+    transform: translateX(2vw) translateY(calc(-50% - 8vh)) rotate(0deg);
+  }
+  100% {
+    transform: translateX(2vw) translateY(calc(-50% - 8vh)) rotate(360deg);
+  }
+}
+
 #name-1, #name-2 {
+    z-index: 3;
+    color: white;
     font-size: 8.5vw;
     font-weight: bolder;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translateX(calc(-50% - 23vw)) translateY(calc(-50% - 8vh));
+  }
+
+  #name-1 {
+    transform: translateX(calc(-100% - 2vw)) translateY(calc(-50% - 8vh));
   }
 
   #name-2 {
-    transform: translateX(calc(-50% + 23vw)) translateY(calc(-50% - 8vh)); 
+    transform: translateX(2vw) translateY(calc(-50% - 8vh)); 
   }
 
   #avatar {
@@ -82,6 +127,7 @@ body::-webkit-scrollbar {
   scrollbar-width: none;  /* Firefox */
   -ms-overflow-style: none;  /* IE and Edge */
   overflow-x:hidden;
+  overflow-y:hidden; /* removed by index.js */
   }
 
 .container {
@@ -141,4 +187,40 @@ body::-webkit-scrollbar {
   color: black;
   border-left: 1px solid grey;
   border-right: 1px solid grey;
+}
+
+.overlapping-container {
+  z-index: 1;
+}
+
+.overlapping {
+  position: absolute;
+  left: 50%;
+}
+
+#overlapping-divider {
+  transform: translateX(-50%);
+}
+
+#brain-img {
+  z-index: -1;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#loading-screen { 
+  width:100vw;
+  height:100vh;
+  background-color: blue;
+  position:absolute;
+  z-index:2;
+  left:0;
+  top:0;
 }
