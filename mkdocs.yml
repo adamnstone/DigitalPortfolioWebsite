@@ -11,6 +11,9 @@ nav:
           - Overview: projects/rhythm-link/eeg-testing-device/overview.md
     - Arts:
       - "Lord Farquaad": arts/farquaad.md
+      - "Billy Cane": arts/billy-cane.md
+      - "Mr. Smith": arts/mr-smith.md
+      - "Resume": arts/resume.md
 theme: 
   name: material
   custom_dir: overrides
