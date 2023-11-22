@@ -186,14 +186,6 @@ body::-webkit-scrollbar {
     border-radius: 4rem;
   }
 
-  
-.project-divider {
-  width: 4px;
-  color: black;
-  border-left: 1px solid grey;
-  border-right: 1px solid grey;
-}
-
 
 @keyframes fade-out {
   from {

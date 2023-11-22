@@ -25,3 +25,4 @@ markdown_extensions:
 plugins:
     - search
     - mermaid2
+    - mkdocs-video
