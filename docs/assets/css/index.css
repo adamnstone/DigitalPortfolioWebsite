@@ -189,22 +189,6 @@ body::-webkit-scrollbar {
   border-right: 1px solid grey;
 }
 
-.overlapping-container {
-  z-index: 1;
-}
-
-.overlapping {
-  position: absolute;
-  left: 50%;
-}
-
-#overlapping-divider {
-  transform: translateX(-50%);
-}
-
-#brain-img {
-  z-index: -1;
-}
 
 @keyframes fade-out {
   from {
