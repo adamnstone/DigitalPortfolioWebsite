@@ -14,7 +14,7 @@ I was also the *Dance Captain* for *Shrek the Musical*. (ballet?) (dance ensambl
 
 Here is a video of the number *"What's Up Duloc?"* (I'm the short king that comes down the elevator!)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KdQFDuWZpJ0?si=ycnlZ7AksxVm7gkN&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dV7Y7Av7lR0?si=AIf-I3UGVPnoOXSs&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 I enjoyed this role so much that, during [Fab Academy](../projects/fab-academy/disability-forewarning-system.md), I made a Farquaad sticker on the vinyl cutter! [Here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week3/vinyl-cutting/#lord-farquaad){:target="_blank"} is a link to my documentation of the process.
 
