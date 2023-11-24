@@ -1,28 +1,37 @@
 site_name: Adam Stone Digital Portfoio
-nav:
-    - Home: index.md
-    - About: about.md
-    - Projects:
-      - "Fab Academy":
-        - "Disability Forewarning System": projects/fab-academy/disability-forewarning-system.md
-      - "RhythmLink®": 
-        - Overview: projects/rhythm-link/rhythm-link.md
-        - "EEGs":
-          - Overview: projects/rhythm-link/eeg-testing-device/overview.md
-    - Arts:
-      - "Lord Farquaad": arts/farquaad.md
-      - "Billy Cane": arts/billy-cane.md
-      - "Mr. Smith": arts/mr-smith.md
-      - "Resume": arts/resume.md
+
 theme: 
   name: material
   custom_dir: overrides
   favicon: assets/images/favicon/favicon.ico
   palette:
-    primary: blue
+    primary: red
     accent: orange
   features:
     - navigation.tabs
+    - navigation.indexes
+
+nav:
+    - Home: index.md
+    - About: about.md
+    - STEM:
+      - stem/index.md
+      - "Fab Academy":
+        - stem/fab-academy/index.md
+        - "Disability Forewarning System": stem/fab-academy/disability-forewarning-system.md
+      - "RhythmLink®": 
+        - stem/rhythm-link/index.md
+        - "EEGs":
+          - Overview: stem/rhythm-link/eeg-testing-device/index.md
+    - Arts:
+      - arts/index.md
+      - "Lord Farquaad": arts/farquaad.md
+      - "Billy Cane": arts/billy-cane.md
+      - "Mr. Smith": arts/mr-smith.md
+      - "Résumé": arts/resume.md
+    - Advocacy: 
+      - advocacy/index.md
+
 markdown_extensions:
   - attr_list
 plugins:

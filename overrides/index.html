@@ -6,11 +6,27 @@
     <title>Adam Stone Digital Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/menu.css" />
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon/favicon.ico">
     <script>history.scrollRestoration = "manual"</script>
 </head>
 <body>
-    
+  <div class="menu-btn">
+    <div class="menu-btn__burger"></div>
+  </div>
+
+  <div id="menu-container">
+    <div class="container">
+      {% for nav_item in nav %}
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <span class="nav-span display-1"><a href="{% if nav_item.is_page %}{{ nav_item.url }}{% else %}{{ nav_item.title.lower() }}{% endif %}">{{ nav_item.title }}</a></span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
   <div id="loading-screen"></div>
 
     <div class="container text-center">

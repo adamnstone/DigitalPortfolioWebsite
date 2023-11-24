@@ -1,5 +1,5 @@
 let allTimeouts = [];
-let loadingScreen;
+let loadingScreen, menuBtn;
 
 window.onload = () => {
 
@@ -7,6 +7,31 @@ const body = document.getElementsByTagName("body")[0];
 
 const name1 = document.getElementById("name-1");
 const name2 = document.getElementById("name-2");
+
+menuBtn = document.querySelector('.menu-btn');
+const menuContainer = document.querySelector("#menu-container")
+console.log(menuContainer);
+let menuOpen = false;
+let isClickable = true;
+console.log(menuBtn);
+menuBtn.addEventListener('click', (e) => {
+    if (!isClickable) return;
+    e.stopPropagation();
+  if(!menuOpen) {
+    menuBtn.classList.add('open');
+    menuOpen = true;
+    menuContainer.style.display = "inline";
+    menuContainer.style.animation = "1s ease menu-fade-in forwards";
+    isClickable = false;
+    setTimeout(() => isClickable = true, 1000);
+  } else {
+    menuBtn.classList.remove('open');
+    menuOpen = false;
+    menuContainer.style.animation = "1s ease menu-fade-out forwards";
+    isClickable = false;
+    setTimeout(() => {menuContainer.style.display = "none"; isClickable = true}, 1000);
+  }
+});
 
 let rotating = false;
 let stopRotating = false;
@@ -41,12 +66,10 @@ const endLoading = (event) => {
     //setTimeout(() => {
         stopRotating = true;
         allTimeouts.push(setTimeout(() => {
-            console.log("triggering");
-            console.log(loadingScreen)
             loadingScreen.style.animation = "1s ease-out fade-out forwards";
             name1.style.animation = "1s ease-out fade-to-black-1 forwards";
             name2.style.animation = "1s ease-out fade-to-black-2 forwards";
-            setTimeout(() => {loadingScreen.style.display = "none"; body.style.overflowY = "scroll";}, 1000);
+            setTimeout(() => {loadingScreen.style.display = "none"; body.style.overflowY = "scroll"; menuBtn.style.zIndex = 6;}, 1000);
         }, 2000));
     //},1000);
 };
@@ -70,3 +93,4 @@ window.onunload = () => {
         }
     });
 };
+
