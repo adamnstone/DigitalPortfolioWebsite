@@ -275,14 +275,21 @@ body::-webkit-scrollbar {
   }
 }
 
+#menu {
+  position:fixed;
+  left:0;
+  top:50%;
+  transform: translateY(-50%);
+  animation: none;
+}
+
 #menu-container {
+  position: fixed;
+  z-index:5;
+  display:none;
+  top:0;
+  left:0;
   width:100vw;
   height:100vh;
-  position:fixed;
-  display:none;
   background-color: black;
-  z-index:5;
-  left:0;
-  top:0;
-  animation: none;
 }

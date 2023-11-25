@@ -1,4 +1,4 @@
-# Adam Stone Theater Résumé
+# Adam Stone Theatre Résumé
 
 **Headshot**
 
