@@ -11,6 +11,9 @@ theme:
     - navigation.tabs
     - navigation.indexes
 
+repo_url: https://github.com/adamnstone/DigitalPortfolioWebsite
+repo_name: adamnstone/DigitalPortfolioWebsite
+
 nav:
     - Home: index.md
     - About: about.md
@@ -28,7 +31,7 @@ nav:
       - "Lord Farquaad": arts/farquaad.md
       - "Billy Cane": arts/billy-cane.md
       - "Mr. Smith": arts/mr-smith.md
-      - "Résumé": arts/resume.md
+      - "Theatre Résumé": arts/resume.md
     - Advocacy: 
       - advocacy/index.md
 
