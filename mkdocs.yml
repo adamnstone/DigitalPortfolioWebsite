@@ -10,9 +10,13 @@ theme:
   features:
     - navigation.tabs
     - navigation.indexes
+    - content.code.annotate
 
 repo_url: https://github.com/adamnstone/DigitalPortfolioWebsite
 repo_name: adamnstone/DigitalPortfolioWebsite
+
+extra_css: 
+  - assets/css/extra.css
 
 nav:
     - Home: index.md
@@ -39,6 +43,13 @@ nav:
 
 markdown_extensions:
   - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 plugins:
     - search
     - mermaid2

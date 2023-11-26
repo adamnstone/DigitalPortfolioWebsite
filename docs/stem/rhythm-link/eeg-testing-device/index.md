@@ -23,17 +23,17 @@ I read [this article](https://www.datatobiz.com/blog/brain-waves-data-using-pyth
 
 Here's a diagram of the waveforms of different types of brain waves.
 
-![Brainwave Waveforms](../../../assets/images/projects/rhythm-link/eeg-testing-machine/research/brainwave-waveforms.jpg)
+![Brainwave Waveforms](../../../assets/images/stem/rhythm-link/eeg-testing-machine/research/brainwave-waveforms.jpg)
 
 ### Visualizing Waves
 
 [This article](https://medium.com/@mohitjain72/detection-and-visualization-of-brainwaves-using-python-d3-and-bootstrap-742129f9ed97) also discusses how to visualize brainwave input from an EEG in Python.
 
-![Article Pic 1](../../../assets/images/projects/rhythm-link/eeg-testing-machine/research/article-pic-1.png)
+![Article Pic 1](../../../assets/images/stem/rhythm-link/eeg-testing-machine/research/article-pic-1.png)
 
-![Article Pic 2](../../../assets/images/projects/rhythm-link/eeg-testing-machine/research/article-pic-2.png)
+![Article Pic 2](../../../assets/images/stem/rhythm-link/eeg-testing-machine/research/article-pic-2.png)
 
-![Article Pic 3](../../../assets/images/projects/rhythm-link/eeg-testing-machine/research/article-pic-3.png)
+![Article Pic 3](../../../assets/images/stem/rhythm-link/eeg-testing-machine/research/article-pic-3.png)
 
 ### EEG Pros & Cons
 
@@ -52,6 +52,6 @@ I also skimmed [this article](https://www.betterhealth.vic.gov.au/health/conditi
 
 [Here](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf) is a link to the RhythmLink® October 2023 Digital Catalog. It includes information about their different electrode products. I was especially interested by their [PressOn™ electrode](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf#page=5) design. To see these in action, watch [this video](https://rhythmlink.com/videos/brainhealth-headset-application-training/) explaning how to apply the [BrainHealth Headset™](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf#page=21).
 
-![PressOn™ Electrode](../../../assets/images/projects/rhythm-link/eeg-testing-machine/research/presson-electrode.png)
+![PressOn™ Electrode](../../../assets/images/stem/rhythm-link/eeg-testing-machine/research/presson-electrode.png)
 
-![BrainHealth Headset™](../../../assets/images/projects/rhythm-link/eeg-testing-machine/research/brainhealth-headset.png)
+![BrainHealth Headset™](../../../assets/images/stem/rhythm-link/eeg-testing-machine/research/brainhealth-headset.png)
