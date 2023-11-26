@@ -6,7 +6,7 @@ theme:
   favicon: assets/images/favicon/favicon.ico
   palette:
     primary: red
-    accent: orange
+    accent: blue
   features:
     - navigation.tabs
     - navigation.indexes
@@ -19,6 +19,8 @@ nav:
     - About: about.md
     - STEM:
       - stem/index.md
+      - "Expert Network Map":
+        - stem/expert-network-map/index.md
       - "Fab Academy":
         - stem/fab-academy/index.md
         - "Disability Forewarning System": stem/fab-academy/disability-forewarning-system.md
