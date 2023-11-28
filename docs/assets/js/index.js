@@ -41,7 +41,7 @@ loadingScreen = document.getElementById("loading-screen");
 let rotationCount = 0;
 const rotationFunc = (loadingInterval) => {
     rotationCount += 1;
-    if (rotationCount > 4) {
+    if (rotationCount > 2) {
         endLoading();
     }
     if (stopRotating){

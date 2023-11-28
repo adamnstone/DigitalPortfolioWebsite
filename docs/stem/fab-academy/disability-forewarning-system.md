@@ -1,6 +1,6 @@
 # Disability Forewarning System
 
-For my Fab Academy Final Project, I wanted to create something that helps people living with Tourette Syndrome (a condition I have). Tourette Syndrome a neurodevelopmental disorder included in the ADA that's characterized by making involuntary movements and vocalizations, called tics, and there's no cure. Tourette's affects 1-in-50 people. It ranges from very mild to very severe. For more information, see the [Tourette Association of America's website](https://tourette.org/).
+For my Fab Academy Final Project, I wanted to create something that helps people living with Tourette Syndrome. Tourette Syndrome a neurodevelopmental disorder included in the ADA that's characterized by making involuntary movements and vocalizations, called tics, and there's no cure. Tourette's affects 1-in-50 people. It ranges from very mild to very severe. For more information, see the [Tourette Association of America's website](https://tourette.org/).
 
 My tics are mild, but for people with severe Tourette, tics can be misinterpreted by law enforcement as intoxication or aggression, dangerously escalating police encounters. I wanted to create a device that prevents escalation at a traffi stop when an officer is interacting with someone who has severe tics.
 
