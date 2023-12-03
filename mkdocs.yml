@@ -28,10 +28,12 @@ nav:
       - "Fab Academy":
         - stem/fab-academy/index.md
         - "Disability Forewarning System": stem/fab-academy/disability-forewarning-system.md
-      - "RhythmLink®": 
+      - "RhythmLink": 
         - stem/rhythm-link/index.md
         - "EEGs":
-          - Overview: stem/rhythm-link/eeg-testing-device/index.md
+          - Overview: stem/rhythm-link/eeg/index.md
+      - "Test Generator":
+        - stem/test-generator/index.md
     - Arts:
       - arts/index.md
       - "Lord Farquaad": arts/farquaad.md

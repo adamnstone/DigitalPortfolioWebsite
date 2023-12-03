@@ -2,7 +2,7 @@
 
 According to [Johns Hopkins Medicine](https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/electroencephalogram-eeg), an EEG, or *electroencephalogram*, is a test that detects abnormalities in your brain waves, or in the electrical activity of your brain. During the procedure, electrodes consisting of small metal discs with thin wires are pasted onto your scalp. The electrodes detect tiny electrical charges that result from the activity of your brain cells.
 
-To see a video of the application of RhythmLink®'s PressOn™ EEG Electrodes, [click here](https://rhythmlink.com/videos/presson-eeg-electrode/).
+To see a video of the application of RhythmLink's PressOn™ EEG Electrodes, [click here](https://rhythmlink.com/videos/presson-eeg-electrode/).
 
 ## Research
 
@@ -48,9 +48,9 @@ I watched [this two-minute summary](https://www.youtube.com/watch?v=tZcKT4l_JZk)
 
 I also skimmed [this article](https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/eeg-test#:~:text=EEG%20is%20a,help%20in%20diagnosis.) which revealed that an EEG has no side-effects or complications for the vast majority of patients.
 
-### RhythmLink® Products
+### RhythmLink Products
 
-[Here](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf) is a link to the RhythmLink® October 2023 Digital Catalog. It includes information about their different electrode products. I was especially interested by their [PressOn™ electrode](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf#page=5) design. To see these in action, watch [this video](https://rhythmlink.com/videos/brainhealth-headset-application-training/) explaning how to apply the [BrainHealth Headset™](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf#page=21).
+[Here](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf) is a link to the RhythmLink October 2023 Digital Catalog. It includes information about their different electrode products. I was especially interested by their [PressOn™ electrode](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf#page=5) design. To see these in action, watch [this video](https://rhythmlink.com/videos/brainhealth-headset-application-training/) explaning how to apply the [BrainHealth Headset™](https://rhythmlink.com/wp-content/uploads/2023/10/Digital-Catalog-2023_October.pdf#page=21).
 
 ![PressOn™ Electrode](../../../assets/images/stem/rhythm-link/eeg-testing-machine/research/presson-electrode.png)
 

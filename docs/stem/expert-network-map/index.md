@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Here is a link to the `Expert Network Map`!](https://pub.fabcloud.io/project/expert-network-map/)
+[Here is a link to the `Expert Network Map`!](https://pub.fabcloud.io/project/expert-network-map/) *(be sure to use Chrome on a computer)*
 
 The `Expert Network Map` is a network analysis research project to locate hidden expertise in the Fab Academy community and democratize access to helpful documentation.
 
