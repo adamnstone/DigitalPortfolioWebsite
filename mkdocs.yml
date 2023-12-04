@@ -34,6 +34,8 @@ nav:
           - Overview: stem/rhythm-link/eeg/index.md
       - "Test Generator":
         - stem/test-generator/index.md
+      - "Ninja Cube Ultimate":
+        - stem/ninja-cube-ultimate/index.md
     - Arts:
       - arts/index.md
       - "Lord Farquaad": arts/farquaad.md
