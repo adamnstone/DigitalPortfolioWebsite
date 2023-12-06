@@ -213,3 +213,217 @@ The more times a student’s documentation website has been referenced, the larg
 ![Filters](../../assets/images/stem/expert-network-map/filters.jpg)
 
 Because the first version of the `Expert Network Map` had tens of thousands of data points reloading in real-time, the tool was too slow to be usable. I made two modifications to optimize performance. First, I used D3JS’ enter-update-exit protocol to change the force simulation graph without reloading all of the data. Next, I collapsed multiple references between the same students into a single edge with greater force. The `Expert Network Map` is live and will be used by Fab Academy 2024 students.
+
+## Documentation
+
+### Step 1: Data Collection
+
+### Step 2: AI, Sorting Data, & Analysis
+
+### Step 3: Data Visualization
+
+#### Library and Data Structure
+
+I employed [D3JS](https://d3js.org/), a JavaScript library, to create the data visualization. I started off by browsing the [D3 Gallery](https://observablehq.com/@d3/gallery?utm_source=d3js-org&utm_medium=hero&utm_campaign=try-observable) to select the format for my visualization. I was choosing between a [`Disjoint Force-Directed Graph`](https://observablehq.com/@d3/disjoint-force-directed-graph/2?intent=fork) and a [`Force Directed Graph with Arrows`](https://observablehq.com/@brunolaranjeira/d3-v6-force-directed-graph-with-directional-straight-arrow). Due to frequent two-way connections between nodes and a large amount of data (so very small lines for each individual connection, making arrowheads hard to discern), I decided on the `Disjoint Force-Directed Graph`.
+
+![Force-Directed Graph](../../assets/images/stem/expert-network-map/f-dg.jpg){: style="width:300px;"}
+![Force-Directed Graph with Arrows](../../assets/images/stem/expert-network-map/f-dga.jpg){: style="width:300px;"}
+
+So I read through the [example code](https://observablehq.com/@d3/disjoint-force-directed-graph/2?intent=fork) from D3JS carefully and found that the input data was a JSON with the following format:
+
+```json
+{
+  "nodes": {
+    {"id": "ID1", "radius": 1},
+    {"id": "ID2", "radius": 1},
+    {"id": "ID3", "radius": 1}
+  },
+  "links": {
+    {"source": "ID1", "target": "ID3", "value": 1},
+    {"source": "ID2", "target": "ID3", "value": 4},
+    {"source": "ID2", "target": "ID1", "value": 3}
+  }
+}
+```
+
+The `nodes` object contains every node's ID as well as other data, such as the node's radius. The `links` object contains each edge, in my case connection between students, and an associated value which can be used to control strength or thickness.
+
+#### Transforming Data
+
+So the first step was to transform my `Pandas` dataframe into a JSON file of this format. I wrote `matrix2d3js.py`. When this script is run, it takes `final_data.csv` (the output from [Step 2](#step-2-ai-sorting-data--analysis)) and moves all of the data into a JSON file matching the structure outline above. This is then saved as `final_data.json`.
+
+*matrix2d3js.py*
+
+```py
+import pandas as pd
+import numpy as np
+import json
+
+INPUT_FILE = "final_data.csv"
+OUTPUT_FILE = "final_data.json"
+
+df = pd.read_csv(INPUT_FILE, header=[0, 1], index_col=0)
+
+STUDENTS = list(df.iloc[:, 0].keys())
+TOPICS = [
+    "Prefab",
+    "Computer-Aided Design",
+    "Computer-Controlled Cutting",
+    "Embedded Programing",
+    "3D Scanning and Printing",
+    "Electronics Design",
+    "Computer-Controlled Machining",
+    "Electronics Production",
+    "Mechanical Design, Machine Design",
+    "Input Devices",
+    "Moulding and Casting",
+    "Output Devices",
+    "Embedded Networking and Communications",
+    "Interface and Application Programming",
+    "Wildcard Week",
+    "Applications and Implications",
+    "Invention, Intellectual Property and Business Models",
+    "Final Project",
+    "Other"
+]
+
+def get_value(df, referencer_student, referenced_student, topic):
+    return df.loc[referencer_student, (referenced_student, topic)]
+
+def generate_node_obj(name, group):
+    return {
+        "id": name,
+        "group": group
+    }
+
+def generate_link_obj(name_from, name_to, strength, topic):
+    return {
+        "source": name_from,
+        "target": name_to,
+        "value": strength,
+        "topic": topic
+    }
+
+final_data = {
+    "nodes": [ ],
+    "links": [ ]
+}
+
+def split_name(name):
+    return name.split(";")
+
+if __name__ == "__main__":
+    # create `nodes` object in final JSON
+    for student in STUDENTS:
+        student_name, student_link = split_name(student)
+        final_data['nodes'].append(generate_node_obj(student, 1))
+
+    # for each link between students, add a link object in the final JSON under the `links` object
+    for referencer_student in STUDENTS:
+        referencer_student_name, referencer_student_link = split_name(referencer_student)
+        for referenced_student in STUDENTS:
+            referenced_student_name, referenced_student_link = split_name(referenced_student)
+            for topic in TOPICS:
+                val = get_value(df, referencer_student, referenced_student, topic)
+
+                if val == 0 or np.isnan(val): continue
+
+                final_data['links'].append(generate_link_obj(referencer_student, referenced_student, val, topic))
+
+    with open("final_data.json", "w") as outfile:
+        json.dump(final_data, outfile)
+```
+
+#### Name Conflicts
+
+Upon inspecting the data, I noticed that several students with longer names had names that did not reflect their listing on the Fab Academy Student Rosters (for example, click [here](https://fabacademy.org/2023/people.html) to see the 2023 roster). To resolve this, I wrote `resolve_name_conflicts.py`. This identifies students based on the URL to their website (which acts as a unique identifier for every student) and checkes it against the webpage. This was especially challenging since some students whose names have diacritic marks or accent marks are sometimes displayed as characters and other times as unicode beginning with `\u`, so I checked for both. The webpage name overrides the name collected during [Step 2](#step-2-ai-sorting-data--analysis).
+
+So I ran `resolve_name_conflicts.py`, which takes `final_data.json` as an input and outputs `final_data_name_fixed.json`.
+
+Below is `resolve_name_conflicts.py`. Before that codeblock I include four functions that are imported from `main.py` (see [Step 2](#step-2-ai-sorting-data--analysis)) for reference. I did not include the libraries included in `main.py` as it is detailed above.
+
+```py
+# check if an object exists at the specified filepath
+def save_exists(folder_name, name):
+    return os.path.exists(f"{folder_name}/{name}.obj")
+
+# return the pickled object saved in the specifed filepath
+def load_obj(folder_name, name):
+    with open(f"{folder_name}/{name}.obj", "rb") as filehandler:
+        return pickle.load(filehandler)
+
+# return the webpage of fabacademy.org that includes every student's names from the specified year (and if this has already been downloaded and saved in a pickled object, load that instead of sending an HTTP request)
+def get_people_soup(year):
+    filename = f"{year}-soup"
+    if save_exists("people_saves", filename):
+        return load_obj("people_saves", filename)
+
+    base_url = f"https://fabacademy.org/{year}/people.html"
+    soup = BeautifulSoup(requests.get(base_url).content, 'html.parser')
+
+    save_obj("people_saves", soup, filename)
+
+    return soup
+
+# formats a student's ID by accessing their name as detailed on the fabacademy.org students list, as well as the URL to their website
+def repo_name_to_student_name(name_and_web_url_tup):
+    name, web_url = name_and_web_url_tup
+    year = web_url.split("/")[3]
+    href = f'/{"/".join(web_url.split("/")[3:])}'
+    people_soup = get_people_soup(year)
+    As = people_soup.find_all('a', href=True)
+    a = [_ for _ in As if _['href'] == href or _['href'] == href[:-1]][0] # or to account for ending slash
+    name_final = a.text.strip()
+    return name_final, web_url
+```
+
+*resolve_name_conflicts.py*
+
+```py
+from main import repo_name_to_student_name
+import pandas as pd
+import re
+
+df = pd.read_csv("final_data.csv", header=[0, 1], index_col=0)
+
+STUDENTS = list(df.iloc[:, 0].keys())
+
+regexes = {}
+
+normal_chars = "abcdefghijklmnopqrstuvwxyz-"
+
+# convert a char from a character with an accent/dialectic into unicode
+def accent_to_code(char):
+    return format(ord(char), "#06x").replace("0x", "\\u")
+
+# convert a char from unicode into a character with an accent/dialectic
+def code_to_accent(code):
+    return chr(int(code.replace("\\u", "0x"), 16))
+
+# takes a name, converts it to a list of chars, then converts all characters with accents/dialectics to unicode
+def non_letters_into_codes(name):
+    lst = [_ for _ in name]
+    for i in range(len(lst)):
+        char = lst[i]
+        if char.lower() not in normal_chars:
+            lst[i] = accent_to_code(char)
+    return "".join(lst)
+
+if __name__ == "__main__":
+    # create a dictionary where keys are regexes of the student's previous names as standard text and as text where diacritics/accents are replaced with unicode, and values are the corrected names
+    for student in STUDENTS:
+        val = ";".join(repo_name_to_student_name(student.split(";")))
+        regexes[student] = val
+        regexes[non_letters_into_codes(student.split(";")[0]) + ";" + student.split(";")[1]] = val
+
+    # run the regex on final_data.json (literally replace the text, don't load as an object)
+    with open('final_data.json', 'r') as file:
+        content = file.read()
+        for key in regexes:
+            content = re.sub(re.escape(key), regexes[key], content)
+        
+    # store the corrected data
+    with open('final_data_name_fixed.json', 'w', encoding='utf-8') as file: # encoding='utf-8' so that special characters in names can be written without UnicodeEncodeError
+        file.write(content)
+```
+
