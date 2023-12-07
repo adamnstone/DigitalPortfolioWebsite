@@ -220,15 +220,21 @@ Because the first version of the `Expert Network Map` had tens of thousands of d
 
 The first step of the project is to collect data on all of the references between Fab Academy students' documentation from 2018-2023. Since every student's documentation website is hosted from a GitLab repo, I wrote a Python script that uses the [Python-GitLab API](https://python-gitlab.readthedocs.io/en/stable/api-usage.html) to scan each student's repo using a [RegEx](https://www.w3schools.com/python/python_regex.asp). 
 
-In my first iteration of the script, I did not realize that the [GitLab API paginates to the first twenty projects or repos by default](https://gitlab.com/gitlab-org/gitlab/-/issues/17329#:~:text=Description,to%20a%20maximum%20of%20100%20.), and the RegEx failed to include links from students between years (for example, a student from 2023 referencing a student from 2018). I realized this error after I had completed part of [Step 2](#step-2-ai-sorting-data--analysis) and successfully trained and hyperparameter tuned a neural network to categorize text by subject-area. So, I could have included more training data, however I decided not to re-run the training process since the model had a lot of data to train on even with the pagination and missing references (~13,000 blocks of 2,000 characters of text, approximately 18,000 pages) and achieved a satisfactory accuracy of 86.4%. Most importantly, these students' data and the extra references were included in the network analysis in [Step 2](#step-2-ai-sorting-data--analysis), as well as in the data visualization in [Step 3](#step-3-data-visualization). I will show the code with the errors first (the changes were minimal between the versions), then include the altered in [Step 2](#step-2-ai-sorting-data--analysis).
+In my first iteration of the script, I did not realize that the [GitLab API paginates to the first twenty projects or repos by default](https://gitlab.com/gitlab-org/gitlab/-/issues/17329#:~:text=Description,to%20a%20maximum%20of%20100%20.), and the RegEx failed to include links from students between years (for example, a student from 2023 referencing a student from 2018). I realized this error after I had completed part of [Step 2](#step-2-ai-sorting-data--analysis) and successfully trained and hyperparameter tuned a neural network to categorize text by subject-area. So, I could have included more training data, however I decided not to re-run the training process since the model had a lot of data to train on even with the pagination and missing references (~13,000 blocks of 2,000 characters of text, approximately 18,000 pages) and achieved a satisfactory accuracy of 86.3%. Most importantly, these students' data and the extra references *were* included in the network analysis in [Step 2](#step-2-ai-sorting-data--analysis), as well as in the data visualization in [Step 3](#step-3-data-visualization). I will show the code with the errors first (the changes were minimal between the versions), then include the altered version in [Step 2](#step-2-ai-sorting-data--analysis).
 
-Data was stored in the below structure before being converted to a Pandas dataframe. There was an array of tuples that contained the GitLab ID of a student's lab's subgroup and a dictionary. The dictionary had one key, the name of the student, and had another dictionary as the value. The inner dictionary container key-value pairs of how many times the student referenced other students' websites.
+Data was stored in the below structure before being converted to a Pandas dataframe. There was an array of tuples that contained the GitLab ID of a student's lab's subgroup and a dictionary. The dictionary had one key, the name of the student, and had another dictionary as the value. The inner dictionary contained key-value pairs of how many times the student referenced other students' websites.
 
 ```py
 [(lab_id: id (int), {"Student Name": {"student-referenced": num_references (int), ...}}), ...]
 ```
 
-Additionally, I wrote a list of keywords for each subject-area. If the 2,000 characters surrounding a link contained one of the keywords, a new object was stored in a `jsonl` file containing the text and categorized subject-area. Below is a list of the subject-areas and the corresponding keywords (later the subject-areas "Prefab" and "Other" were removed):
+Additionally, I wrote a list of keywords for each subject-area. If the 2,000 characters surrounding a link contained one of the keywords, a new object was stored in a `jsonl` file containing the text and categorized subject-area. Additionally, self-links were included in the training data. Here's a sample from the collected data.
+
+```json
+{"text": "018/labs/fablabamsterdam/students/klein-xavier/pages/week8.html\">check here to know how i did it</a>), i set the clock to <i>internal 8 mhz</i>.\n\ni tried the code <a href=\"https://github.com/maltesemants1/charlieplexing-the-arduino/blob/master/charlieplexing%20sketch\" target=\"_blank\">from the tutorial i followed</a>.<br>\nnow, if you look at images of the board above, something is missing. the regulator. if you're already noticed it you win this \"very good eyes\" cup:<br><br>\n<img src=\"week11/img/cup.gif\" alt=\"\"><br><br>\n\ni try first with the code above, i change the pins, looking to this type of datasheet: <br><br>\n<img src=\"http://fabacademy.org/2018/labs/fablabtrivandrum/students/aby-michael/week9/image/attinypinouts14.jpg\" alt=\"\"><br><br>\n\n i've upload the code and nothing happened. the regulator started to fried!<br>\n it fried because i put it there to regulate a 9v from a battery to 5v. but there was no battery when i tested the code (using the programmer as power supply) and the regulator didn't enjoy it.<br>\n so for the next \"experiments\" i remove it and used only the programmer as power supply.<br><br>\n\n i manage to make charlieplexing working with the good pins, i've made some mods to the code in order to have a back and forth movement (you check this code <a href=\"http://archive.fabacademy.org/2018/labs/fablabamsterdam/students/klein-xavier/pages/week11/file/charlieplexing.ino\">here</a>.):<br><br>\n <img src=\"week11/img/pins.png\" alt=\"\"><br><br>\n here's the beast:<br><br>\n<iframe src=\"https://giphy.com/embed/1lxry3fbt0naiel2gn\" width=\"480\" height=\"266\" frameborder=\"0\" class=\"giphy-embed\" allowfullscreen></iframe><br><br>\n\n<b>the code:</b><br><br>\n\nt\n\n/*<br>\n * charlieplexing code for this board:<br>\n\n * http://archive.fabacademy.org/2018/labs/fablabamsterdam/students/klein-xavier/pages/week11/file/ledboard.zip <br>\n * wtfpl xavier klein <br>\n */ <br>\n\n<br>\n<b>here i have 3 variables related to the 3 pins i dedicated to for each row.</b><br>\n//setting the pin for each row.<br>\nconst int led_1 = 0;     //led", "label": "Embedded Programing", "metadata": {"from": "https://fabacademy.org/2018/labs/fablabamsterdam/students/klein-xavier/", "to": "https://fabacademy.org/2018/labs/fablabtrivandrum/students/aby-michael/"}}
+```
+
+Below is a list of the subject-areas and the corresponding keywords (later the subject-areas "Prefab" and "Other" were removed):
 
 ```py
 TOPICS = [
@@ -693,8 +699,309 @@ if __name__ == "__main__":
     matrix = format_data_to_matrix(reference_dicts_across_years)
 ```
 
-
 ### Step 2: AI, Sorting Data, & Analysis
+
+#### Training the Model
+
+Before running the training, I had to format the trianing data from a `jsonl` to a `csv` file. So, I wrote `jsonl2csv.py` to convert the JSON objects into CSV format. I used a number to signify each subject-area (each will correspond to an output node in the neural network) and save the exported dataframe as `NLP_data/train.csv`.
+
+*jsonl2csv.py*
+
+```py
+import json, string
+import pandas as pd
+
+DATA_LABELS = {
+    "Prefab": 0,
+    "Computer-Aided Design": 1,
+    "Computer-Controlled Cutting": 2,
+    "Embedded Programing": 3,
+    "3D Scanning and Printing": 4,
+    "Electronics Design": 5,
+    "Computer-Controlled Machining": 6,
+    "Electronics Production": 7,
+    "Mechanical Design, Machine Design": 8,
+    "Input Devices": 9,
+    "Moulding and Casting": 10,
+    "Output Devices": 11,
+    "Embedded Networking and Communications": 12,
+    "Interface and Application Programming": 13,
+    "Wildcard Week": 14,
+    "Applications and Implications": 15,
+    "Invention, Intellectual Property and Business Models": 16,
+    "Final Project": 17,
+    "Other": 18
+}
+
+if __name__ == "__main__":
+    txts = []
+    labels = []
+    tos = []
+    froms = []
+    with open('NLP_data/train.jsonl', 'r') as jsonl:
+        for line in jsonl.readlines():
+            j = json.loads(line)
+            txts.append("".join([char for char in j['text'] if char in set(string.printable)])) # string.printable removes non-ASCII chars to avoid writing errors
+            labels.append(DATA_LABELS[j['label']])
+            tos.append(j['metadata']['to'])
+            froms.append(j['metadata']['from'])
+
+    data_dict = {
+        "Text": txts,
+        "Labels": labels,
+        "To": tos,
+        "From": froms
+    }
+    
+    df = pd.DataFrame(data_dict)
+
+    df.to_csv("NLP_data/train.csv")
+```
+
+To train the model in `train_nn.py`, I used the Python machine-learning libraries [`PyTorch`](https://pytorch.org/) and [`Sci-Kit Learn`](https://scikit-learn.org/stable/). I'll break the code into sections then provide the entire file below.
+
+First, I loaded the CSV with Pandas, stored the 2,000 blocks and their lables in two series, and used `train_test_split` from `sklearn.model_selection` to put 80% of the data into a training set and 20% into a testing set.
+
+```py
+# Read the CSV file
+df = pd.read_csv('NLP_data/train.csv')
+
+# Columns are named 'Text' and 'Labels'
+texts = df['Text']
+labels = df['Labels']
+
+# Split the dataset into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(texts, labels, test_size=0.2, random_state=42)
+```
+
+Then, using the `CountVectorizer` from `sklearn.feature_extraction.text`, I vectorized the training and test data. You can read about the [`CountVectorizer` here](https://www.google.com/search?q=sklelarn+count+vectorizer&rlz=1C1RXQR_enUS1018US1018&oq=sklelarn+count+vectorizer&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTILCAEQABgKGA0YgAQyDQgCEAAYhgMYgAQYigUyDQgDEAAYhgMYgAQYigUyDQgEEAAYhgMYgAQYigUyDQgFEAAYhgMYgAQYigXSAQgyMTE4ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8).
+
+```py
+# Convert the texts into vectors
+vectorizer = CountVectorizer(max_features=5000)  # limit to 5000 most frequent words/tokens
+X_train = vectorizer.fit_transform(X_train)
+X_test = vectorizer.transform(X_test)
+```
+
+I pickled and saved the vectorizer object.
+
+```py
+# Save the vectorizer
+pickle.dump(vectorizer, open("vectorizer.pickle", "wb"))
+```
+
+Next I converted the train and test data to [NumPy arrays](https://numpy.org/doc/stable/reference/generated/numpy.array.html) then [PyTorch tensors](https://pytorch.org/docs/stable/tensors.html).
+
+```py
+# Convert the vectors and labels to numpy arrays
+X_train = X_train.toarray()
+X_test = X_test.toarray()
+y_train = y_train.to_numpy()
+y_test = y_test.to_numpy()
+
+X_train = torch.from_numpy(X_train).float()
+X_test = torch.from_numpy(X_test).float()
+y_train = torch.from_numpy(y_train).long()
+y_test = torch.from_numpy(y_test).long()
+```
+
+Then I defined the `TextClassifer` neural network class. There are three layers: input, hidden, and output. Adjacent layers are [fully connected (FC)](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks#:~:text=Fully%20Connected%20(FC)%20The%20fully,objectives%20such%20as%20class%20scores.) (also called [`linear` layers](https://docs.nvidia.com/deeplearning/performance/dl-performance-fully-connected/index.html)). The network also implements [dropout](https://www.analyticsvidhya.com/blog/2022/08/dropout-regularization-in-deep-learning/#:~:text=Dropout%20is%20a%20regularization%20method,connectedness%20to%20the%20preceding%20layer.) and the [ReLU activaition function](https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html) before the hidden layer.
+
+```py
+class TextClassifier(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim, dropout_prob=0.5):
+        super(TextClassifier, self).__init__()
+        self.fc1 = nn.Linear(input_dim, hidden_dim)
+        self.dropout = nn.Dropout(dropout_prob)
+        self.fc2 = nn.Linear(hidden_dim, output_dim)
+    
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        x = self.dropout(x)
+        x = self.fc2(x)
+        return x
+```
+
+Next, to begin finding the optimal hyperparameter combinations, I defined a list of values of `learning rate` and `dropout rate` to try, as well as a function to train the network with a specified value for each of these hyperparameters. The dimensions of the network are `5000x200x18`. The training runs 100 [epochs](https://www.baeldung.com/cs/epoch-neural-networks) using the [`Adam optimizer`](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) and [`CrossEntropyLoss` function](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html). Then the model performance evaluated. The `train_model` function returns the model accuracy (measured on the test set data) and the model itself.
+
+```py
+# define grid of hyperparameters
+learning_rates = [0.1, 0.01, 0.001]
+dropout_rates = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+
+# define a function for the training loop
+def train_model(lr, dropout_rate):
+    model = TextClassifier(input_dim=X_train.shape[1], hidden_dim=200, output_dim=18, dropout_prob=dropout_rate)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=lr)
+
+    for epoch in range(100):  
+        optimizer.zero_grad()
+        outputs = model(X_train)
+        loss = criterion(outputs, y_train)
+        loss.backward()
+        optimizer.step()
+
+    # Evaluate the model
+    with torch.no_grad():
+        outputs = model(X_test)
+        _, predicted = torch.max(outputs, 1)
+        correct = (predicted == y_test).sum().item()
+        accuracy = correct / y_test.size(0)
+    
+    return accuracy, model
+```
+
+Then to implement the gridsearch, I loop through the combinations of [`learning rate`](https://deepchecks.com/glossary/learning-rate-in-machine-learning/#:~:text=The%20learning%20rate%2C%20denoted%20by,network%20concerning%20the%20loss%20gradient%3E.) and [`dropout rate`](https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html), training and evaluating a neural network then storing its parameters and the model itself if the accuracy is better than all previous accuracies.
+
+```py
+# Perform the grid search
+best_accuracy = 0.0
+best_lr = None
+best_dropout_rate = None
+best_model = None
+
+for lr in learning_rates:
+    for dropout_rate in dropout_rates:
+        accuracy, model = train_model(lr, dropout_rate)
+        print(f'Learning rate: {lr}, Dropout rate: {dropout_rate}, Accuracy: {accuracy}')
+        
+        if accuracy > best_accuracy:
+            best_accuracy = accuracy
+            best_lr = lr
+            best_dropout_rate = dropout_rate
+            best_model = model
+```
+
+Finally, the results of the best model are printed, the best model is saved in the `best_model.pt` file, and the best parameters are pickled and saved in `best_params.pickle`.
+
+```py
+print(f'Best learning rate: {best_lr}, Best dropout rate: {best_dropout_rate}, Best accuracy: {best_accuracy}')
+
+# Save the best model to a file
+torch.save(best_model.state_dict(), 'best_model.pt')
+
+# Also save the parameters in a dictionary
+best_params = {"learning_rate": best_lr, "dropout_rate": best_dropout_rate, "accuracy": best_accuracy}
+
+with open('best_params.pickle', 'wb') as handle:
+    pickle.dump(best_params, handle, protocol=pickle.HIGHEST_PROTOCOL)
+```
+
+All together, here is `train_nn.py`.
+
+*train_nn.py*
+
+```py
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from sklearn.metrics import accuracy_score
+import pickle
+
+# Read the CSV file
+df = pd.read_csv('NLP_data/train.csv')
+
+# Columns are named 'Text' and 'Labels'
+texts = df['Text']
+labels = df['Labels']
+
+# Split the dataset into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(texts, labels, test_size=0.2, random_state=42)
+
+# Convert the texts into vectors
+vectorizer = CountVectorizer(max_features=5000)  # limit to 5000 most frequent words/tokens
+X_train = vectorizer.fit_transform(X_train)
+X_test = vectorizer.transform(X_test)
+
+# Save the vectorizer
+pickle.dump(vectorizer, open("vectorizer.pickle", "wb"))
+
+# Convert the vectors and labels to numpy arrays
+X_train = X_train.toarray()
+X_test = X_test.toarray()
+y_train = y_train.to_numpy()
+y_test = y_test.to_numpy()
+
+X_train = torch.from_numpy(X_train).float()
+X_test = torch.from_numpy(X_test).float()
+y_train = torch.from_numpy(y_train).long()
+y_test = torch.from_numpy(y_test).long()
+
+class TextClassifier(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim, dropout_prob=0.5):
+        super(TextClassifier, self).__init__()
+        self.fc1 = nn.Linear(input_dim, hidden_dim)
+        self.dropout = nn.Dropout(dropout_prob)
+        self.fc2 = nn.Linear(hidden_dim, output_dim)
+    
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        x = self.dropout(x)
+        x = self.fc2(x)
+        return x
+
+# define grid of hyperparameters
+learning_rates = [0.1, 0.01, 0.001]
+dropout_rates = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+
+# define a function for the training loop
+def train_model(lr, dropout_rate):
+    model = TextClassifier(input_dim=X_train.shape[1], hidden_dim=200, output_dim=18, dropout_prob=dropout_rate)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=lr)
+
+    for epoch in range(100):  
+        optimizer.zero_grad()
+        outputs = model(X_train)
+        loss = criterion(outputs, y_train)
+        loss.backward()
+        optimizer.step()
+
+    # Evaluate the model
+    with torch.no_grad():
+        outputs = model(X_test)
+        _, predicted = torch.max(outputs, 1)
+        correct = (predicted == y_test).sum().item()
+        accuracy = correct / y_test.size(0)
+    
+    return accuracy, model
+
+# Perform the grid search
+best_accuracy = 0.0
+best_lr = None
+best_dropout_rate = None
+best_model = None
+
+for lr in learning_rates:
+    for dropout_rate in dropout_rates:
+        accuracy, model = train_model(lr, dropout_rate)
+        print(f'Learning rate: {lr}, Dropout rate: {dropout_rate}, Accuracy: {accuracy}')
+        
+        if accuracy > best_accuracy:
+            best_accuracy = accuracy
+            best_lr = lr
+            best_dropout_rate = dropout_rate
+            best_model = model
+
+print(f'Best learning rate: {best_lr}, Best dropout rate: {best_dropout_rate}, Best accuracy: {best_accuracy}')
+
+# Save the best model to a file
+torch.save(best_model.state_dict(), 'best_model.pt')
+
+# Also save the parameters in a dictionary
+best_params = {"learning_rate": best_lr, "dropout_rate": best_dropout_rate, "accuracy": best_accuracy}
+
+with open('best_params.pickle', 'wb') as handle:
+    pickle.dump(best_params, handle, protocol=pickle.HIGHEST_PROTOCOL)
+```
+
+#### Classifying References
+
+
 
 ### Step 3: Data Visualization
 
