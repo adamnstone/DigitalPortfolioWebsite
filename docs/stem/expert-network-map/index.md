@@ -218,9 +218,487 @@ Because the first version of the `Expert Network Map` had tens of thousands of d
 
 ### Step 1: Data Collection
 
+The first step of the project is to collect data on all of the references between Fab Academy students' documentation from 2018-2023. Since every student's documentation website is hosted from a GitLab repo, I wrote a Python script that uses the [Python-GitLab API](https://python-gitlab.readthedocs.io/en/stable/api-usage.html) to scan each student's repo using a [RegEx](https://www.w3schools.com/python/python_regex.asp). 
+
+In my first iteration of the script, I did not realize that the [GitLab API paginates to the first twenty projects or repos by default](https://gitlab.com/gitlab-org/gitlab/-/issues/17329#:~:text=Description,to%20a%20maximum%20of%20100%20.), and the RegEx failed to include links from students between years (for example, a student from 2023 referencing a student from 2018). I realized this error after I had completed part of [Step 2](#step-2-ai-sorting-data--analysis) and successfully trained and hyperparameter tuned a neural network to categorize text by subject-area. So, I could have included more training data, however I decided not to re-run the training process since the model had a lot of data to train on even with the pagination and missing references (~13,000 blocks of 2,000 characters of text, approximately 18,000 pages) and achieved a satisfactory accuracy of 86.4%. Most importantly, these students' data and the extra references were included in the network analysis in [Step 2](#step-2-ai-sorting-data--analysis), as well as in the data visualization in [Step 3](#step-3-data-visualization). I will show the code with the errors first (the changes were minimal between the versions), then include the altered in [Step 2](#step-2-ai-sorting-data--analysis).
+
+Data was stored in the below structure before being converted to a Pandas dataframe. There was an array of tuples that contained the GitLab ID of a student's lab's subgroup and a dictionary. The dictionary had one key, the name of the student, and had another dictionary as the value. The inner dictionary container key-value pairs of how many times the student referenced other students' websites.
+
+```py
+[(lab_id: id (int), {"Student Name": {"student-referenced": num_references (int), ...}}), ...]
+```
+
+Additionally, I wrote a list of keywords for each subject-area. If the 2,000 characters surrounding a link contained one of the keywords, a new object was stored in a `jsonl` file containing the text and categorized subject-area. Below is a list of the subject-areas and the corresponding keywords (later the subject-areas "Prefab" and "Other" were removed):
+
+```py
+TOPICS = [
+    "Prefab",
+    "Computer-Aided Design",
+    "Computer-Controlled Cutting",
+    "Embedded Programing",
+    "3D Scanning and Printing",
+    "Electronics Design",
+    "Computer-Controlled Machining",
+    "Electronics Production",
+    "Mechanical Design, Machine Design",
+    "Input Devices",
+    "Moulding and Casting",
+    "Output Devices",
+    "Embedded Networking and Communications",
+    "Interface and Application Programming",
+    "Wildcard Week",
+    "Applications and Implications",
+    "Invention, Intellectual Property and Business Models",
+    "Final Project",
+    "Other"
+]
+
+TOPIC_SEARCH_TERMS = [
+    [],
+    ["Computer-Aided Design", "freecad"], 
+    ["Laser Cut", "CCC week", "Computer-Controlled Cutting"],
+    ["Embedded Programming", "MicroPython", "C\+\+", "python" "cpp", "ino", "Arduino IDE", "programming week"], 
+    ["3D Printing", "3D Scanning", "TPU", "PETG", "filament", "Prusa", "3d printing week", "polyCAM", "3D Scanning and Printing", "3d printers", "3d printer"], # not PLA because in too many other words
+    ["EagleCAD", "Eagle", "KiCAD", "Routing", "Auto-Route", "Trace", "Footprint", "electronic design", "Electronics Design"],
+    ["CNC", "Shopbot", "Computer-Controlled Machining"],
+    ["Mill", "Milling", "copper", "electronic production", "Electronics Production"],
+    ["Machine week", "actuation and automation", "Mechanical Design, Machine Design"],
+    ["Input Devices", "Input Device", "Inputs Devices", "Electronic input", "sensor", "Input Devices"],
+    ["Part A", "Part B", "pot time", "pottime", "molding", "moulding", "casting", "cast", "Moulding and Casting"],
+    ["Output Device", "Outputs Devices", "Outputs Device", "Servo", "motor", "Output Devices"],
+    ["SPI", "UART", "I2C", "RX", "TX", "SCL", "networking week", "networking", "network", "networking and communications", "Embedded Networking and Communications"],
+    ["Interfacing Week", "interface week", "Interface and Application Programming"],
+    ["Wildcard Week"],
+    ["Applications and Implications", "Bill-of-Materials", "Bill of materials"],
+    ["Patent", "copyright", "trademark", "Invention, Intellectual Property and Business Models"],
+    ["Final Project"],
+    []
+]
+```
+
+The Fab Academy student GitLab repos are structured as follows:
+
+![GitLab Flowchart](../../assets/images/stem/expert-network-map/gitlab-flowchart.jpg)
+
+So it worked down the tree, starting with each year's subgroup and traversing down the tree breadth-first. Helper functions are included in the full `main_collection.py` below.
+
+```py
+for year in range(2018, 2024):
+    print("Loading student names...")
+    all_student_names = get_all_people(year)
+    print(all_student_names)
+    print("Collecting student repo IDs...")
+    all_student_repo_ids = get_all_student_repo_ids(year, ALL_LAB_SUBGROUP_IDS[year], all_student_names)
+    print(all_student_repo_ids)
+
+    all_reference_dicts = [] # [(lab_id: id (int), {"Student Name": {"student-referenced": num_references (int), ...}}), ...]
+
+    for lab_number, id in all_student_repo_ids:
+        reference_dict_list = []
+        
+        compiled_reference_dict = get_all_reference_dicts(year, id)
+
+        print("Adding reference dictionary to database...")
+        all_reference_dicts.append((lab_number, {format_name(get_repo_name(id), year): compiled_reference_dict}))
+        print(f"All reference dictionaries so far... {all_reference_dicts}")
+    reference_dicts_across_years.append(all_reference_dicts)
+
+matrix = format_data_to_matrix(reference_dicts_across_years)
+```
+
+Since all links to another's website in documentation should be found in either an `HTML`, `TXT`, or `Markdown` file, I only scanned for references in these file types. I also provided the Subgroup IDs of the overal Fab Academy GitLab Projects for the years 2018-2023.
+
+```py
+VALID_EXTENSOINS = ["html", "txt", "md"]
+ALL_LAB_SUBGROUP_IDS = {
+    2023: 8145,
+    2022: 3632,
+    2021: 2917,
+    2020: 2140,
+    2019: 1619,
+    2018: 852
+}
+```
+
+In order to decrease run-time when running the script multiple times, certain information, such as the list of every student's names from the fabacademy.org website, are pickled and stored locally.
+
+Here is the entire `main_collection.py` file with helper functions. 
+
+```py
+import requests, base64, urllib.parse, gitlab, re, pickle, os, time, json
+from bs4 import BeautifulSoup
+import pandas as pd
+from urllib.parse import urljoin
+
+GL = gitlab.Gitlab('https://gitlab.fabcloud.org', api_version=4)
+VALID_EXTENSOINS = ["html", "txt", "md"]
+ALL_LAB_SUBGROUP_IDS = {
+    2023: 8145,
+    2022: 3632,
+    2021: 2917,
+    2020: 2140,
+    2019: 1619,
+    2018: 852
+}
+
+CHARACTERS_EACH_DIRECTION_TOPIC_DETECTION = 1000
+TOPICS = [
+    "Prefab",
+    "Computer-Aided Design",
+    "Computer-Controlled Cutting",
+    "Embedded Programing",
+    "3D Scanning and Printing",
+    "Electronics Design",
+    "Computer-Controlled Machining",
+    "Electronics Production",
+    "Mechanical Design, Machine Design",
+    "Input Devices",
+    "Moulding and Casting",
+    "Output Devices",
+    "Embedded Networking and Communications",
+    "Interface and Application Programming",
+    "Wildcard Week",
+    "Applications and Implications",
+    "Invention, Intellectual Property and Business Models",
+    "Final Project",
+    "Other"
+]
+
+TOPIC_SEARCH_TERMS = [
+    [],
+    ["Computer-Aided Design", "freecad"], 
+    ["Laser Cut", "CCC week", "Computer-Controlled Cutting"],
+    ["Embedded Programming", "MicroPython", "C\+\+", "python" "cpp", "ino", "Arduino IDE", "programming week"], 
+    ["3D Printing", "3D Scanning", "TPU", "PETG", "filament", "Prusa", "3d printing week", "polyCAM", "3D Scanning and Printing", "3d printers", "3d printer"], # not PLA because in too many other words
+    ["EagleCAD", "Eagle", "KiCAD", "Routing", "Auto-Route", "Trace", "Footprint", "electronic design", "Electronics Design"],
+    ["CNC", "Shopbot", "Computer-Controlled Machining"],
+    ["Mill", "Milling", "copper", "electronic production", "Electronics Production"],
+    ["Machine week", "actuation and automation", "Mechanical Design, Machine Design"],
+    ["Input Devices", "Input Device", "Inputs Devices", "Electronic input", "sensor", "Input Devices"],
+    ["Part A", "Part B", "pot time", "pottime", "molding", "moulding", "casting", "cast", "Moulding and Casting"],
+    ["Output Device", "Outputs Devices", "Outputs Device", "Servo", "motor", "Output Devices"],
+    ["SPI", "UART", "I2C", "RX", "TX", "SCL", "networking week", "networking", "network", "networking and communications", "Embedded Networking and Communications"],
+    ["Interfacing Week", "interface week", "Interface and Application Programming"],
+    ["Wildcard Week"],
+    ["Applications and Implications", "Bill-of-Materials", "Bill of materials"],
+    ["Patent", "copyright", "trademark", "Invention, Intellectual Property and Business Models"],
+    ["Final Project"],
+    []
+] 
+
+# return file contents from GitLab repo
+def get_file_content(file_path, project_id, default_branch_name):
+    print(f"Getting file content: {file_path}, {project_id}")
+    safe_url = f"https://gitlab.fabcloud.org/api/v4/projects/{project_id}/repository/files/{urllib.parse.quote(file_path, safe='')}?ref={default_branch_name}"
+    print(safe_url)
+    response = requests.get(safe_url).json()
+    if 'message' in response:
+        if '404' in response['message']:
+            print(f"404 ERROR from {safe_url}")
+            return
+    encrypted_blob = response['content']
+    
+    decrypted_text = base64.b64decode(encrypted_blob)
+    return decrypted_text
+
+# get name of GitLab repo
+def get_repo_name(project_id):
+    safe_url = f"https://gitlab.fabcloud.org/api/v4/projects/{project_id}"
+    print(safe_url)
+    response = requests.get(safe_url).json()
+    web_url = response['web_url']
+    if 'message' in response:
+        if '404' in response['message']:
+            print(f"404 ERROR from {safe_url}")
+            return
+    return response['name'], gitlab_url_to_site_url(f"{web_url}/") # / to make it consistent with the name lists with urljoin and the a's hrefs
+
+# get a list of the subgroups of a GitLab project
+def get_file_repo_list(id):
+    all_file_paths = []
+    project = GL.projects.get(id)
+    all_directories = project.repository_tree(recursive=True, all=True)
+    for item in all_directories:
+        path = item['path']
+        if path.split('.')[-1].lower().strip() in VALID_EXTENSOINS:
+            all_file_paths.append(path)
+    return all_file_paths
+
+# get the IDs of the subgroups of a GitLab project
+def get_subgroup_ids(group_id):
+    safe_url = f"https://gitlab.fabcloud.org/api/v4/groups/{group_id}/subgroups"
+    response = None
+    while response is None:
+        try:
+            response = requests.get(safe_url).json()
+        except Exception as e:
+            print(f"Server timeout- {e}")
+            time.sleep(10)
+    p_ids = []
+    for item in response:
+        try:
+            p_ids.append(item['id'])
+        except:
+            print("Error finding subgroups -- skipping")
+    return p_ids
+
+# get the IDs of subgprojects of a GitLab project
+def get_subproject_ids(group_id):
+    safe_url = f"https://gitlab.fabcloud.org/api/v4/groups/{group_id}/projects"
+    response = requests.get(safe_url).json()
+    p_ids = []
+    for item in response:
+        p_ids.append(item['id'])
+    return p_ids
+
+def name_split_char(year):
+    return "." if year < 2021 else " "
+
+# convert a URL to a GitLab repo to a URL to the hosted website
+def gitlab_url_to_site_url(gitlab_url):
+    return f"https://fabacademy.org/{gitlab_url.split('https://gitlab.fabcloud.org/academany/fabacademy/')[-1]}"
+
+# format student's name to create a unique identifier for each student
+def format_name(name_url_tup, year, tup=True):
+    if tup:
+        name, web_url = name_url_tup
+        return f'{"-".join(name.lower().strip().split(name_split_char(year)))};{web_url}' 
+    else:
+        print("Warning: name generated without URL")
+        name = name_url_tup
+        return "-".join(name.lower().strip().split(name_split_char(year)))
+
+# remove all links to websites that are not students' repos
+def filter_only_student_repos(all_student_repo_ids, all_student_names, year):
+    filtered_ids = []
+    all_student_urls = [name.split(";")[1].strip() for name in all_student_names]
+    for i, id_list in all_student_repo_ids:
+        for id in id_list:
+            _, web_url = get_repo_name(id)
+            if web_url.strip()[:-1] in all_student_urls or web_url.strip() in all_student_urls: # [:-1] to remove ending slash
+                filtered_ids.append((i, id))
+    return filtered_ids
+
+# get the repo IDs of all fab Academy students
+def get_all_student_repo_ids(year, year_subgroup_id, all_student_names):
+    if save_exists("student_repo_id_saves", year):
+        return load_obj("student_repo_id_saves", year)
+    all_student_repo_ids = []
+    all_lab_ids = get_subgroup_ids(year_subgroup_id)
+    
+    for id in all_lab_ids:
+        for sub_id in get_subgroup_ids(id):
+            all_student_repo_ids.append((id, get_subproject_ids(sub_id))) # ((i, get_subproject_ids(sub_id)))
+    print(all_student_repo_ids)
+    to_return = filter_only_student_repos(all_student_repo_ids, all_student_names, year)
+    save_obj("student_repo_id_saves", to_return, year)
+    return to_return
+
+def save_exists(folder_name, name):
+    return os.path.exists(f"{folder_name}/{name}.obj")
+
+def load_obj(folder_name, name):
+    with open(f"{folder_name}/{name}.obj", "rb") as filehandler:
+        return pickle.load(filehandler)
+
+def save_obj(folder_name, obj, name):
+    with open(f"{folder_name}/{name}.obj", 'wb') as filehandler: 
+        pickle.dump(obj, filehandler)
+
+# go to fabacademy.org website to find student oster and all students' names and links to their websites
+def get_all_people(year):
+    if save_exists("people_saves", year):
+        return load_obj("people_saves", year)
+    
+    base_url = f"https://fabacademy.org/{year}/people.html"
+    soup = BeautifulSoup(requests.get(base_url).content, 'html.parser')
+
+    if year > 2018:
+        lab_divs = soup.find_all("div", {"class": "lab"})
+
+        names = []
+
+        for lab_div in lab_divs:
+            lis = lab_div.find_all("li")
+
+            As = [li.find("a") for li in lis]
+
+            names += [f"{a.text.strip().lower().replace(' ', '-')};{urljoin(base_url, a['href'])}" for a in As]        
+    else:
+        lis = soup.find_all("li")
+        names = [f"{li.find('a').text.strip().lower().replace(' ', '-')};{urljoin(base_url, li.find('a')['href'])}" for li in lis]
+
+    save_obj("people_saves", names, year)
+
+    return names
+
+# scan a repo for references to another student's documentation
+def get_references(content, year, from_url):
+    pattern = re.compile(f"\/{year}\/labs\/[^\/]+\/students\/(\w|-)+\/")
+    people_linked = {}
+    for match in pattern.finditer(str(content)):
+        full_url = f"https://fabacademy.org{match.group(0)}"
+        print(f"FULL URL {full_url}")
+        person = format_name((match.group(0).split("/")[-2], full_url), year)
+
+        link_label = None
+
+        topic_search_start_ind = match.start() - CHARACTERS_EACH_DIRECTION_TOPIC_DETECTION
+        if topic_search_start_ind < 0:
+            topic_search_start_ind = 0
+        topic_search_end_ind = match.end() + CHARACTERS_EACH_DIRECTION_TOPIC_DETECTION
+        if topic_search_end_ind > len(content):
+            topic_search_end_ind = len(content)
+        print(f"({match.start()}, {match.end()}) -> ({topic_search_start_ind}, {topic_search_end_ind})")
+        topic_text = content.decode()[topic_search_start_ind:topic_search_end_ind].lower()
+        
+        print("TOPIC TEXT", topic_text)
+        for i in range(len(TOPICS)):
+            topic = TOPICS[i]
+            topic_search_terms = TOPIC_SEARCH_TERMS[i]
+            for item in topic_search_terms:
+                item_spaces = item.replace("-", " ").replace("/", " ").replace(",", " ").lower().strip()
+                if re.search(re.compile(item_spaces.replace(" ",".")), topic_text) or re.search(re.compile(item_spaces.replace(" ","-")), topic_text) or re.search(re.compile(item_spaces), topic_text) or re.search(re.compile(item_spaces.replace(" ","")), topic_text):
+                    link_label = topic
+        
+        if link_label is None:
+            continue
+
+        with open("NLP_data/train.jsonl", "a") as file:
+            file.write('{' + '"text": ' + json.dumps(topic_text) + ', "label": "' + link_label + '", "metadata": '+ '{' + '"from": "' + from_url + '", "to": "' + full_url + '"' + '}' + '}\n')
+        
+        if person in people_linked:
+            if link_label in people_linked[person]:
+                people_linked[person][link_label] += 1
+        else:
+            people_linked[person] = {}
+            people_linked[person][link_label] = 1
+
+    return people_linked
+
+# combine students' dictionaries of references to other's websites
+def combine_reference_dicts(reference_dict_list):
+    combined_reference_dict = {}
+    for dict in reference_dict_list:
+        for key in dict:
+            if key in combined_reference_dict:
+                for topic_key in dict[key]:
+                    if topic_key in combined_reference_dict[key]:
+                        combined_reference_dict[key][topic_key] += dict[key][topic_key]
+                    else:
+                        combined_reference_dict[key][topic_key] = dict[key][topic_key]
+            else:
+                combined_reference_dict[key] = dict[key] 
+    return combined_reference_dict
+
+# convert data to Pandas crosstab matrix
+def format_data_to_matrix(data):
+    students = []
+
+    for year_info in data: # [(lab_id: int, {"Student Name": {"student-referenced": num_references: int, ...}}), ...]
+        for student_info in year_info: # (lab_id: int, {"Student Name": {"student-referenced": num_references: int, ...}})
+            lab_id = student_info[0] 
+            student_name = list(student_info[1].keys())[0]
+            reference_dict = student_info[1][list(student_info[1].keys())[0]]
+            students.append(student_name) 
+
+    print("STUDENTS", students)
+
+    df = pd.crosstab(students, students)
+    df.rename_axis("Referencing Students", axis=0, inplace=True)
+    df.rename_axis("Referenced Students", axis=1, inplace=True)
+
+    df = pd.DataFrame(df, index=df.index, columns=pd.MultiIndex.from_product([df.columns, TOPICS]))
+
+    for student1 in students:
+        for student2 in students:
+            for topic_name in TOPICS:
+                df.at[student1, (student2, topic_name)] = (pd.NA if student1 == student2 else 0)
+
+    def assign_value(referencer_student, referenced_student, num_references, topic):
+        if referencer_student == referenced_student:
+            print(f"Ignoring self-referenced student {referencer_student}")
+        elif referenced_student not in students:
+            print("Referenced student isn't a student - URL matched naming convention so regex caught but wasn't checked against student list - skipping")
+        else:
+            df.loc[referencer_student, (referenced_student, topic)] = num_references
+
+    def get_value(referencer_student, referenced_student, topic):
+        return df.loc[referencer_student, (referenced_student, topic)]
+
+    for year_info in data:
+        for student_info in year_info:
+            student_name = list(student_info[1].keys())[0]
+            reference_dict = dict(student_info[1][student_name])
+            for referenced_student in reference_dict:
+                for reference_type in reference_dict[referenced_student]:
+                    num_references = reference_dict[referenced_student][reference_type]
+                    assign_value(student_name, referenced_student, num_references, reference_type)
+
+    df.to_csv("final_data.csv", index_label="Referencing Students|Referenced Students")
+
+    return df
+
+# get all of the reference dictionaries of different students for a given year
+def get_all_reference_dicts(year, id):
+    filename = f"{year}-{id}"
+    if save_exists("reference_dict_saves", filename):
+        print(f"Save exists! {load_obj('reference_dict_saves', filename)}")
+        return load_obj("reference_dict_saves", filename)
+    reference_dict_list = []
+    default_branch_name_response = requests.get(f"https://gitlab.fabcloud.org/api/v4/projects/{id}/repository/branches").json()
+    default_branch_name = None
+    for branch in default_branch_name_response:
+        if branch['default']:
+            default_branch_name = branch['name']
+    if default_branch_name is None:
+        print(f"Error: Default Branch Not Found (id: {id}) {default_branch_name_response} - leaving as None")
+    try:
+        for file in get_file_repo_list(id):
+            print(f"Checking {file}...")
+            reference_dict_list.append(get_references(get_file_content(file, id, default_branch_name), year, get_repo_name(id)[1]))
+        print("Generating compiled reference dictionary...")
+        compiled_reference_dict = combine_reference_dicts(reference_dict_list)
+        print(compiled_reference_dict)
+        save_obj("reference_dict_saves", compiled_reference_dict, filename)
+        print(f"SAVING to {filename}")
+        return compiled_reference_dict
+    except gitlab.exceptions.GitlabGetError as e:
+        return combine_reference_dicts(reference_dict_list)
+
+if __name__ == "__main__":
+    reference_dicts_across_years = [] # [[(lab_id: id (int), {"Student Name": {"student-referenced": num_references: (int), ...}}), ...], ...]
+
+    for year in range(2018, 2024):
+        print("Loading student names...")
+        all_student_names = get_all_people(year)
+        print(all_student_names)
+        print("Collecting student repo IDs...")
+        all_student_repo_ids = get_all_student_repo_ids(year, ALL_LAB_SUBGROUP_IDS[year], all_student_names)
+        print(all_student_repo_ids)
+
+        all_reference_dicts = [] # [(lab_id: id (int), {"Student Name": {"student-referenced": num_references: 9d (int), ...}}), ...]
+
+        for lab_number, id in all_student_repo_ids:
+            reference_dict_list = []
+            
+            compiled_reference_dict = get_all_reference_dicts(year, id)
+
+            print("Adding reference dictionary to database...")
+            all_reference_dicts.append((lab_number, {format_name(get_repo_name(id), year): compiled_reference_dict}))
+            print(f"All reference dictionaries so far... {all_reference_dicts}")
+        reference_dicts_across_years.append(all_reference_dicts)
+
+
+    matrix = format_data_to_matrix(reference_dicts_across_years)
+```
+
+
 ### Step 2: AI, Sorting Data, & Analysis
 
 ### Step 3: Data Visualization
+
+[Download all code for Step 3 here!](../../assets/code/step3-data-visualization.zip)
 
 #### Library and Data Structure
 
@@ -2857,6 +3335,8 @@ Finally, I use [Google Analytics](https://analytics.google.com/analytics/web/) t
 
 Since the website is a static webpage, I only use one HTML file, `index.html`. 
 
+*index.html*
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -2918,4 +3398,293 @@ Since the website is a static webpage, I only use one HTML file, `index.html`.
 </body>
 
 </html>
+```
+
+#### CSS
+
+All styles not created through D3JS are located in `style.css`. This includes background color, orienting description text, etc.
+
+*styles.css*
+
+```css
+:root {
+    --tooltip-background-color: white;
+    --node-stroke: #000;
+    --top-title-color: #393836;
+    --top-subtitle-color: grey;
+    --top-blurb-h3-color: #595754;
+    --body-background-color: white;
+    --overlay-text-color: black;
+}
+
+#tooltip {
+    background-color: var(--tooltip-background-color);
+    border: black solid 1px;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    visibility: hidden;
+    display: none;
+    pointer-events: none;
+}
+
+#tooltip span {
+    color: black;
+    font-family: 'Saira';
+}
+
+html {
+    Overflow-y: auto;
+}
+
+body {
+    Overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+circle {
+    stroke: var(--node-stroke);
+    stroke-width: 0px;
+}
+
+line {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--body-background-color);
+}
+
+#top-intro {
+    margin: 0 auto;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+#top-title {
+    font-size: 57px;
+    color: var(--top-title-color);
+    font-family: 'IM Fell DW Pica', serif;
+    margin-bottom: -12px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#intro-title {
+    width: 46%;
+    display: inline-block;
+}
+
+#top-subtitle {
+    font-size: 17px;
+    font-weight: 300;
+    margin-top: 11px;
+    line-height: 150%;
+    padding-bottom: 0px;
+    color: var(--top-subtitle-color);
+}
+
+#top-blurb {
+    margin-top: 20px;
+}
+
+#top-blurb p {
+    font-size: 11px;
+    text-align: justify;
+    line-height: 155%;
+    color: #777777;
+}
+
+#top-blurb h3 {
+    font-size: 16px;
+    color: var(--top-blurb-h3-color);
+    font-family: 'IM Fell DW Pica', serif;
+    margin-bottom: -8px;
+}
+
+#intro-text {
+    width: 45%;
+    display: inline-block;
+    padding-left: 50px;
+    padding-right: 0px;
+    vertical-align: top;
+    padding-bottom: 10px;
+}
+
+#top-explanation {
+    font-size: 12px;
+    text-align: justify;
+}
+
+#top-explanation p {
+    line-height: 160%;
+    color: #777777;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.multiselect {
+    width: 170px;
+    font-size: 15px;
+    padding-bottom: 4px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+    outline: none;
+}
+
+.multiselect:hover {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.multiselect.active {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: 1px solid transparent;
+}
+
+.multiselect>.title {
+    cursor: pointer;
+    height: 16px;
+    padding: 6px;
+}
+
+.multiselect>.title>.text {
+    max-width: 130px;
+    max-height: 25px;
+    display: block;
+    float: left;
+    overflow: hidden;
+    line-height: 1.3em;
+}
+
+.multiselect>.title>.expand-icon,
+.multiselect>.title>.close-icon {
+    float: right;
+    border-radius: 50%;
+    padding: 0 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    transition: 0.2s;
+    display: none;
+}
+
+.multiselect.selection>.title>.expand-icon {
+    display: none;
+}
+
+.multiselect.selection>.title>.expand-icon:hover {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: rgb(203, 32, 32);
+    color: #fff;
+}
+
+.multiselect>.title>.expand-icon,
+.multiselect.selection>.title>.close-icon {
+    display: block;
+}
+
+.multiselect>.title>.close-icon:hover {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: rgb(203, 32, 32);
+    color: #fff;
+}
+
+.multiselect>.container {
+    max-height: 200px;
+    overflow: auto;
+    margin-top: 4px;
+    margin-left: -1px;
+    width: 170px;
+    transition: 0.2s;
+    position: absolute;
+    z-index: 99;
+    background: #fff;
+    border: 1px solid transparent;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.multiselect.active>.container {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top: 0;
+}
+
+.multiselect:hover>.container {
+    border-top-color: rgba(0, 0, 0, 0.3);
+}
+
+.multiselect.active:hover>.container {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.multiselect>.container>option {
+    display: none;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.multiselect>.container>option.selected {
+    background: rgb(122, 175, 233);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.multiselect>.container>option:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.multiselect>.container>option.selected:hover {
+    background: rgba(53, 112, 130, 0.4);
+    color: #000;
+}
+
+.multiselect.active>.container>option {
+    display: block;
+}
+
+option[value=All] {
+    font-weight: bold;
+}
+
+#value-input {
+    position: absolute;
+    /*right: 120px;*/
+    /*top: 48%;*/
+    text-align: center;
+    width: 60px;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 18px;
+    color: white;
+}
+
+.overlay-text {
+    fill: var(--overlay-text-color);
+    font-family: Arial, sans-serif;
+}
 ```
