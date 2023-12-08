@@ -20,7 +20,7 @@ Here is a video of the number *"The Ballad of Farquaad"*
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lRGHWJbHD0k?si=i8uLEoHSsgQpNkBx&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-I enjoyed this role so much that, during [Fab Academy](../projects/fab-academy/disability-forewarning-system.md), I made a Farquaad sticker on the vinyl cutter! [Here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week3/vinyl-cutting/#lord-farquaad){:target="_blank"} is a link to my documentation of the process.
+I enjoyed this role so much that, during [Fab Academy](../stem/disability-forewarning-system/index.md), I made a Farquaad sticker on the vinyl cutter! [Here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week3/vinyl-cutting/#lord-farquaad){:target="_blank"} is a link to my documentation of the process.
 
 ![Farquaad Sticker](../assets/images/arts/farquaad/farquaad-sticker.jpg){: width=300px;}
 ![Farquaad Sticker Lab](../assets/images/arts/farquaad/farquaad-sticker-lab.jpg){: width=300px;}

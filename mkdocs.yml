@@ -25,9 +25,18 @@ nav:
       - stem/index.md
       - "Expert Network Map":
         - stem/expert-network-map/index.md
-      - "Fab Academy":
-        - stem/fab-academy/index.md
-        - "Disability Forewarning System": stem/fab-academy/disability-forewarning-system.md
+      - "Disability Forewarning System": 
+        - stem/disability-forewarning-system/index.md
+        - "Planning": stem/disability-forewarning-system/final-project-planning.md
+        - "Cupholder Mechanism": stem/disability-forewarning-system//cupholder-mechanism.md
+        - "Cupholder Electronics": stem/disability-forewarning-system//cupholder-electronics.md
+        - "Display Mechanism": stem/disability-forewarning-system//display-mechanics.md
+        - "Display Electronics": stem/disability-forewarning-system//display-electronics.md
+        - "Motor Calculations": stem/disability-forewarning-system//motor-calculations.md
+        - "Wireless Communication": stem/disability-forewarning-system//wireless-communication.md
+        - "Combining Electronics": stem/disability-forewarning-system//combining-electronics.md
+        - "Project Summary": stem/disability-forewarning-system//project-requirements.md
+        - "Final Project: Reflection": stem/disability-forewarning-system//project-reflection.md
       - "RhythmLink": 
         - stem/rhythm-link/index.md
         - "EEGs":
