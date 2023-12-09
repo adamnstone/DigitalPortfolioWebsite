@@ -44,11 +44,11 @@ I executed the project in three distinct phases: I wrote a script to collect the
 
 You can download all the code from the project in [this GitLab repo](https://gitlab.fabcloud.org/pub/project/expert-network-map). In the repo, you will also find [`documentation.md`](https://gitlab.fabcloud.org/pub/project/expert-network-map/-/blob/main/documentation.md?ref_type=heads), a file that lists the technical changes made in each iteration of the project.
 
-### Step 1: Scrape the Data
+### Step 1: Data Collection
 
 For the first step, I wrote a `Python` script to scrape all Fab Academy students’ documentation website GitLab repos over the past six years using the [`Python-GitLab API`](https://python-gitlab.readthedocs.io/en/stable/api-usage.html) and scan for URL references to other student websites using [`RegEx`](https://docs.python.org/3/library/re.html). I also stored 1,000 characters before and after to use for classification and used Pandas to create a reference matrix that structured the data for analysis. My program yielded a database of ~29,000 references.
 
-### Step 2: Categorize the Data
+### Step 2: AI, Sorting Data, & Analysis
 
 After the data were collected, I knew I had a significant challenge. For the network analysis to be useful, I needed to calculate the number of times a student’s documentation was referenced for a specific subject area. I had collected tens of thousands of pages of documentation text that used vastly different naming conventions for each subject area (for example, "3D Scanning & Printing" vs "3d.printing.and.scanning"), and much of the text understandably had spelling errors given that many Fab Academy students do not speak English as a first language. To overcome the challenge of categorizing references by subject area with no consistent naming convention, I created a text-classification neural network. Using a list of keywords that were often associated with a Fab Academy subject-area, for example "PLA filament" for "3D Printing," I was able to classify ~13,000 of the ~29,000 references based on the surrounding text. Find a `JSON` file of the keywords I used for each subject area below.
 
@@ -208,7 +208,7 @@ for lr in learning_rates:
 
 The model successfully classified the remaining  ~16,000 references, completing the second step of my project. 
 
-### Step 3: Visualize the Data
+### Step 3: Data Visualization
 
 Lastly, I wanted to provide the global Fab community with an easy-to-use navigation tool to locate expert documentation by subject area, as identified in my network analysis. I consulted with Mr. Arroyo and decided to create an interactive force simulation graph using [`D3.js`](https://d3js.org/). In the graph, each node represents a student and each edge represents references between students. 
 
@@ -230,7 +230,7 @@ Because the first version of the `Expert Network Map` had tens of thousands of d
 
 The first step of the project is to collect data on all of the references between Fab Academy students' documentation from 2018-2023. Since every student's documentation website is hosted from a GitLab repo, I wrote a Python script that uses the [Python-GitLab API](https://python-gitlab.readthedocs.io/en/stable/api-usage.html) to scan each student's repo using a [RegEx](https://www.w3schools.com/python/python_regex.asp). 
 
-In my first iteration of the script, I did not realize that the [GitLab API paginates to the first twenty projects or repos by default](https://gitlab.com/gitlab-org/gitlab/-/issues/17329#:~:text=Description,to%20a%20maximum%20of%20100%20.), and the RegEx failed to include links from students between years (for example, a student from 2023 referencing a student from 2018). I realized this error after I had completed part of [Step 2](#step-2-ai-sorting-data--analysis) and successfully trained and hyperparameter tuned a neural network to categorize text by subject-area. So, I could have included more training data, however I decided not to re-run the training process since the model had a lot of data to train on even with the pagination and missing references (~13,000 blocks of 2,000 characters of text, approximately 18,000 pages) and achieved a satisfactory accuracy of 86.3%. Most importantly, these students' data and the extra references *were* included in the network analysis in [Step 2](#step-2-ai-sorting-data--analysis), as well as in the data visualization in [Step 3](#step-3-data-visualization). I will show the code with the errors first (the changes were minimal between the versions), then include the altered version in [Step 2](#step-2-ai-sorting-data--analysis).
+In my first iteration of the script, I did not realize that the [GitLab API paginates to the first twenty projects or repos by default](https://gitlab.com/gitlab-org/gitlab/-/issues/17329#:~:text=Description,to%20a%20maximum%20of%20100%20.), and the RegEx failed to include links from students between years (for example, a student from 2023 referencing a student from 2018). I realized this error after I had completed part of [Step 2](#step-2-ai-sorting-data--analysis-1) and successfully trained and hyperparameter tuned a neural network to categorize text by subject-area. So, I could have included more training data, however I decided not to re-run the training process since the model had a lot of data to train on even with the pagination and missing references (~13,000 blocks of 2,000 characters of text, approximately 18,000 pages) and achieved a satisfactory accuracy of 86.3%. Most importantly, these students' data and the extra references *were* included in the network analysis in [Step 2](#step-2-ai-sorting-data--analysis-1), as well as in the data visualization in [Step 3](#step-3-data-visualization-1). I will show the code with the errors first (the changes were minimal between the versions), then include the altered version in [Step 2](#step-2-ai-sorting-data--analysis-1).
 
 #### Data Structure
 
@@ -1104,7 +1104,7 @@ class Classifier(object):
 
 Now that I have a neural network to classify references between students, I revised `main_collection.py` to `main.py`, implementing topic classification. I'll first point out the significant changes then display the entire file.
 
-First, I fixed the pagination bug from [Step 1](#step-1-data-collection) in three places:
+First, I fixed the pagination bug from [Step 1](#step-1-data-collection-1) in three places:
 
 - *`get_file_repo_list` function*
 
@@ -1729,7 +1729,7 @@ The `nodes` object contains every node's ID as well as other data, such as the n
 
 #### Transforming Data
 
-So the first step was to transform my `Pandas` dataframe into a JSON file of this format. I wrote `matrix2d3js.py`. When this script is run, it takes `final_data.csv` (the output from [Step 2](#step-2-ai-sorting-data--analysis)) and moves all of the data into a JSON file matching the structure outline above. This is then saved as `final_data.json`.
+So the first step was to transform my `Pandas` dataframe into a JSON file of this format. I wrote `matrix2d3js.py`. When this script is run, it takes `final_data.csv` (the output from [Step 2](#step-2-ai-sorting-data--analysis-1)) and moves all of the data into a JSON file matching the structure outline above. This is then saved as `final_data.json`.
 
 *matrix2d3js.py*
 
@@ -1815,11 +1815,11 @@ if __name__ == "__main__":
 
 #### Name Conflicts
 
-Upon inspecting the data, I noticed that several students with longer names had names that did not reflect their listing on the Fab Academy Student Rosters (for example, click [here](https://fabacademy.org/2023/people.html) to see the 2023 roster). To resolve this, I wrote `resolve_name_conflicts.py`. This identifies students based on the URL to their website (which acts as a unique identifier for every student) and checkes it against the webpage. This was especially challenging since some students whose names have diacritic marks or accent marks are sometimes displayed as characters and other times as unicode beginning with `\u`, so I checked for both. The webpage name overrides the name collected during [Step 2](#step-2-ai-sorting-data--analysis).
+Upon inspecting the data, I noticed that several students with longer names had names that did not reflect their listing on the Fab Academy Student Rosters (for example, click [here](https://fabacademy.org/2023/people.html) to see the 2023 roster). To resolve this, I wrote `resolve_name_conflicts.py`. This identifies students based on the URL to their website (which acts as a unique identifier for every student) and checkes it against the webpage. This was especially challenging since some students whose names have diacritic marks or accent marks are sometimes displayed as characters and other times as unicode beginning with `\u`, so I checked for both. The webpage name overrides the name collected during [Step 2](#step-2-ai-sorting-data--analysis-1).
 
 So I ran `resolve_name_conflicts.py`, which takes `final_data.json` as an input and outputs `final_data_name_fixed.json`.
 
-Below is `resolve_name_conflicts.py`. Before that codeblock I include four functions that are imported from `main.py` (see [Step 2](#step-2-ai-sorting-data--analysis)) for reference. I did not include the libraries included in `main.py` as it is detailed above.
+Below is `resolve_name_conflicts.py`. Before that codeblock I include four functions that are imported from `main.py` (see [Step 2](#step-2-ai-sorting-data--analysis-1)) for reference. I did not include the libraries included in `main.py` as it is detailed above.
 
 ```py
 # check if an object exists at the specified filepath
