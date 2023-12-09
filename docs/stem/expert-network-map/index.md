@@ -14,6 +14,8 @@ In July 2023, I virtually presented The Expert Network Map at the [International
 
 For a more detailed description of the project, please read below.
 
+Thank you very much [Francisco Sanchez Arroyo](https://fabacademy.org/archives/2013/students/sanchez.francisco/) for all of his guidance and help, as well as [Nadieh Bremer] for her advice on 
+
 ## Project Description
 
 ### Background
