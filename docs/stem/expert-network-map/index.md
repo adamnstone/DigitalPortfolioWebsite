@@ -38,11 +38,7 @@ I showed the results to my local lab leader, [Mr. Dubick](https://www.linkedin.c
 
 ## Project Execution
 
-### GitLab Repo
-
 I executed the project in three distinct phases: I wrote a script to collect the data, designed a text-classification AI model to sort links by subject area, and utilized D3JS to present the data in an interactive visualization.
-
-You can download all the code from the project in [this GitLab repo](https://gitlab.fabcloud.org/pub/project/expert-network-map). In the repo, you will also find [`documentation.md`](https://gitlab.fabcloud.org/pub/project/expert-network-map/-/blob/main/documentation.md?ref_type=heads), a file that lists the technical changes made in each iteration of the project.
 
 ### Step 1: Data Collection
 
