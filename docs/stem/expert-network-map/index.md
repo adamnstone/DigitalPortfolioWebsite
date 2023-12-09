@@ -1136,6 +1136,18 @@ safe_url = f"https://gitlab.fabcloud.org/api/v4/groups/{group_id}/projects"
 safe_url = f"https://gitlab.fabcloud.org/api/v4/groups/{group_id}/projects?per_page=99999"
 ```
 
+I also fixed the bug where only references between students of the same years are counted.
+
+- *`get_references` function*
+
+```py
+# original
+pattern = re.compile(f"\/{year}\/labs\/[^\/]+\/students\/(\w|-)+\/")
+
+# fixed
+pattern = re.compile(f"\/20[0-9][0-9]\/labs\/[^\/]+\/students\/(\w|-)+\/")
+```
+
 Second, the script no longer stores references that have a subject-area keyword in a `jsonl` file, and it uses the neural network to classify all of the references that don't have keywords.
 
 *in `get_references` function*
