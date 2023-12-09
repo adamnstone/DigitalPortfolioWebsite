@@ -21,5 +21,3 @@ Here's my [Cuttle Project](https://cuttle.xyz/@AdamStone/Final-Project-Epaper-Di
 ## Reflection
 
 I am proud of my final project and feel that it demonstrates a wide variety of skills I've learned throughout Fab Academy. After finishing an MVP, I also had to to add more features, like a recharging port in the display electronics and an acryllic lid to the electronics case. I was able to overcome challenges I'd faced in previous weeks, such as interfacing with an e-paper display, and I've learned the importance of only changing one variable at a time and closely following instructions before modifying components of a tutorial.
-
-[test](../../assets/zips/disability-forewarning-system/)
