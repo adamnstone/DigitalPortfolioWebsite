@@ -1,14 +1,18 @@
 # Expert Network Map
 
-## Overview
+## Introduction
+
+While enrolled in [Fab Academy](../fab-academy/index.md), I could easily identify experts within the Charlotte Fab Lab when I faced technical roadblocks. However, subject area experts were difficult to locate beyond my local lab, and vast amounts of helpful documentation shared by the global Fab community were hard to find. To resolve this problem, I created the `Expert Network Map`, a research project consisting of two components: a network analysis of the Fab Academy open-source community and an interactive visualization of the network. 
+
+I executed the project in three distinct phases: I wrote a script to collect the data, designed a text-classification AI model to sort links by subject area for analysis, and utilized D3JS to present the findings in an interactive visualization.
 
 [Here is a link to the `Expert Network Map`!](https://pub.fabcloud.io/project/expert-network-map/) *(be sure to use Chrome on a computer)*
 
-The `Expert Network Map` is a network analysis research project to locate hidden expertise in the Fab Academy community and democratize access to helpful documentation.
-
-I was invited by [MIT Professor Neil Gershenfeld](https://ng.cba.mit.edu/) to present this project at the [FAB23 Bhutan: Designing Resilient Futures](https://fab23.fabevent.org/) conference in Bhutan. This conference, focused on using technology to realize a collective vision for the shared future, is the 19th edition of the International Fab Lab Conference and Symposium, the largest digital fabrication event in the world.
+In July 2023, I virtually presented The Expert Network Map at the [International Fab Lab Conference and Symposium](https://fab23.fabevent.org/), the largest digital fabrication event in the world. The Expert Network Map is live and will be used by Fab Academy 2024 students. Find my presentation below.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F12IUwdAcgs?si=glPwne61UZXOQMvC&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+For a more detailed description of the project, please read below.
 
 ## Project Description
 

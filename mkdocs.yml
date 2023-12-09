@@ -28,28 +28,25 @@ nav:
       - "Disability Forewarning System": 
         - stem/disability-forewarning-system/index.md
         - "Planning": stem/disability-forewarning-system/final-project-planning.md
-        - "Cupholder Mechanism": stem/disability-forewarning-system//cupholder-mechanism.md
-        - "Cupholder Electronics": stem/disability-forewarning-system//cupholder-electronics.md
-        - "Display Mechanism": stem/disability-forewarning-system//display-mechanics.md
-        - "Display Electronics": stem/disability-forewarning-system//display-electronics.md
-        - "Motor Calculations": stem/disability-forewarning-system//motor-calculations.md
-        - "Wireless Communication": stem/disability-forewarning-system//wireless-communication.md
-        - "Combining Electronics": stem/disability-forewarning-system//combining-electronics.md
-        - "Project Summary": stem/disability-forewarning-system//project-requirements.md
-        - "Final Project: Reflection": stem/disability-forewarning-system//project-reflection.md
-      - "RhythmLink": 
-        - stem/rhythm-link/index.md
-        - "EEGs":
-          - Overview: stem/rhythm-link/eeg/index.md
+        - "Cupholder Mechanism": stem/disability-forewarning-system/cupholder-mechanism.md
+        - "Cupholder Electronics": stem/disability-forewarning-system/cupholder-electronics.md
+        - "Display Mechanism": stem/disability-forewarning-system/display-mechanics.md
+        - "Display Electronics": stem/disability-forewarning-system/display-electronics.md
+        - "Motor Calculations": stem/disability-forewarning-system/motor-calculations.md
+        - "Wireless Communication": stem/disability-forewarning-system/wireless-communication.md
+        - "Combining Electronics": stem/disability-forewarning-system/combining-electronics.md
+        - "Project Summary": stem/disability-forewarning-system/project-requirements.md
+        - "Final Project: Reflection": stem/disability-forewarning-system/project-reflection.md
+      - "Fab Academy":
+        - stem/fab-academy/index.md
+      - "Bridge Builder":
+        - stem/bridge-builder/index.md
       - "Test Generator":
         - stem/test-generator/index.md
       - "Ninja Cube Ultimate":
         - stem/ninja-cube-ultimate/index.md
     - Arts:
       - arts/index.md
-      - "Lord Farquaad": arts/farquaad.md
-      - "Billy Cane": arts/billy-cane.md
-      - "Mr. Smith": arts/mr-smith.md
       - "Theatre Résumé": arts/resume.md
     - Advocacy: 
       - advocacy/index.md

@@ -1,24 +1,11 @@
-# Fab Academy
+# Disability Forewarning System
 
-## What is Fab Academy?
+For five years, I have been an active advocate for the Tourette Association of America. I understand how a moment of education can drastically improve the outcome of a situation. When I was in elementary school, I was diagnosed with Tourette Syndrome, a neurological disorder characterized by involuntary motor and vocal tics. Determined to transform an obstacle into an opportunity, I became a Youth Ambassador for the Tourette Association of America. For people with severe tics, their movements and vocalizations are often misinterpreted by law enforcement as intoxication or aggression, dangerously escalating encounters. In 2022, I was asked to help script and act in a Tourette Syndrome training video for law enforcement. While filming, I understood that this video faced obstacles in facilitating successful interactions, as not all officers would go through the training or recall the information during an encounter. I began dreaming of a device that could be a real-time advocate for people with Tourette Syndrome at a traffic stop.
 
-[Fab Academy](https://fabacademy.org/) is a five-month digital fabrication course led by [MIT Professor Neil Gershenfeld](https://ng.cba.mit.edu/) focused on rapid-prototyping. Students create weekly projects, each focused on a digital fabrication skill ranging from 3D Printing to Molding & Casting, that culminate in a final project using all of the skills acquired.
 
-![Fab Academy Logo](../../assets/images/stem/disability-forewarning-system/fab-academy-logo.jpg)
+When I enrolled in [Fab Academy](../fab-academy/index.md), I had the opportunity to make this dream a reality. For my final project, I created the Disability Forewarning System, a device that mounts onto the rear window of a car. The device remains out of sight until the driver presses a button that wirelessly moves a screen down, flashing the message “Driver Has Tourette Syndrome.” The Disability Forewarning System was showcased by Fab Academy as a `Featured Project` and won the `Fab Academy Best Assistive Technology Award`.
 
-Throughout the course, every student creates a digital portfolio website documenting their projects and course work. [Here is a link to my Fab Academy website!](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/)
-
-I graduated from Fab Academy my sophomore year. Read about my final project below!
-
-## Disability Forewarning System
-
-For my Fab Academy Final Project, I wanted to create something that helps people living with Tourette Syndrome. Tourette Syndrome a neurodevelopmental disorder included in the ADA that's characterized by making involuntary movements and vocalizations, called tics, and there's no cure. Tourette's affects 1-in-50 people. It ranges from very mild to very severe. For more information, see the [Tourette Association of America's website](https://tourette.org/).
-
-My tics are mild, but for people with severe Tourette, tics can be misinterpreted by law enforcement as intoxication or aggression, dangerously escalating police encounters. I wanted to create a device that prevents escalation at a traffi stop when an officer is interacting with someone who has severe tics.
-
-So, I created `Disability Forewarning System`. Whenever a button is pressed in the driverside cupholder of a car, a display is lowered into the rear window and an e-paper display flashes, displaying a message that informs an officer that the driver has Tourette Syndrome.
-
-To read in-depth about the idea and plan for executing my final project, click [here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/final-project/final-project-planning/#the-idea). To see the project summary, click [here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/final-project/project-requirements/).
+To read in-depth about the idea and plan for executing my final project, [click here](./final-project-planning.md)!. To see the project summary, click [here](./project-requirements.md).
 
 **Final Project Presentation Video**
 

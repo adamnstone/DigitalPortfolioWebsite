@@ -1,5 +1,0 @@
-# RhythmLink Internship
-
-I recently applied for and was offered an internship to get hands-on experience working for [RhythmLink](https://rhythmlink.com/), a company that creates technologies within the neurophysiology medical space. I’ve signed an NDA regarding my research, but I can share that I’ll be working with the R&D department on a project that will include research and prototyping, as well as presenting to senior management. 
-
-[RhythmLink® International](https://rhythmlink.com/) designs, manufactures and distributes medical devices and provides custom packaging, private labeling, custom products and contract manufacturing to its customers. [RhythmLink](https://rhythmlink.com/) is recognized as a leader within its field at providing the important physical connection between patients and the diagnostic equipment to record or elicit neurophysiologic biopotentials.
