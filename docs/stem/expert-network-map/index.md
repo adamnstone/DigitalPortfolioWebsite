@@ -226,7 +226,7 @@ Because the first version of the `Expert Network Map` had tens of thousands of d
 
 The first step of the project is to collect data on all of the references between Fab Academy students' documentation from 2018-2023. Since every student's documentation website is hosted from a GitLab repo, I wrote a Python script that uses the [Python-GitLab API](https://python-gitlab.readthedocs.io/en/stable/api-usage.html) to scan each student's repo using a [RegEx](https://www.w3schools.com/python/python_regex.asp). 
 
-In my first iteration of the script, I did not realize that the [GitLab API paginates to the first twenty projects or repos by default](https://gitlab.com/gitlab-org/gitlab/-/issues/17329#:~:text=Description,to%20a%20maximum%20of%20100%20.), and the RegEx failed to include links from students between years (for example, a student from 2023 referencing a student from 2018). I realized this error after I had completed part of [Step 2](#step-2-ai-sorting-data--analysis-1) and successfully trained and hyperparameter tuned a neural network to categorize text by subject-area. So, I could have included more training data, however I decided not to re-run the training process since the model had a lot of data to train on even with the pagination and missing references (~13,000 blocks of 2,000 characters of text, approximately 18,000 pages) and achieved a satisfactory accuracy of 86.3%. Most importantly, these students' data and the extra references *were* included in the network analysis in [Step 2](#step-2-ai-sorting-data--analysis-1), as well as in the data visualization in [Step 3](#step-3-data-visualization-1). I will show the code with the errors first (the changes were minimal between the versions), then include the altered version in [Step 2](#step-2-ai-sorting-data--analysis-1).
+In my first iteration of the script, I did not realize that the [GitLab API paginates to the first twenty projects or repos by default](https://gitlab.com/gitlab-org/gitlab/-/issues/17329#:~:text=Description,to%20a%20maximum%20of%20100%20.), and the RegEx failed to include links from students between years (for example, a student from 2023 referencing a student from 2018). I realized this error after I had completed part of [Step 2](#step-2-ai-sorting-data-analysis_1) and successfully trained and hyperparameter tuned a neural network to categorize text by subject-area. So, I could have included more training data, however I decided not to re-run the training process since the model had a lot of data to train on even with the pagination and missing references (~13,000 blocks of 2,000 characters of text, approximately 18,000 pages) and achieved a satisfactory accuracy of 86.3%. Most importantly, these students' data and the extra references *were* included in the network analysis in [Step 2](#step-2-ai-sorting-data-analysis_1), as well as in the data visualization in [Step 3](#step-3-data-visualization_1). I will show the code with the errors first (the changes were minimal between the versions), then include the altered version in [Step 2](#step-2-ai-sorting-data-analysis_1).
 
 #### Data Structure
 
@@ -1100,7 +1100,7 @@ class Classifier(object):
 
 Now that I have a neural network to classify references between students, I revised `main_collection.py` to `main.py`, implementing topic classification. I'll first point out the significant changes then display the entire file.
 
-First, I fixed the pagination bug from [Step 1](#step-1-data-collection-1) in three places:
+First, I fixed the pagination bug from [Step 1](#step-1-data-collection_1) in three places:
 
 - *`get_file_repo_list` function*
 
@@ -1725,7 +1725,7 @@ The `nodes` object contains every node's ID as well as other data, such as the n
 
 #### Transforming Data
 
-So the first step was to transform my `Pandas` dataframe into a JSON file of this format. I wrote `matrix2d3js.py`. When this script is run, it takes `final_data.csv` (the output from [Step 2](#step-2-ai-sorting-data--analysis-1)) and moves all of the data into a JSON file matching the structure outline above. This is then saved as `final_data.json`.
+So the first step was to transform my `Pandas` dataframe into a JSON file of this format. I wrote `matrix2d3js.py`. When this script is run, it takes `final_data.csv` (the output from [Step 2](#step-2-ai-sorting-data-analysis_1)) and moves all of the data into a JSON file matching the structure outline above. This is then saved as `final_data.json`.
 
 *matrix2d3js.py*
 
@@ -1811,11 +1811,11 @@ if __name__ == "__main__":
 
 #### Name Conflicts
 
-Upon inspecting the data, I noticed that several students with longer names had names that did not reflect their listing on the Fab Academy Student Rosters (for example, click [here](https://fabacademy.org/2023/people.html) to see the 2023 roster). To resolve this, I wrote `resolve_name_conflicts.py`. This identifies students based on the URL to their website (which acts as a unique identifier for every student) and checkes it against the webpage. This was especially challenging since some students whose names have diacritic marks or accent marks are sometimes displayed as characters and other times as unicode beginning with `\u`, so I checked for both. The webpage name overrides the name collected during [Step 2](#step-2-ai-sorting-data--analysis-1).
+Upon inspecting the data, I noticed that several students with longer names had names that did not reflect their listing on the Fab Academy Student Rosters (for example, click [here](https://fabacademy.org/2023/people.html) to see the 2023 roster). To resolve this, I wrote `resolve_name_conflicts.py`. This identifies students based on the URL to their website (which acts as a unique identifier for every student) and checkes it against the webpage. This was especially challenging since some students whose names have diacritic marks or accent marks are sometimes displayed as characters and other times as unicode beginning with `\u`, so I checked for both. The webpage name overrides the name collected during [Step 2](#step-2-ai-sorting-data-analysis_1).
 
 So I ran `resolve_name_conflicts.py`, which takes `final_data.json` as an input and outputs `final_data_name_fixed.json`.
 
-Below is `resolve_name_conflicts.py`. Before that codeblock I include four functions that are imported from `main.py` (see [Step 2](#step-2-ai-sorting-data--analysis-1)) for reference. I did not include the libraries included in `main.py` as it is detailed above.
+Below is `resolve_name_conflicts.py`. Before that codeblock I include four functions that are imported from `main.py` (see [Step 2](#step-2-ai-sorting-data-analysis_1)) for reference. I did not include the libraries included in `main.py` as it is detailed above.
 
 ```py
 # check if an object exists at the specified filepath

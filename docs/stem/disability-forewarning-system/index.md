@@ -5,7 +5,7 @@ For five years, I have been an active advocate for the Tourette Association of A
 
 When I enrolled in [Fab Academy](../fab-academy/index.md), I had the opportunity to make this dream a reality. For my final project, I created the Disability Forewarning System, a device that mounts onto the rear window of a car. The device remains out of sight until the driver presses a button that wirelessly moves a screen down, flashing the message “Driver Has Tourette Syndrome.” The Disability Forewarning System was showcased by Fab Academy as a `Featured Project` and won the `Fab Academy Best Assistive Technology Award`.
 
-To read in-depth about the idea and plan for executing my final project, [click here](./final-project-planning.md)!. To see the project summary, click [here](./project-requirements.md).
+To read in-depth about the idea and plan for executing my final project, [click here](./final-project-planning.md)! To see the project summary, click [here](./project-requirements.md)!
 
 **Final Project Presentation Video**
 
