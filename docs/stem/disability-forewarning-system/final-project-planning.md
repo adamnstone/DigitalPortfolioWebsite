@@ -37,7 +37,7 @@ The conclusion from the discussion was that the best solution would be a flip-up
 
 ## Rough Sketch
 
-At first, I thought that a button on the steering wheel would require the least amount of movement by the driver as the officer approached.
+Initially, I thought that a button on the steering wheel could be pressed by the driver to raise the screen mounted on the mirror and communicate that the driver has Tourette Syndrome. I believed that having the button on the steering wheel would require the least amount of movement by the driver as the officer approached.
 
 ![Final Project Sketch Steering Wheel](../../assets/images/stem/disability-forewarning-system/final-project-sketch.jpg)
 
@@ -45,9 +45,9 @@ However, I decided against the button because it could accidentally be pressed w
 
 ![Final Project Sketch V2](../../assets/images/stem/disability-forewarning-system/final-project-sketch-v2.jpg)
 
-Some other potential ideas instead of the flip-up screen I discussed with [Dr. Fagan](https://mees.charlotte.edu/directory/terence-j-fagan) were a see-through LED screen that goes over the mirror and only turns on when activated and a bendable LED screen that is released down the driver-side door when the window is rolled down.
+I consulted with [Dr. Fagan](https://mees.charlotte.edu/directory/terence-j-fagan), a professor at UNC Charlotte, to brainstorm other potential ideas for the screen. We talked about a see-through LED screen that goes over the mirror and only turns on when activated, as well as a bendable LED screen that is released over the driver-side door when the window is rolled down.
 
-If I still have time after making the MVP, I'd also like to create a mobile app or website that lets users customize the message displayed because this technology could be used to help people with other conditions who may have difficulty communicating with law enforcement. Also, if possible I'd like to add some mechanism to the cup holder case that expands to fit a cup holder of any size. This is not necessary for the MVP, but I'd like to work on this if time permits.
+If I still had time during Fab Academy after making the Minimum Viable Product (MVP), I planned to create a mobile app or website that would allow users customize the message displayed on the screen to expand the technology to help people with other conditions who may have difficulty communicating with law enforcement. Also, if time permitted, I would try to add a mechanism to the cup holder case that expands to fit a cup holder of any size. 
 
 ## Logic Flowchart
 
@@ -60,45 +60,45 @@ B --> |No| D((Do Nothing))
 
 ## Project Overhaul
 
-I met with another law enforcement official on 2/2/23 to get his advice on my project. He suggested that a display in the back window of the car might be a better idea than on the mirror for several reasons:
+I interviewed another law enforcement official on to get his advice on my project. He suggested that a display in the back window of the car might be a better idea than on the mirror for several reasons:
 
-- the officer is focusing on the individual inside of the vehicle - they only look at the mirror if that's their only line of visiblity - they're more likely to see the display if its in the back window
-- I don't have to worry about legal considerations with the DMV for building something on the inside of a car
-- I can make the screen bigger to clearly display a simple message to the officer
-- I don't have to worry about weather-proofing my project
+- The officer is focusing on the individual inside of the vehicle. The officer would only look at the mirror if it were the only line of visiblity to the driver. An officer would be more likely to see the display if it were in the back window.
+- A device inside of the car mounted to the back window would not need clearance from the DMV.
+- A screen mounted to the rear window could provide a larger viewing space.
+- A device that resides inside of the car would not require weather-proofing.
 
-Considering these insights, I decided to go along with his idea and change the display of my project. The biggest challenges now were figuring out how to attach the project to the inside roof of the car and how to attach the motor to the display.
+Considering these insights, I changed the display of my project. The next challenge was to determine how to attach the device to the inside roof of the car and how to attach the motor to the display.
 
 I originally imagined the servo motor to be placed like this where the screen flips downwards from the inside roof of the car.
 
 ![Final Project Updated Sketch](../../assets/images/stem/disability-forewarning-system/updated-final-project-sketch.jpg)
 
-I considered possibly moving the display with a sliding motion like [this](https://www.youtube.com/watch?v=aXFCkfvWTHs) and not folding it upwards, but I ended up going with the folding motion because for a lot of cars the display won't be able to move upwards considering the angle between the roof and the trunk.
+I considered moving the display upward with an sliding motion like [this](https://www.youtube.com/watch?v=aXFCkfvWTHs) instead, but ended up going back to the above design since the angle between the roof and the trunk would prevent the upward sliding motion.
 
-For the motor itself, I am planning to make a servo-driven hinge mechanism similar to products I found while researching. [This Thingiverse page](https://www.thingiverse.com/thing:1323380/files) has the `STL` files from the video as well as a technical drawing. [This GrabCAD page](https://grabcad.com/library/servo-based-hinge-1) has 3D models also containing the servo motor itself.
+For the motor itself, I planned to make a servo-driven hinge mechanism similar to products I found while researching. [This Thingiverse page](https://www.thingiverse.com/thing:1323380/files) has the `STL` files from the design below, as well as a technical drawing. [This GrabCAD page](https://grabcad.com/library/servo-based-hinge-1) has 3D models also containing the servo motor itself.
 
 [![Servo-Driven Hinge](../../assets/images/stem/disability-forewarning-system/servo-driven-hinge-vid-thumbnail.jpg)](https://www.youtube.com/watch?v=e58yMo2MXdY)
 
-I am also planning on attaching the device through suction cups to the back window, as I feel this is the easiest and most secure mechanism for holding the display in place.
+I also planned on attaching the device through suction cups to the back window, as I felt this would be the easiest and most secure mechanism for holding the display in place.
 
 ## Design Shift
 
-I met with [Dr. Fagan](https://mees.charlotte.edu/directory/terence-j-fagan) who suggested that I slightly change my design to where the motor is at the axis the screen is rotating around.
+I met with [Dr. Fagan](https://mees.charlotte.edu/directory/terence-j-fagan) again who suggested that I slightly change my design so that the motor is on the axis the screen is rotating around.
 
 ![New Design](../../assets/images/stem/disability-forewarning-system/motor-image.jpg)
 
-Using [this servo motor case model](https://cults3d.com/en/orders/53123748), I adapted my design. Since I'm not sure what motor I'll use yet, I didn't design the attachment mechanism between the motor shaft and the screen.
+Using [this servo motor case model](https://cults3d.com/en/orders/53123748), I adapted my design. Since I'm wasn't sure what motor I'd yet, I didn't design the attachment mechanism between the motor shaft and the screen.
 
 ![Motor Design](../../assets/images/stem/disability-forewarning-system/motor-design.jpg)
 
-Next if the weight of my screen and case is `x`, I want to know the minimum torque for a motor to be able to turn it. [Dr. Fagan](https://mees.charlotte.edu/directory/terence-j-fagan) taught me that I can calculate the torque by multiplying the gravitational force by the distance between the axis of rotation and the center of mass, and I can ignore the angle since it starts horizontal and `sin0 (deg) = 1`. He then said I should multiply the result by a safety factor of two.
+Next, given the weight of my screen and case `x`, I wanted to know the minimum torque for a motor to be able to turn it. [Dr. Fagan](https://mees.charlotte.edu/directory/terence-j-fagan) taught me to calculate the torque by multiplying the gravitational force by the distance between the axis of rotation and the center of mass. He said I could ignore the angle since it starts horizontal and `sin0 = 1`. He then said I should multiply the result by a safety factor of two.
 
 ![Fagan Math](../../assets/images/stem/disability-forewarning-system/n-fagan-math.jpg)
 
-Here's my understanding of it simplified to an inequality for which I can plug in my material and design once it's finalized: `torque >= 19.6 * m * r` where `m` is the mass and `r` is the distance from the motor to the center of gravity.
+Here's the calculation simplified to an inequality for which I could plug in my material and design once it was finalized: `torque >= 19.6 * m * r` where `m` is the mass and `r` is the distance from the motor to the center of gravity.
 
 ![My Calculation](../../assets/images/stem/disability-forewarning-system/o-t-calc.jpg)
 
-## Another Idea
+## Additional Features
 
-Also, beyond the MVP, I'd like to implement notifications when there is low battery to make sure that the user is never in a situation where the device fails during an encounter with law enforcement.
+Also, beyond the MVP, I wanted to implement low-battery notifications to make sure that the user would never be in a situation where the device fails during an encounter with law enforcement.
