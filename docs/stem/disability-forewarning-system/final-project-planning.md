@@ -14,11 +14,9 @@ The first step was to gain a strong understanding of the needs of drivers who ha
 
 ![Tourette Card](../../assets/images/stem/disability-forewarning-system/tourette-card.jpg){: style="border-style: solid;"}
 
-Next, I set up a time to meet with [Major Dale Greene](https://www.linkedin.com/in/dale-greene-6501266b), the [Director of Security at Charlotte Latin School](https://www.charlottelatin.org/programs/safety) and Curtis Bowers a Security Officer at Charlotte Latin School who retired from the Charlotte-Mecklenburg Police Department after 30 years of service. They provided great insights from the law enforcement perspective about what's going through an officer's mind at a traffic stop and how they are trained to handle situations with different special populations. The biggest takeaway was that an officer starts at the highest level of alert and caution possible - suspecting the worst leaves them the most prepared, but being too relaxed then encountering a dangerous scenario puts the officer's life at risk. Therefore, it is important to communicate to the officer that the driver has Tourette's as early as possible in the encounter.
+Next, I set up a time to meet with [Major Dale Greene](https://www.linkedin.com/in/dale-greene-6501266b), the [Director of Security at Charlotte Latin School](https://www.charlottelatin.org/programs/safety) and Curtis Bowers, a Security Officer at Charlotte Latin School who retired from the Charlotte-Mecklenburg Police Department after 30 years of service. They provided great insights from the law enforcement perspective about what's going through an officer's mind at a traffic stop and how they are trained to handle situations with different special populations. The biggest takeaway was that it is important to communicate to the officer that the driver has Tourette's as early as possible in the encounter. An officer starts at the highest level of alert and caution possible because suspecting the worst leaves them the most prepared.
 
-Our conclusion from the discussion was that the best solution would be some device on the outside mirror of the car that informs the officer that the driver has Tourette's and they are not being aggressive or intoxicated, etc. This way the driver is not fiddling around with a device and the officer will notice the device as they're walking up to the car, diffusing the situation as early as possible. Communicating in a precise and concise manner is especially important when dealing with officers who've recieved less training with special populations.
-
-They also recommended that I meet with a police officer from a smaller police department who has less training surrounding pedestrians with Tourette's to help guide my design towards a device that prevents escalation with an officer with any level of training.
+The conclusion from the discussion was that the best solution would be a flip-up screen that mounts onto the driver-side outside mirror of a car and informs the officer that the driver has Tourette Syndrome. The officer would notice the device while walking up to the car, diffusing the situation as early as possible. Communicating in a precise and concise manner is especially important for officers who've recieved less training with special populations.
 
 ## Weekly Plan
 
@@ -40,11 +38,11 @@ They also recommended that I meet with a police officer from a smaller police de
 
 ## Rough Sketch
 
-At first, I thought that a button on the steering wheel would require the least amount of scrambling by the driver as the officer approached.
+At first, I thought that a button on the steering wheel would require the least amount of movement by the driver as the officer approached.
 
 ![Final Project Sketch Steering Wheel](../../assets/images/stem/disability-forewarning-system/final-project-sketch.jpg)
 
-But I ultimately decided against it because such a button would likely be accidentally pressed while driving. Instead, something that fits in the cupholder with a button that activates the machine would be a better solution.
+However, I decided against the button because it could accidentally be pressed while driving. I started to design a mechanism with a button that fits into a cupholder that could activate the device.
 
 ![Final Project Sketch V2](../../assets/images/stem/disability-forewarning-system/final-project-sketch-v2.jpg)
 
