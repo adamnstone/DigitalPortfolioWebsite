@@ -12,7 +12,7 @@ I've limited the website to only Google Accounts I have approved since the API b
 
 ## Documentation
 
-The most interesting aspect of this project was the networking with ChatGPT and Google Forms, not the HTML/CSS and Flask server. So, I'll cover the code for the backend of the project.
+The documentation below covers the most interesting aspect of the project, which was networking with ChatGPT and Google Forms.
 
 ### ChatGPT
 
