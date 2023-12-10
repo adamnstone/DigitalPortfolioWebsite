@@ -7,8 +7,7 @@ Tourette Syndrome is not deadly, but ignorance about the condition can be life-t
 The first step was to gain a strong understanding of the needs of drivers who have severe tics, as well as the perspective of law enfrocement officers at a traffic stop. To understand driver needs, I spoke with Heather Ramsey, the Tourette Association of America’s Director of Education, Support & Public Policy. She has worked extensively with law enforcement to spread awareness and education about Tourette Syndrome, and her insights were extremely valuable. She explained that the only current solution for drivers with severe tics is an information card that can be handed over to a law enforcement officer. However, there are several major problems with this solution:
 
 - Reaching for the card takes the driver's hands out of the officer's view, potentially making the officer believe the driver is reaching for a weapon
-- If a driver waits for the officer to arrive and ask for documents before taking out the card, his tics could escalate the situation before information can be provided
-- If a driver have vocal tics, they may impair communication about reaching for and showing the card
+- If a driver waits for the officer to arrive to retrieve the card and is experiencing severe tics, the situation could escalate before information is provided
 
 **Current Card**
 
