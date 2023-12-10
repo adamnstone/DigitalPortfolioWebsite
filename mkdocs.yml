@@ -4,6 +4,7 @@ theme:
   name: material
   custom_dir: overrides
   favicon: assets/images/favicon/favicon.ico
+  logo: assets/images/favicon/logo.png
   palette:
     primary: red
     accent: blue

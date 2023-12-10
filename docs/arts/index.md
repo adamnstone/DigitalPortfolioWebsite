@@ -4,7 +4,7 @@ From the moment I first stepped on stage, I felt the exhilaration of persuading 
 
 Being a third-degree black belt in Taekwondo has helped my physicality on stage, but several years ago I wanted to get more formal training. I auditioned for the [Charlotte Ballet’s Summer Workshop](https://charlotteballet.org/) and had the opportunity to spend six weeks learning from esteemed faculty in multiple genres of dance. I’ve also been fortunate to have studied acting and singing with incredible coaches. 
 
-I’ve performed in 11 productions in the past six years and was extremely honored to be a Best Actor Finalist at the [Blumey Awards](https://www.blumenthalarts.org/blumey-awards) two years in a row for my roles as [Billy Cane in “Bright Star”](#billy-cane-bright-star) and [Lord Farquaad in “Shrek, The Musical.”](#lord-farquaad-shrek-the-musical) The Blumey Awards recognizes exceptional achievements in high school musical theater and is a regional qualifier to the [Jimmy Awards](https://www.jimmyawards.com/), a Broadway program for top talent in musical theater. 
+I’ve performed in 11 productions in the past six years and was extremely honored to be a Best Actor Finalist at the [Blumey Awards](https://www.blumenthalarts.org/blumey-awards) two years in a row for my roles as [Billy Cane in “Bright Star”](#billy-cane-bright-star) and [Lord Farquaad in “Shrek the Musical.”](#lord-farquaad-shrek-the-musical) The Blumey Awards recognizes exceptional achievements in high school musical theater and is a regional qualifier to the [Jimmy Awards](https://www.jimmyawards.com/), a Broadway program for top talent in musical theater. 
 
 ## Lord Farquaad, Shrek the Musical
 
