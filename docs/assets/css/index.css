@@ -317,7 +317,7 @@ body::-webkit-scrollbar {
 */}
 
 .vl {
-  border-left: 6px solid green;
+  border-left: 6px solid black;
   height: 500px;
   height:100%;
   left: 50%;
