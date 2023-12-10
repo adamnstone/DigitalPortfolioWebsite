@@ -1,6 +1,8 @@
 # Test Generator
 
-The *Test Generator*, a website I created to streamline test making for educators, is in active use by the teachers in the Charlotte Latin School Innovation & Design Department. Using [Flask](https://flask.palletsprojects.com/en/3.0.x/), I created a website for teachers to easily create tests in Google Forms by inputting the test topic and number of questions. The back-end queries the [ChatGPT API](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) and uses the [Google Forms](https://developers.google.com/forms/api/quickstart/python) and [OAuth APIs](https://testdriven.io/blog/oauth-python/) to create a new form in the teacher’s account.
+In a Computer Science clsas last winter, my teacher shared that creating tests with realistic, but incorrect, multiple-choice options was time intensive. To help, I coded the Test Generator, an application that requires two inputs from a teacher (test topic and number of questions) to generate a test within Google Forms in seconds. My code integrated ChatGPT with Google Forms to create a seamless experience for educators. The Test Generator is actively being used by teachers at the Charlotte Latin Innovation & Design Department. 
+
+Using [Flask](https://flask.palletsprojects.com/en/3.0.x/), I created a website for teachers to easily create tests in Google Forms by inputting the test topic and number of questions. The back-end queries the [ChatGPT API](https://openai.com/blog/introducing-chatgpt-and-whisper-apis) and uses the [Google Forms](https://developers.google.com/forms/api/quickstart/python) and [OAuth APIs](https://testdriven.io/blog/oauth-python/) to create a new form in the teacher’s account.
 
 I've limited the website to only Google Accounts I have approved since the API bills per request, but for a video demonstration, please see below:
 
