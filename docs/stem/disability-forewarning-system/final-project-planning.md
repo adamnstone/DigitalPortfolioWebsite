@@ -8,7 +8,7 @@ The first step was to gain a strong understanding of the needs of drivers who ha
 
 - Reaching for the card takes the driver's hands out of the officer's view potentially making the officer believe the driver is reaching for a weapon
 - If a driver waits for the officer to arrive before taking out the card, his tics could escalate the situation before information can be provided
-- Even if the situation doesn't escalate, 
+- If a driver has vocal tics, they may impair communication to the officer 
 
 - Scrambling for the card making the officer nervous
 - Escalation before the officer asks for documents
