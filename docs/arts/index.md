@@ -8,19 +8,17 @@ I’ve performed in 11 productions in the past six years and was extremely honor
 
 ## Lord Farquaad, Shrek the Musical
 
-My sophomore year, I played **Lord Farquaad** in *Shrek the Musical* at Charlotte Latin School. I was a [*Blumey Awards Best Actor Finalist*](https://www.blumenthalarts.org/assets/doc/2023-Blumey-Nominees-and-Finalists-dc56d4a6fb.pdf#page=3) for my performance.
+In 2023, I played **Lord Farquaad** in *Shrek the Musical* at Charlotte Latin School. I was a [*Blumey Awards Best Actor Finalist*](https://www.blumenthalarts.org/assets/doc/2023-Blumey-Nominees-and-Finalists-dc56d4a6fb.pdf#page=3) for my performance.
 
 When I embraced the character of Lord Farquaad, an extremely insecure villain whose distain for uniqueness and diversity drives him to terrorize his kingdom in the name of conformity, every laugh at his expense and applause at his failures showed me that the audience understood that intolerance was detrimental and ridiculous. As an advocate for people with disabilities, I clearly understand the dangers of limiting acceptance to only those who fit a certain norm. I was thrilled to be able to share the message of inclusion in an entertaining way that resonated with audience members of all ages in the Charlotte community.
 
-I was also the *Dance Captain* for *Shrek the Musical*. (ballet?) (dance ensamble?)
+In addition to playing Lord Farquaad, I was the *Dance Captain* for the production.
 
-![Dance Captain Image](../assets/images/arts/farquaad/dance-captain-still.png)
-
-Here is a video of the number *"What's Up Duloc?"* (I'm the short king that comes down the elevator!)
+Here's a video of the musical number *"What's Up Duloc?"* (I'm the short king that comes down the elevator!)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dV7Y7Av7lR0?si=AIf-I3UGVPnoOXSs&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-Here is a video of the number *"The Ballad of Farquaad"*
+Here's a video of the musical number *"The Ballad of Farquaad"*
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lRGHWJbHD0k?si=i8uLEoHSsgQpNkBx&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -28,21 +26,19 @@ Here is a video of the number *"The Ballad of Farquaad"*
 ![Farquaad Still 2](../assets/images/arts/farquaad/farquaad-still-2.jpg){: style="width:500px;"}
 ![Farquaad Still 3](../assets/images/arts/farquaad/farquaad-still-3.jpg){: style="width:238px;"}
 
-I enjoyed this role so much that, during [Fab Academy](../stem/disability-forewarning-system/index.md), I made a Farquaad sticker on the vinyl cutter! [Here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week3/vinyl-cutting/#lord-farquaad){:target="_blank"} is a link to my documentation of the process.
+I enjoyed this role so much that during [Fab Academy](../stem/disability-forewarning-system/index.md), I made a Farquaad sticker on the vinyl cutter! [Here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week3/vinyl-cutting/#lord-farquaad){:target="_blank"} is a link to my documentation of the process.
 
 ![Farquaad Sticker](../assets/images/arts/farquaad/farquaad-sticker.jpg){: width=300px;}
 ![Farquaad Sticker Lab](../assets/images/arts/farquaad/farquaad-sticker-lab.jpg){: width=300px;}
 
 ## Billy Cane, Bright Star
 
-My freshman year, I played **Billy Cane** in *Bright Star* at Charlotte Latin School. I was a [*Blumey Awards Best Actor Finalist*](https://www.blumenthalarts.org/assets/doc/2022-Blumey-Awards-Finalists-2242ca9e68.pdf#page=3) for my performance.
+In 2022, I played **Billy Cane** in *Bright Star* at Charlotte Latin School. I was a [*Blumey Awards Best Actor Finalist*](https://www.blumenthalarts.org/assets/doc/2022-Blumey-Awards-Finalists-2242ca9e68.pdf#page=3) for my performance.
 
-"Bright Star,” a musical written Steve Martin and Edie Brickell, is set in Blue Ridge Mountains of North Carolina during the 1940s with flashbacks to 1923. It is a powerful story of love, loss, and redemption. I played the role of Billy Cane, an aspiring young writer who embodies the themes of hope, new beginnings, and the power of our dreams. 
+*Bright Star*, a musical written by Steve Martin and Edie Brickell, is set in Blue Ridge Mountains of North Carolina during the 1940s with flashbacks to 1923. It is a powerful story of love, loss, and redemption. Billy Cane is an aspiring young writer who embodies the themes of hope, new beginnings, and the power of dreams. 
 
 ![Billy Cane Still 1](../assets/images/arts/billy-cane/rbilly-still-1.jpg)
 ![Billy Cane Still 2](../assets/images/arts/billy-cane/rbilly-still-2.jpg)
-
-## Michael Banks, Mary Poppins
 
 ## Adam Stone Theatre Résumé
 
