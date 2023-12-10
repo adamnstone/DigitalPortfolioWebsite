@@ -6,7 +6,7 @@ Being a third-degree black belt in Taekwondo has helped my physicality on stage,
 
 I’ve performed in 11 productions in the past six years and was extremely honored to be a Best Actor Finalist at the [Blumey Awards](https://www.blumenthalarts.org/blumey-awards) two years in a row for my roles as [Billy Cane in *Bright Star*](#billy-cane-bright-star) and [Lord Farquaad in *Shrek the Musical.*](#lord-farquaad-shrek-the-musical) The Blumey Awards recognizes exceptional achievements in high school musical theater and is a regional qualifier to the [Jimmy Awards](https://www.jimmyawards.com/), a Broadway program for top talent in musical theater.
 
-## Lord Farquaad, Shrek the Musical
+## Lord Farquaad, *Shrek the Musical*
 
 In 2023, I played **Lord Farquaad** in *Shrek the Musical* at Charlotte Latin School. I was a [*Blumey Awards Best Actor Finalist*](https://www.blumenthalarts.org/assets/doc/2023-Blumey-Nominees-and-Finalists-dc56d4a6fb.pdf#page=3) for my performance.
 
@@ -14,7 +14,7 @@ When I embraced the character of Lord Farquaad, an extremely insecure villain wh
 
 In addition to playing Lord Farquaad, I was the Dance Captain for the production.
 
-Here's a video of the musical number *"What's Up Duloc?"* (I'm the short king that comes down the elevator!)
+Here's a video of the musical number *"What's Up Duloc?"* (I'm the short king who comes down the elevator!)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dV7Y7Av7lR0?si=AIf-I3UGVPnoOXSs&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -31,7 +31,7 @@ I enjoyed this role so much that during [Fab Academy](../stem/disability-forewar
 ![Farquaad Sticker](../assets/images/arts/farquaad/farquaad-sticker.jpg){: width=300px;}
 ![Farquaad Sticker Lab](../assets/images/arts/farquaad/farquaad-sticker-lab.jpg){: width=300px;}
 
-## Billy Cane, Bright Star
+## Billy Cane, *Bright Star*
 
 In 2022, I played **Billy Cane** in *Bright Star* at Charlotte Latin School. I was a [*Blumey Awards Best Actor Finalist*](https://www.blumenthalarts.org/assets/doc/2022-Blumey-Awards-Finalists-2242ca9e68.pdf#page=3) for my performance.
 
