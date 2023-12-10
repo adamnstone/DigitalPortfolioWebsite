@@ -37,6 +37,7 @@ In 2022, I played **Billy Cane** in *Bright Star* at Charlotte Latin School. I w
 
 *Bright Star*, a musical written by Steve Martin and Edie Brickell, is set in Blue Ridge Mountains of North Carolina during the 1940s with flashbacks to 1923. It is a powerful story of love, loss, and redemption. Billy Cane is an aspiring young writer who embodies the themes of hope, new beginnings, and the power of dreams. 
 
+![Billy Cane Still 3](../assets/images/arts/billy-cane/rbilly-still-3.jpg)
 ![Billy Cane Still 1](../assets/images/arts/billy-cane/rbilly-still-1.jpg)
 ![Billy Cane Still 2](../assets/images/arts/billy-cane/rbilly-still-2.jpg)
 
