@@ -8,7 +8,7 @@ I executed the project in three distinct phases: I wrote a script to collect the
 
 [Here is a link to the `Expert Network Map`!](https://pub.fabcloud.io/project/expert-network-map/) *(be sure to use Chrome on a computer)*
 
-In July 2023, I virtually presented The Expert Network Map at the [International Fab Lab Conference and Symposium](https://fab23.fabevent.org/), the largest digital fabrication event in the world. The Expert Network Map is live and will be used by Fab Academy 2024 students. Find my presentation below.
+In July 2023, I virtually presented the `Expert Network Map` at the [International Fab Lab Conference and Symposium](https://fab23.fabevent.org/), the largest digital fabrication event in the world. The Expert Network Map is live and will be used by Fab Academy 2024 students. Find my presentation below.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F12IUwdAcgs?si=glPwne61UZXOQMvC&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
