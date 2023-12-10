@@ -2,11 +2,13 @@
 
 ## The Idea
 
-For my final project, I wanted to create something that helps people living with Tourette Syndrome (a condition I have). It's a neurodevelopmental disorder included in the ADA that's characterized by making involuntary movements and vocalizations, called tics, and there's no cure. Tourette's affects 1-in-50 people. It ranges from very mild to very severe. For more information, see the [Tourette Association of America's website](https://tourette.org/).
+Tourette Syndrome is not deadly, but ignorance about the condition can be life-threatening. For people with severe tics, their movements and vocalizations are often misinterpreted by law enforcement as intoxication or aggression, dangerously escalating encounters. I wanted to create a device to help facilitate safe interactions between law enforcement and people wtih severe tics.
 
-My Tourette's are mild, but one problem for people living with more severe tics is interactions with law enforcement, so I wanted to create a device that prevents a traffic stop from escalating when an officer is interacting with someone who has Tourette's.
+The first step was to gain a strong understanding of the needs of drivers who have severe tics, as well as the perspective of law enfrocement officers at a traffic stop. To understand driver needs, I spoke with Heather Ramsey, the Tourette Association of America’s Director of Education, Support & Public Policy. She has worked extensively with law enforcement to spread awareness and education about Tourette Syndrome, and her insights were extremely valuable. She explained that the only current solution for drivers with severe tics is an information card that can be handed over to a law enforcement officer. However, there are several major problems with this card:
 
-My first step was to talk to my local Chapter Leader of the Tourette Association of America, Heather Ramsey. She works with law enforcement to spread awareness and education about Tourette's and her insights were extremely valuable. She explained that the current solution used by the Tourette Association of America are information cards that people with Tourette can hand to a law enforcement officer, yet there are several problems with this card:
+- Reaching for the card takes the driver's hands out of the officer's view potentially making the officer believe the driver is reaching for a weapon
+- If a driver waits for the officer to arrive before taking out the card, his tics could escalate the situation before information can be provided
+- Even if the situation doesn't escalate, 
 
 - Scrambling for the card making the officer nervous
 - Escalation before the officer asks for documents
