@@ -2,7 +2,7 @@
 
 ## Introduction
 
-While enrolled in [Fab Academy](../fab-academy/index.md), I could easily identify experts within the Charlotte Fab Lab when I faced technical roadblocks. However, subject area experts were difficult to locate beyond my local lab, and vast amounts of helpful documentation shared by the global Fab community were hard to find. To resolve this problem, I created the `Expert Network Map`, a research project consisting of two components: a network analysis of the Fab Academy open-source community and an interactive visualization of the network. 
+While enrolled in [Fab Academy](../fab-academy/index.md), I could easily identify experts within the Charlotte Fab Lab when I faced technical roadblocks. However, subject area experts were difficult to locate beyond my local lab, and vast amounts of helpful documentation shared by the global Fab community were hard to find. To resolve this problem, I created the `Expert Network Map`, a research project consisting of two components: a network analysis of the Fab Academy community and an interactive visualization of the network. 
 
 I executed the project in three distinct phases: I wrote a script to collect the data, designed a text-classification AI model to sort links by subject area for analysis, and utilized D3JS to present the findings in an interactive visualization.
 
@@ -20,7 +20,7 @@ Thank you very much [Francisco Sanchez Arroyo](https://fabacademy.org/archives/2
 
 ### Background
 
-The `Expert Network Map` is an analysis of 1000+ members of the Fab Academy open-source community to locate hidden expertise in 17 subject areas and an interactive visualization of the network. Fab Academy is a digital fabrication course focused on rapid-prototyping led by MIT Professor Neil Gershenfeld. All Fab Academy students keep a documentation website detailing the process of completing projects, and students are encouraged to seek out others’ documentation to navigate technical roadblocks. For an example of a documentation website, see mine [here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/). To give credit to content referenced, students add links in their own websites to the documentation websites they found helpful. For example, in my documentation website, I linked [Nidhie Dhiman](https://fabacademy.org/2022/labs/charlotte/students/nidhie-dhiman/)'s documentation for help with embroidery. 
+The `Expert Network Map` is an analysis of 1000+ members of the Fab Academy community to locate hidden expertise in 17 subject areas and an interactive visualization of the network. Fab Academy is a digital fabrication course focused on rapid-prototyping led by MIT Professor Neil Gershenfeld. All Fab Academy students keep a documentation website detailing the process of completing projects, and students are encouraged to seek out others’ documentation to navigate technical roadblocks. For an example of a documentation website, see mine [here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/). To give credit to content referenced, students add links in their own websites to the documentation websites they found helpful. See the box below for an example in my documentation website where I link to [Nidhie Dhiman](https://fabacademy.org/2022/labs/charlotte/students/nidhie-dhiman/)'s documentation to give her credit.
 
 ![Reference Example](../../assets/images/stem/expert-network-map/reference-example.jpg){: style="border-style: solid;"}
 
@@ -32,7 +32,7 @@ I hypothesized that the more times students’ documentation websites were refer
 
 ![Test Graph](../../assets/images/stem/expert-network-map/test-graph.jpg)
 
-Read more about my initial prototypes here: [1st iteration](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/side-projects/lab-link-graph/#iteration-1) and [2nd iteration](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/side-projects/lab-link-graph/#iteration-2).
+Read more about my initial prototype here: [1st iteration](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/side-projects/lab-link-graph/#iteration-1) and [2nd iteration](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/side-projects/lab-link-graph/#iteration-2).
 
 ### Pitch
 
