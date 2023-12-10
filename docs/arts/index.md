@@ -12,7 +12,7 @@ In 2023, I played **Lord Farquaad** in *Shrek the Musical* at Charlotte Latin Sc
 
 When I embraced the character of Lord Farquaad, an extremely insecure villain whose distain for uniqueness and diversity drives him to terrorize his kingdom in the name of conformity, every laugh at his expense and applause at his failures showed me that the audience understood that intolerance was detrimental and ridiculous. As an advocate for people with disabilities, I clearly understand the dangers of limiting acceptance to only those who fit a certain norm. I was thrilled to be able to share the message of inclusion in an entertaining way that resonated with audience members of all ages in the Charlotte community.
 
-In addition to playing Lord Farquaad, I was the *Dance Captain* for the production.
+In addition to playing Lord Farquaad, I was the Dance Captain for the production.
 
 Here's a video of the musical number *"What's Up Duloc?"* (I'm the short king that comes down the elevator!)
 
