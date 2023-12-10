@@ -6,8 +6,8 @@ Tourette Syndrome is not deadly, but ignorance about the condition can be life-t
 
 The first step was to gain a strong understanding of the needs of drivers who have severe tics, as well as the perspective of law enfrocement officers at a traffic stop. To understand driver needs, I spoke with Heather Ramsey, the Tourette Association of America’s Director of Education, Support & Public Policy. She has worked extensively with law enforcement to spread awareness and education about Tourette Syndrome, and her insights were extremely valuable. She explained that the only current solution for drivers with severe tics is an information card that can be handed over to a law enforcement officer. However, there are several major problems with this solution:
 
-- Reaching for the card takes the driver's hands out of the officer's view, potentially making the officer believe the driver is reaching for a weapon
-- If a driver waits for the officer to arrive to retrieve the card and is experiencing severe tics, the situation could escalate before information is provided
+- Reaching for the card takes the driver's hands out of the officer's view, potentially making the officer believe the driver is reaching for a weapon.
+- If a driver waits for the officer to arrive to retrieve the card and is experiencing severe tics, the situation could escalate before information is provided.
 
 **Current Card**
 
@@ -73,7 +73,7 @@ I originally imagined the servo motor to be placed like this where the screen fl
 
 ![Final Project Updated Sketch](../../assets/images/stem/disability-forewarning-system/updated-final-project-sketch.jpg)
 
-I considered moving the display upward with an sliding motion like [this](https://www.youtube.com/watch?v=aXFCkfvWTHs) instead, but ended up going back to the above design since the angle between the roof and the trunk would prevent the upward sliding motion.
+I considered moving the display upward with a sliding motion like [this](https://www.youtube.com/watch?v=aXFCkfvWTHs) instead, but ended up going back to the above design since the angle between the roof and the trunk would prevent the upward sliding motion.
 
 For the motor itself, I planned to make a servo-driven hinge mechanism similar to products I found while researching. [This Thingiverse page](https://www.thingiverse.com/thing:1323380/files) has the `STL` files from the design below, as well as a technical drawing. [This GrabCAD page](https://grabcad.com/library/servo-based-hinge-1) has 3D models also containing the servo motor itself.
 
@@ -87,7 +87,7 @@ I met with [Dr. Fagan](https://mees.charlotte.edu/directory/terence-j-fagan) aga
 
 ![New Design](../../assets/images/stem/disability-forewarning-system/motor-image.jpg)
 
-Using [this servo motor case model](https://cults3d.com/en/orders/53123748), I adapted my design. Since I'm wasn't sure what motor I'd yet, I didn't design the attachment mechanism between the motor shaft and the screen.
+Using [this servo motor case model](https://cults3d.com/en/orders/53123748), I adapted my design. Since I wasn't sure what motor I'd use yet, I didn't design the attachment mechanism between the motor shaft and the screen.
 
 ![Motor Design](../../assets/images/stem/disability-forewarning-system/motor-design.jpg)
 
