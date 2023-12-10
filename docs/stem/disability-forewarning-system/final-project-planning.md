@@ -91,7 +91,7 @@ Using [this servo motor case model](https://cults3d.com/en/orders/53123748), I a
 
 ![Motor Design](../../assets/images/stem/disability-forewarning-system/motor-design.jpg)
 
-Next, given the weight of my screen and case `x`, I wanted to know the minimum torque for a motor to be able to turn it. [Dr. Fagan](https://mees.charlotte.edu/directory/terence-j-fagan) taught me to calculate the torque by multiplying the gravitational force by the distance between the axis of rotation and the center of mass. He said I could ignore the angle since it starts horizontal and `sin0 = 1`. He then said I should multiply the result by a safety factor of two.
+Next, given the weight of my screen and case `x`, I wanted to know the minimum torque for a motor to be able to turn it. [Dr. Fagan](https://mees.charlotte.edu/directory/terence-j-fagan) taught me to calculate the torque by multiplying the gravitational force by the distance between the axis of rotation and the center of mass. He said I could ignore the angle since it starts out horizontal. He then said I should multiply the result by a safety factor of two.
 
 ![Fagan Math](../../assets/images/stem/disability-forewarning-system/n-fagan-math.jpg)
 
