@@ -14,7 +14,7 @@ In July 2023, I virtually presented the `Expert Network Map` at the [Internation
 
 For a more detailed description of the project, please read below.
 
-Thank you very much [Francisco Sanchez Arroyo](https://fabacademy.org/archives/2013/students/sanchez.francisco/) for all of his guidance and help, as well as [Nadieh Bremer](https://www.visualcinnamon.com/) for her advice on visualization.
+Thank you very much to [Francisco Sanchez Arroyo](https://fabacademy.org/archives/2013/students/sanchez.francisco/) for all of his guidance and help, as well as to [Nadieh Bremer](https://www.visualcinnamon.com/) for her advice on visualization.
 
 ## Project Description
 
@@ -46,7 +46,7 @@ I executed the project in three distinct phases: I wrote a script to collect the
 
 For the first step, I wrote a `Python` script to scrape all Fab Academy students’ documentation website GitLab repos over the past six years using the [`Python-GitLab API`](https://python-gitlab.readthedocs.io/en/stable/api-usage.html) and scan for URL references to other student websites using [`RegEx`](https://docs.python.org/3/library/re.html). I also stored 1,000 characters before and after to use for classification and used Pandas to create a reference matrix that structured the data for analysis. My program yielded a database of ~29,000 references.
 
-### Step 2: AI, Sorting Data, & Analysis
+### Step 2: AI, Sorting Data & Analysis
 
 After the data were collected, I knew I had a significant challenge. For the network analysis to be useful, I needed to calculate the number of times a student’s documentation was referenced for a specific subject area. I had collected tens of thousands of pages of documentation text that used vastly different naming conventions for each subject area (for example, "3D Scanning & Printing" vs "3d.printing.and.scanning"), and much of the text understandably had spelling errors given that many Fab Academy students do not speak English as a first language. To overcome the challenge of categorizing references by subject area with no consistent naming convention, I created a text-classification neural network. Using a list of keywords that were often associated with a Fab Academy subject-area, for example "PLA filament" for "3D Printing," I was able to classify ~13,000 of the ~29,000 references based on the surrounding text. Find a `JSON` file of the keywords I used for each subject area below.
 
@@ -717,7 +717,7 @@ if __name__ == "__main__":
     matrix = format_data_to_matrix(reference_dicts_across_years)
 ```
 
-### Step 2: AI, Sorting Data, & Analysis
+### Step 2: AI, Sorting Data & Analysis
 
 [Download the Python code and all other files for Step 2 here!](../../assets/code/step2-python-cache-pickle-jsonl-csv.zip) *(10.6 MB)*
 
