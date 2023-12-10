@@ -208,7 +208,7 @@ The model successfully classified the remaining  ~16,000 references, completing 
 
 ### Step 3: Data Visualization
 
-Lastly, I wanted to provide the global Fab community with an easy-to-use navigation tool to locate expert documentation by subject area, as identified in my network analysis. I consulted with Mr. Arroyo and decided to create an interactive force simulation graph using [`D3.js`](https://d3js.org/). In the graph, each node represents a student and each edge represents references between students. 
+Lastly, I wanted to provide the global Fab community with an easy-to-use navigation tool to locate expert documentation by subject area, as identified in my network analysis. I consulted with Mr. Arroyo and decided to create an interactive force simulation graph using [`D3JS`](https://d3js.org/). In the graph, each node represents a student and each edge represents references between students. 
 
 ![Student Node Example](../../assets/images/stem/expert-network-map/student-node-example.jpg)
 
