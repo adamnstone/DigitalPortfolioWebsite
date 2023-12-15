@@ -25,18 +25,24 @@ Here's a video of the musical number *"The Ballad of Farquaad"*
 ![Farquaad Still 1](../assets/images/arts/farquaad/farquaad-still-1.png)
 
 <div style="display:flex;">
-<div style="flex:1.40456182473; margin:2px;">
-<img alt="Farquaad Still 2" src="../assets/images/arts/farquaad/farquaad-still-2.jpg" >
-</div>
-<div style="flex:0.66658653846;margin:2px;">
-<img alt="Farquaad Still 3" src="../../assets/images/arts/farquaad/farquaad-still-3.jpg">
-</div>
+    <div style="flex:1.40456182473; margin:2px;">
+        <img alt="Farquaad Still 2" src="../assets/images/arts/farquaad/farquaad-still-2.jpg" >
+    </div>
+    <div style="flex:0.66658653846;margin:2px;">
+        <img alt="Farquaad Still 3" src="../../assets/images/arts/farquaad/farquaad-still-3.jpg">
+    </div>
 </div>
 
 I enjoyed this role so much that during [Fab Academy](../stem/disability-forewarning-system/index.md), I made a Farquaad sticker on the vinyl cutter! [Here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week3/vinyl-cutting/#lord-farquaad){:target="_blank"} is a link to my documentation of the process.
 
-![Farquaad Sticker](../assets/images/arts/farquaad/farquaad-sticker.jpg){: width=300px;}
-![Farquaad Sticker Lab](../assets/images/arts/farquaad/farquaad-sticker-lab.jpg){: width=300px;}
+<div style="display:flex;">
+    <div style="flex:0.75; margin:2px;">
+        <img alt="Farquaad Sticker" src="../assets/images/arts/farquaad/farquaad-sticker.jpg" >
+    </div>
+    <div style="flex:0.75;margin:2px;">
+        <img alt="Farquaad Sticker Lab" src="../../assets/images/arts/farquaad/farquaad-sticker-lab.jpg">
+    </div>
+</div>
 
 ## Billy Cane, *Bright Star*
 
