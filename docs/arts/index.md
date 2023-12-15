@@ -23,8 +23,15 @@ Here's a video of the musical number *"The Ballad of Farquaad"*
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lRGHWJbHD0k?si=i8uLEoHSsgQpNkBx&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ![Farquaad Still 1](../assets/images/arts/farquaad/farquaad-still-1.png)
-![Farquaad Still 2](../assets/images/arts/farquaad/farquaad-still-2.jpg){: style="width:500px;"}
-![Farquaad Still 3](../assets/images/arts/farquaad/farquaad-still-3.jpg){: style="width:238px;"}
+
+<div style="display:flex;">
+<div style="flex:1.40456182473; margin:2px;">
+<img alt="Farquaad Still 2" src="../assets/images/arts/farquaad/farquaad-still-2.jpg" >
+</div>
+<div style="flex:0.66658653846;margin:2px;">
+<img alt="Farquaad Still 3" src="../../assets/images/arts/farquaad/farquaad-still-3.jpg">
+</div>
+</div>
 
 I enjoyed this role so much that during [Fab Academy](../stem/disability-forewarning-system/index.md), I made a Farquaad sticker on the vinyl cutter! [Here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week3/vinyl-cutting/#lord-farquaad){:target="_blank"} is a link to my documentation of the process.
 
@@ -37,9 +44,17 @@ In 2022, I played **Billy Cane** in *Bright Star* at Charlotte Latin School. I w
 
 *Bright Star*, a musical written by Steve Martin and Edie Brickell, is set in Blue Ridge Mountains of North Carolina during the 1940s with flashbacks to 1923. It is a powerful story of love, loss, and redemption. Billy Cane is an aspiring young writer who embodies the themes of hope, new beginnings, and the power of dreams. 
 
-![Billy Cane Still 3](../assets/images/arts/billy-cane/rbilly-still-3.jpg)
-![Billy Cane Still 1](../assets/images/arts/billy-cane/rbilly-still-1.jpg)
-![Billy Cane Still 2](../assets/images/arts/billy-cane/rbilly-still-2.jpg)
+<div style="display:flex;">
+    <div style="flex:0.66666666666; margin:2px;">
+        <img alt="Billy Cane Still 2" src="../assets/images/arts/billy-cane/rbilly-still-3.jpg" >
+    </div>
+    <div style="flex:0.66666666666;margin:2px;">
+        <img alt="Billy Cane Still 3" src="../../assets/images/arts/billy-cane/rbilly-still-1.jpg">
+    </div>
+    <div style="flex:0.66666666666;margin:2px;">
+        <img alt="Billy Cane Still 3" src="../../assets/images/arts/billy-cane/rbilly-still-2.jpg">
+    </div>
+</div>
 
 ## Adam Stone Theatre Résumé
 
