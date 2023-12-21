@@ -68,3 +68,8 @@ plugins:
     - search
     - mermaid2
     - mkdocs-video
+
+extra:
+  analytics:
+    provider: google
+    property: G-Z0ZXQ8VL5C

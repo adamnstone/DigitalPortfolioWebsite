@@ -10,10 +10,8 @@ const name2 = document.getElementById("name-2");
 
 menuBtn = document.querySelector('.menu-btn');
 const menuContainer = document.querySelector("#menu-container")
-console.log(menuContainer);
 let menuOpen = false;
 let isClickable = true;
-console.log(menuBtn);
 menuBtn.addEventListener('click', (e) => {
     if (!isClickable) return;
     e.stopPropagation();
