@@ -204,7 +204,9 @@ for lr in learning_rates:
             best_model = model
 ```
 
-The model successfully classified the remaining  ~16,000 references, completing the second step of my project. 
+The model successfully classified the remaining ~16,000 references. 
+
+After the data were collected, I ran a network density analysis for the global community, as well as each individual lab that had more than five members. The global network density was `~0.0024`, while `~91.3%` of the individual labs had a higher density than this, ranging from approximately `0.03` to `0.45` (with the exception of the `Rwanda` network density of `~0.013`), supporting my hypothesis that students frequently connected with experts in their own lab, but not in the global community. Next, for the network analysis to be useful, I calculated each student's in-degree centrality by subject area. Read more about this process [below](#network-analysis).
 
 ### Step 3: Data Visualization
 
@@ -1690,6 +1692,527 @@ if __name__ == "__main__":
 
     matrix = format_data_to_matrix(reference_dicts_across_years)
 ```
+
+#### Network Analysis
+
+**Code**
+
+[Download the network analysis code here!](../../assets/code/step2-analysis-python.zip)
+
+`density.py` calculates the global network density.
+
+*density.py*
+
+```py
+import pandas as pd
+import pickle, json
+import networkx as nx
+
+with open("final_data.json", "rb") as file:
+    final_data = json.load(file)
+
+G = nx.DiGraph()
+
+# Add nodes to the graph
+for node in final_data["nodes"]:
+    G.add_node(node["id"])
+
+# Add edges (links) to the graph
+for link in final_data["links"]:
+    G.add_edge(link["source"], link["target"], weight=link["value"], topic=link["topic"])
+
+# Calculate density
+density = nx.density(G)
+
+with open("density.obj","wb") as file:
+    pickle.dump(density, file)
+
+print(density)
+```
+
+`density_by_lab.py` creates a data table of the network density of each lab.
+
+*density_by_lab.py*
+
+```py
+import pandas as pd
+import pickle, json
+import networkx as nx
+import matplotlib.pyplot as plt
+
+lab_names_urls = ['aachen', 'aalto', 'agrilab', 'akgec', 'akureyri', 'algarve', 'bahrain', 'bangalore', 'barcelona', 'benfica', 'berytech', 'bhubaneswar', 'bhutan', 'boldseoul', 'bottrop', 'brighton', 'cept', 'chaihuo', 'chandigarh', 'charlotte', 'cidi', 'cit', 'ciudadmexico', 'cpcc', 'crunchlab', 'dassault', 'deusto', 'dhahran', 'digiscope', 'dilijan', 'ecae', 'echofab', 'ecostudio', 'egypt', 'energylab', 'esan', 'esne', 'fablabaachen', 'fablabaalto', 'fablabakgec', 'fablabamsterdam', 'fablabat3flo', 'fablabbahrain', 'fablabbeijing', 'fablabberytech', 'fablabbottrop', 'fablabbrighton', 'fablabcept', 'fablabcharlottelatin', 'fablabdassault', 'fablabdigiscope', 'fablabechofab', 'fablabecostudio', 'fablabegypt', 'fablaberfindergarden', 'fablabesan', 'fablabfacens', 'fablabfct', 'fablabgearbox', 'fablabincitefocus', 'fablabirbid', 'fablabisafjorour', 'fablabkamakura', 'fablabkamplintfort', 'fablabkhairpur', 'fablabkochi', 'fablabkromlaboro', 'fablablccc', 'fablableon', 'fablabmadridceu', 'fablabmexico', 'fablabodessa', 'fablabopendot', 'fablaboshanghai', 'fablaboulu', 'fablabpuebla', 'fablabreykjavik', 'fablabrwanda', 'fablabsantiago', 'fablabseoul', 'fablabseoulinnovation', 'fablabsiena', 'fablabsocom', 'fablabsorbonne', 'fablabspinderihallerne', 'fablabszoil', 'fablabtechworks', 'fablabtecsup', 'fablabtembisa', 'fablabtrivandrum', 'fablabuae', 'fablabulb', 'fablabutec', 'fablabvigyanasharm', 'fablabwgtn', 'fablabyachay', 'fablabyucatan', 'fablabzoi', 'falabdeusto', 'falabvestmannaeyjar', 'farmlabalgarve', 'fct', 'formshop', 'hkispace', 'ied', 'incitefocus', 'ingegno', 'inphb', 'insper', 'ioannina', 'irbid', 'isafjordur', 'jubail', 'kamakura', 'kamplintfort', 'kannai', 'kaust', 'keolab', 'khairpur', 'kitakagaya', 'kochi', 'lakazlab', 'lamachinerie', 'lccc', 'leon', 'libya', 'lima', 'napoli', 'newcairo', 'ningbo', 'opendot', 'oshanghai', 'oulu', 'plusx', 'polytech', 'puebla', 'qbic', 'reykjavik', 'riidl', 'rwanda', 'santachiara', 'sedi', 'seoul', 'seoulinnovation', 'singapore', 'sorbonne', 'stjude', 'szoil', 'taipei', 'talents', 'techworks', 'tecsup', 'tecsupaqp', 'tianhelab', 'tinkerers', 'trivandrum', 'twarda', 'uae', 'ucal', 'ucontinental', 'uemadrid', 'ulb', 'ulima', 'utec', 'vancouver', 'vestmannaeyjar', 'vigyanashram', 'waag', 'wheaton', 'winam', 'yucatan', 'zoi']
+
+MIN_STUDENTS = 5
+
+labs_by_continent = {
+    "vigyanashram":"Asia", # India
+    "oulu":"Europe", # Finland
+    "kamplintfort":"Europe", # Germany
+    "charlotte":"North America", # USA (Assumed)
+    "lccc":"North America", # USA (Assumed)
+    "bahrain":"Asia", # Bahrain
+    "uae":"Asia", # United Arab Emirates
+    "libya":"Africa", # Libya
+    "techworks":"North America", # USA (Assumed)
+    "newcairo":"Africa", # Egypt
+    "egypt":"Africa", # Egypt
+    "lakazlab":"Africa", # Mauritius (Assumed)
+    "tecsup":"South America", # Peru
+    "wheaton":"North America", # USA (Assumed)
+    "fablabuae":"Asia", # United Arab Emirates
+    "qbic":"Asia", # Qatar (Assumed)
+    "kochi":"Asia", # India
+    "ied":"Europe", # Italy (Assumed)
+    "fablabtrivandrum":"Asia", # India
+    "fablabakgec":"Asia", # India
+    "barcelona":"Europe", # Spain
+    "fablabsorbonne":"Europe", # France
+    "fablabcept":"Asia", # India
+    "rwanda":"Africa", # Rwanda
+    "leon":"Europe", # Spain (Assumed)
+    "lamachinerie":"Europe", # France (Assumed)
+    "fablabdigiscope":"Europe", # France (Assumed)
+    "energylab":"Europe", # Denmark (Assumed)
+    "akgec":"Asia", # India
+    "irbid":"Asia", # Jordan
+    "reykjavik":"Europe", # Iceland
+    "sorbonne":"Europe", # France
+    "incitefocus":"North America", # USA (Assumed)
+    "puebla":"North America", # Mexico
+    "tecsupaqp":"South America", # Peru
+    "ucontinental":"South America", # Peru
+    "fablabopendot":"Europe", # Italy
+    "santachiara":"Europe", # Italy
+    "fablabechofab":"North America", # Canada
+    "zoi":"Asia", # China (Assumed)
+    "cidi":"North America", # USA (Assumed)
+    "dassault":"Europe", # France (Assumed)
+    "stjude":"North America", # USA (Assumed)
+    "aalto":"Europe", # Finland
+    "fablabzoi":"Asia", # China (Assumed)
+    "ecae":"Asia", # United Arab Emirates
+    "fablabbahrain":"Asia", # Bahrain
+    "khairpur":"Asia", # Pakistan
+    "insper":"South America", # Brazil
+    "trivandrum":"Asia", # India
+    "inphb":"Africa", # Ivory Coast
+    "digiscope":"Europe", # France (Assumed)
+    "ulb":"Europe", # Belgium (Assumed)
+    "lima":"South America", # Peru
+    "fablabspinderihallerne":"Europe", # Denmark
+    "fablabfct":"Europe", # Portugal (Assumed)
+    "fct":"Africa", # Nigeria (Assumed)
+    "opendot":"Europe", # Italy
+    "fablabtecsup":"South America", # Peru
+    "vancouver":"North America", # Canada
+    "fablabbrighton":"Europe", # UK
+    "akureyri":"Europe", # Iceland
+    "yucatan":"North America", # Mexico
+    "bhutan":"Asia", # Bhutan
+    "fablabaachen":"Europe", # Germany
+    "waag":"Europe", # Netherlands
+    "echofab":"North America", # Canada
+    "dilijan":"Asia", # Armenia
+    "polytech":"Europe", # France (Assumed)
+    "agrilab":"Asia", # Armenia
+    "fablabsiena":"Europe", # Italy -- ChatGPT changed "fablabsiena" to "siena" -- corrected by hand
+    "winam":"Africa", # Kenya (Assumed)
+    "fablaboulu":"Europe", # Finland
+    "fablabreykjavik":"Europe", # Iceland
+    "kamakura":"Asia", # Japan
+    "falabvestmannaeyjar":"Europe", # Iceland
+    "singapore":"Asia", # Singapore
+    "oshanghai":"Asia", # China
+    "fablaboshanghai":"Asia", # China
+    "fablabutec":"South America", # Peru
+    "fablabodessa":"Europe", # Ukraine
+    "esan":"South America", # Peru
+    "fablabvigyanasharm":"Asia", # India
+    "hkispace":"Asia", # Hong Kong
+    "taipei":"Asia", # Taiwan
+    "fablabmexico":"North America", # Mexico
+    "ciudadmexico":"North America", # Mexico
+    "aachen":"Europe", # Germany
+    "fablabbottrop":"Europe", # Germany
+    "fablabaalto":"Europe", # Finland
+    "keolab":"Asia", # Japan (Assumed)
+    "cpcc":"North America", # USA (Assumed)
+    "fablabkamplintfort":"Europe", # Germany
+    "ingegno":"Europe", # Italy (Assumed)
+    "fablabkamakura":"Asia", # Japan
+    "tinkerers":"Asia", # United Arab Emirates (Assumed)
+    "cit":"Europe", # Ireland (Assumed)
+    "utec":"South America", # Peru
+    "fablabamsterdam":"Europe", # Netherlands
+    "tianhelab":"Asia", # China (Assumed)
+    "bhubaneswar":"Asia", # India
+    "cept":"Asia", # India
+    "fablabbeijing":"Asia", # China
+    "talents":"Europe", # Germany (Assumed)
+    "fablabyachay":"South America", # Ecuador
+    "fablabdassault":"Europe", # France (Assumed)
+    "ecostudio":"North America", # USA (Assumed)
+    "fablabseoul":"Asia", # South Korea
+    "kaust":"Asia", # Saudi Arabia
+    "berytech":"Asia", # Lebanon
+    "fablabpuebla":"North America", # Mexico
+    "fablabrwanda":"Africa", # Rwanda
+    "fablabesan":"South America", # Peru
+    "fablabberytech":"Asia", # Lebanon
+    "crunchlab":"Europe", # Portugal (Assumed)
+    "ucal":"North America", # USA (Assumed)
+    "vestmannaeyjar":"Europe", # Iceland
+    "sedi":"Europe", # Italy (Assumed)
+    "isafjordur":"Europe", # Iceland
+    "fablabegypt":"Africa", # Egypt
+    "szoil":"Asia", # China
+    "formshop":"Asia", # China (Assumed)
+    "fablabkochi":"Asia", # India
+    "fablabincitefocus":"North America", # USA (Assumed)
+    "kitakagaya":"Asia", # Japan
+    "kannai":"Asia", # Japan
+    "dhahran":"Asia", # Saudi Arabia
+    "seoulinnovation":"Asia", # South Korea
+    "ioannina":"Europe", # Greece
+    "fablabyucatan":"North America", # Mexico
+    "fablabirbid":"Asia", # Jordan
+    "deusto":"Europe", # Spain
+    "falabdeusto":"Europe", # Spain
+    "riidl":"Asia", # India
+    "bottrop":"Europe", # Germany
+    "fablabisafjorour":"Europe", # Iceland
+    "plusx":"Asia", # South Korea (Assumed)
+    "fablaberfindergarden":"Europe", # Germany (Assumed)
+    "uemadrid":"Europe", # Spain
+    "fablabtembisa":"Africa", # South Africa
+    "brighton":"Europe", # UK
+    "fablabfacens":"South America", # Brazil
+    "fablableon":"Europe", # Spain (Assumed)
+    "fablabszoil":"Asia", # China
+    "fablabgearbox":"Africa", # Kenya (Assumed)
+    "farmlabalgarve":"Europe", # Portugal
+    "algarve":"Europe", # Portugal
+    "twarda":"Europe", # Poland (Assumed)
+    "bangalore":"Asia", # India
+    "fablabsantiago":"South America", # Chile
+    "fablablccc":"North America", # USA (Assumed)
+    "fablabcharlottelatin":"North America", # USA
+    "fablabat3flo":"Europe", # Hungary (Assumed)
+    "fablabecostudio":"North America", # USA (Assumed)
+    "fablabsocom":"Asia", # China (Assumed)
+    "boldseoul":"Asia", # South Korea
+    "napoli":"Europe", # Italy
+    "fablabkromlaboro":"Europe", # Slovenia (Assumed)
+    "seoul":"Asia", # South Korea
+    "fablabtechworks":"North America", # USA (Assumed)
+    "fablabkhairpur":"Asia", # Pakistan
+    "chaihuo":"Asia", # China (Assumed)
+    "fablabulb":"Europe", # Belgium (Assumed)
+    "esne":"Europe", # Spain (Assumed)
+    "ulima":"South America", # Peru
+    "fablabseoulinnovation":"Asia", # South Korea
+    "benfica":"Europe", # Portugal (Assumed)
+    "fablabmadridceu":"Europe", # Spain
+    "chandigarh":"Asia", # India
+    "jubail":"Asia", # Saudi Arabia
+    "ningbo":"Asia", # China
+    "fablabwgtn":"Oceania" # New Zealand
+}
+
+grouped_lab_names = [
+    ['aachen', 'fablabaachen'],
+    ['aalto', 'fablabaalto'],
+    ['agrilab'],
+    ['akgec', 'fablabakgec'],
+    ['akureyri'],
+    ['algarve', 'farmlabalgarve'],
+    ['bahrain', 'fablabbahrain'],
+    ['bangalore'],
+    ['barcelona'],
+    ['benfica'],
+    ['berytech', 'fablabberytech'],
+    ['bhubaneswar'],
+    ['bhutan'],
+    ['seoul', 'fablabseoul', 'fablabseoulinnovation', 'boldseoul', 'seoulinnovation'],
+    ['bottrop', 'fablabbottrop'],
+    ['brighton', 'fablabbrighton'],
+    ['cept', 'fablabcept'],
+    ['chaihuo'],
+    ['chandigarh'],
+    ['charlotte', 'fablabcharlottelatin'],
+    ['cidi'],
+    ['cit'],
+    ['ciudadmexico'],
+    ['cpcc'],
+    ['crunchlab'],
+    ['dassault', 'fablabdassault'],
+    ['deusto', 'falabdeusto'],
+    ['dhahran'],
+    ['digiscope', 'fablabdigiscope'],
+    ['dilijan'],
+    ['ecae'],
+    ['echofab', 'fablabechofab'],
+    ['ecostudio', 'fablabecostudio'],
+    ['egypt', 'fablabegypt'],
+    ['energylab'],
+    ['esan', 'fablabesan'],
+    ['esne'],
+    ['fablabamsterdam'],
+    ['fablabat3flo'],
+    ['fablabbeijing'],
+    ['fablabfacens'],
+    ['fablabfct'],
+    ['fablabgearbox'],
+    ['fablabincitefocus'],
+    ['fablabirbid', 'irbid'],
+    ['fablabisafjorour', 'isafjordur'],
+    ['fablabkamakura', 'kamakura'],
+    ['fablabkamplintfort', 'kamplintfort'],
+    ['fablabkhairpur', 'khairpur'],
+    ['fablabkochi', 'kochi'],
+    ['fablabkromlaboro'],
+    ['fablablccc', 'lccc'],
+    ['fablableon', 'leon'],
+    ['fablabmadridceu'],
+    ['fablabmexico', 'ciudadmexico'],
+    ['fablaberfindergarden'],
+    ['fablabodessa'],
+    ['fablabopendot', 'opendot'],
+    ['fablaboshanghai', 'oshanghai'],
+    ['fablaboulu', 'oulu'],
+    ['fablabpuebla', 'puebla'],
+    ['fablabreykjavik', 'reykjavik'],
+    ['fablabrwanda', 'rwanda'],
+    ['fablabsantiago'],
+    ['fablabsiena', 'santachiara'],
+    ['fablabsocom'],
+    ['fablabsorbonne', 'sorbonne'],
+    ['fablabspinderihallerne'],
+    ['fablabszoil', 'szoil'],
+    ['fablabtechworks', 'techworks'],
+    ['fablabtecsup', 'tecsup', 'tecsupaqp'],
+    ['fablabtembisa'],
+    ['fablabtrivandrum', 'trivandrum'],
+    ['fablabuae', 'uae'],
+    ['fablabulb', 'ulb'],
+    ['fablabutec', 'utec'],
+    ['fablabvigyanasharm', 'vigyanashram'],
+    ['fablabwgtn'],
+    ['fablabyachay'],
+    ['fablabyucatan', 'yucatan'],
+    ['fablabzoi', 'zoi'],
+    ['falabvestmannaeyjar', 'vestmannaeyjar'],
+    ['fct'],
+    ['formshop'],
+    ['hkispace'],
+    ['ied'],
+    ['incitefocus'],
+    ['ingegno'],
+    ['inphb'],
+    ['insper'],
+    ['ioannina'],
+    ['jubail'],
+    ['kannai'],
+    ['kaust'],
+    ['keolab'],
+    ['kitakagaya'],
+    ['lakazlab'],
+    ['lamachinerie'],
+    ['libya'],
+    ['lima'],
+    ['napoli'],
+    ['newcairo'],
+    ['ningbo'],
+    ['plusx'],
+    ['polytech'],
+    ['qbic'],
+    ['riidl'],
+    ['sedi'],
+    ['singapore'],
+    ['stjude'],
+    ['taipei'],
+    ['talents'],
+    ['tianhelab'],
+    ['tinkerers'],
+    ['twarda'],
+    ['ucal'],
+    ['ucontinental'],
+    ['uemadrid'],
+    ['ulima'],
+    ['vancouver'],
+    ['waag'],
+    ['wheaton'],
+    ['winam']
+]
+
+def format_lab_group(lab_group):
+    return "/".join(lab_group)
+
+def get_continent(lab_group):
+    for lab_name in lab_group:
+        if lab_name in labs_by_continent:
+            return labs_by_continent[lab_name]
+    raise Exception("Lab Not Found")
+
+def node_is_lab(node_id, lab_sort, year_sort):
+    url = node_id.split(";")[1]
+
+    lab = url.split("/")[5]
+
+    if year_sort == True:
+        year = True
+    else:
+        year = url.split("/")[3]
+
+    lab_group_current = None
+    for lab_group in grouped_lab_names:
+        if lab in lab_group:
+            lab_group_current = lab_group
+            break  
+    else:
+        raise Exception("Lab Not Found")
+    if people_per_lab[format_lab_group(lab_group_current)] < MIN_STUDENTS:
+        return False
+
+    return (lab.lower() in lab_sort) and (year or (year in year_sort))
+
+with open("final_data.json", "rb") as file:
+    final_data = json.load(file)
+
+people_per_lab = {}
+
+for lab_group in grouped_lab_names:
+    formatted = format_lab_group(lab_group)
+    people_per_lab[formatted] = 0
+for student in final_data['nodes']:
+    lab = student['id'].split("/")[5]
+    lab_group_name = None
+    for lab_group in grouped_lab_names:
+        if lab in lab_group:
+            lab_group_name = format_lab_group(lab_group)
+            break
+    else:
+        print(lab)
+        raise Exception("Lab Not Found")
+    people_per_lab[lab_group_name] += 1
+
+densities = {'lab':[], 'density':[], 'geography':[]}
+
+for lab_group in grouped_lab_names:
+    if people_per_lab[format_lab_group(lab_group)] < MIN_STUDENTS:
+        continue
+    G = nx.DiGraph()
+
+    students = []
+
+    LAB = lab_group
+    YEAR = True
+
+    # Add nodes to the graph
+    for node in final_data["nodes"]:
+        students.append(node["id"])
+        if not node_is_lab(node["id"], LAB, YEAR):
+            continue
+        G.add_node(node["id"])
+
+    # Add edges (links) to the graph
+    for link in final_data["links"]:
+        if (not node_is_lab(link["source"], LAB, YEAR)) or (not node_is_lab(link["target"], LAB, YEAR)):
+            continue
+        G.add_edge(link["source"], link["target"], weight=link["value"], topic=link["topic"])
+
+    # Calculate density
+    density = nx.density(G)
+    densities['lab'].append(format_lab_group(lab_group))
+    densities['density'].append(density)
+    densities['geography'].append(get_continent(lab_group))
+
+df = pd.DataFrame(data=densities)
+df.to_csv(f"density_by_lab_minimum_5_students.csv")
+```
+
+`in_degree_centrality_by_subject.py` creates a data table of each student's [`in-degree centrality`](https://networkx.org/documentation/networkx-2.4/reference/algorithms/generated/networkx.algorithms.centrality.in_degree_centrality.html) for each subject area.
+
+*in_degree_centrality_by_subject.py*
+
+```py
+import pandas as pd
+import pickle, json
+import networkx as nx
+
+TOPICS = [
+    "Computer-Aided Design",
+    "Computer-Controlled Cutting",
+    "Embedded Programing",
+    "3D Scanning and Printing",
+    "Electronics Design",
+    "Computer-Controlled Machining",
+    "Electronics Production",
+    "Mechanical Design, Machine Design",
+    "Input Devices",
+    "Moulding and Casting",
+    "Output Devices",
+    "Embedded Networking and Communications",
+    "Interface and Application Programming",
+    "Wildcard Week",
+    "Applications and Implications",
+    "Invention, Intellectual Property and Business Models",
+    "Final Project"
+]
+
+with open("final_data.json", "rb") as file:
+    final_data = json.load(file)
+
+for topic in TOPICS:
+    G = nx.DiGraph()
+
+    # Add nodes to the graph
+    for node in final_data["nodes"]:
+        G.add_node(node["id"])
+
+    # Add edges (links) to the graph
+    for link in final_data["links"]:
+        if link["topic"] != topic:
+            continue
+        G.add_edge(link["source"], link["target"], weight=link["value"], topic=link["topic"])
+
+    # Calculate degree centrality
+    degree_centrality = nx.degree_centrality(G)
+
+    table_data = {"student":[],"degree_centrality":[]}
+
+    for student in list(degree_centrality.keys()):
+        table_data["student"].append(student)
+        table_data["degree_centrality"].append(degree_centrality[student])
+
+    df = pd.DataFrame(data=table_data)
+    df.to_csv(f"in_degree_centrality_topic_{topic.replace(' ','_')}_all_labs_years.csv")
+```
+
+**Ranked Top 10 In-Degree Centrality**
+
+Click on the image below to see the data table for all students who were ranked in the top 10 for their [`in-degree centrality`](https://networkx.org/documentation/networkx-2.4/reference/algorithms/generated/networkx.algorithms.centrality.in_degree_centrality.html) in a subject area. The table includes the students' ranks across all subject areas and highlights in green whenever they were in the top 10. Only `111 students` were ranked in the top 10 for at least one of the 17 subject areas because several students were ranked top 10 in multiple categories.
+
+<a href="../../../assets/xlsx/ExpertNetworkMapTop10.htm" target="_blank">![ExNM Top 10 Thumb](../../assets/images/stem/expert-network-map/ExNMTop10Thumb.jpg)</a>
+
+- [Click here to download an `xlsx` Excel file of the data](../../assets/xlsx/ExpertNetworkMapTop10.xlsx)
+
+**Full In-Degree Centrality Data**
+
+Click on the image below to see the data table for all students' [`in-degree centrality`](https://networkx.org/documentation/networkx-2.4/reference/algorithms/generated/networkx.algorithms.centrality.in_degree_centrality.html) value and ranking by subject area. These data are the basis for ranking students' expertise in a subject area.
+
+<a href="../../../assets/xlsx/ExpertNetworkMapTop10InDegree.htm" target="_blank">![ExNM Top 10 In-Degree Thumb](../../assets/images/stem/expert-network-map/ExNMTop10NDThumb.jpg)</a>
+
+- [Click here to download an `xlsx` Excel file of the data](../../assets/xlsx/In-DegreeCentralityBySubjectArea.xlsx)
+
+**Density by Lab and Continent**
+
+Below is a graph of the [`density`](https://www.ibm.com/docs/en/spss-modeler/18.0.0?topic=networks-network-density) of each lab's network, color coded by continent. Only labs with five or more students since 2018 are included in the analysis since very small labs skew the network analysis (for example, a lab that only had one student has a network density of `1`). The dark blue vertical line represents the global network density of `0.00237457479499778`. `~91.3%` of the individual labs had a higher density than this, ranging from approximately `0.03` to `0.45` (with the exception of the `Rwanda` network density of `~0.013`), supporting my hypothesis that students frequently connected with experts in their own lab, but not in the global community. Click on the graph to open a spreadsheet with all of the data.
+
+<a href="../../../assets/xlsx/DensitiesByLabAndContinent.htm" target="_blank">![Densities By Lab and Continent](../../assets/images/stem/expert-network-map/DensityChart.jpg)</a>
+
+- [Click here to download an `xlsx` Excel file of the data](../../assets/xlsx/DensitiesByLabAndContinent.xlsx)
+- [Click here to download open or download the chart as a `jpg`](../../assets/images/stem/expert-network-map/DensityChart.jpg){: target="_blank"}
 
 ### Step 3: Data Visualization
 
