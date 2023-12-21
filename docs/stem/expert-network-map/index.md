@@ -2557,6 +2557,12 @@ const TOPICS = [
     "Other"
 ]
 
+// dictionary with keys of lab names and values of a list of the corresponding URL codes
+const codesFromNames = {"Talents": ["talents"], "AgriLab": ["agrilab"], "Amsterdam": ["fablabamsterdam"], "IED Madrid": ["ied"], "Bhutan": ["bhutan"], "Sorbonne University": ["fablabsorbonne", "sorbonne"], "ULB": ["fablabulb", "ulb"], "Leon": ["fablableon", "leon"], "Dilijan": ["dilijan"], "Universitario CIDi": ["cidi"], "Vestmannaeyjar": ["falabvestmannaeyjar", "vestmannaeyjar"], "Vancouver": ["vancouver"], "Waag": ["waag"], "EnergyLab-Lomé": ["energylab"], "Spinderihallerne": ["fablabspinderihallerne"], "New Cairo": ["newcairo"], "EchoFab": ["echofab", "fablabechofab"], "CEPT": ["cept", "fablabcept"], "Khairpur": ["fablabkhairpur", "khairpur"], "Reykjavik": ["fablabreykjavik", "reykjavik"], "Egypt": ["egypt", "fablabegypt"], "Oulu": ["fablaboulu", "oulu"], "Berytech": ["berytech", "fablabberytech"], "Bahrain": ["bahrain", "fablabbahrain"], "Charlotte Latin": ["charlotte", "fablabcharlottelatin"], "Santa Chiara": ["fablabsiena", "santachiara"], "Digiscope": ["digiscope", "fablabdigiscope"], "BoldLab": ["seoul", "fablabseoul", "fablabseoulinnovation", "boldseoul", "seoulinnovation"], "Beijing": ["fablabbeijing"], "O Shanghai": ["fablaboshanghai", "oshanghai"], "Aalto": ["aalto", "fablabaalto"], "La Machinerie": ["lamachinerie"], "Dassault Systemes": ["dassault", "fablabdassault"], "Kannai": ["kannai"], "ZOI": ["fablabzoi", "zoi"], "Irbid": ["fablabirbid", "irbid"], "Kamakura": ["fablabkamakura", "kamakura"], "Brighton": ["brighton", "fablabbrighton"], "AKGEC": ["akgec", "fablabakgec"], "Opendot": ["fablabopendot", "opendot"], "EcoStudio": ["ecostudio", "fablabecostudio"], "FCT": ["fct", "fablabfct"], "Bottrop": ["bottrop", "fablabbottrop"], "Aachen": ["aachen", "fablabaachen"], "Trivandrum": ["fablabtrivandrum", "trivandrum"], "UAE": ["fablabuae", "uae"], "Kochi": ["fablabkochi", "kochi"], "TechWorks Amman": ["fablabtechworks", "techworks"], "Singapore": ["singapore"], "LazLab": ["lakazlab"], "Vigyan Asharm": ["fablabvigyanasharm", "vigyanashram"], "Puebla": ["fablabpuebla", "puebla"], "Wheaton": ["wheaton"], "Ciudad Mexico": ["ciudadmexico"], "Barcelona": ["barcelona"], "Incite Focus": ["incitefocus", "fablabincitefocus"], "Santiago": ["fablabsantiago"], "Winam": ["winam"], "Kamp-Lintfort": ["fablabkamplintfort", "kamplintfort"], "TECSUP": ["fablabtecsup", "tecsup", "tecsupaqp"], "QBIC": ["qbic"], "ESAN": ["esan", "fablabesan"], "Rwanda": ["fablabrwanda", "rwanda"], "Lorain College": ["fablablccc", "lccc"], "Bhubaneswar": ["bhubaneswar"], "SZOIL": ["fablabszoil", "szoil"], "UTEC": ["fablabutec", "utec"], "Lima": ["lima"], "Taipei": ["taipei"], "Ucontinental": ["ucontinental"], "Akureyri": ["akureyri"], "Algarve": ["algarve", "farmlabalgarve"], "Bangalore": ["bangalore"], "Benfica": ["benfica"], "Chaihuo": ["chaihuo"], "Chandigarh": ["chandigarh"], "CIT": ["cit"], "CPCC": ["cpcc"], "Crunchlab": ["crunchlab"], "Deusto": ["deusto", "falabdeusto"], "Dhahran": ["dhahran"], "ECAE": ["ecae"], "ESNE": ["esne"], "At3flo": ["fablabat3flo"], "Erfindergarden": ["fablaberfindergarden"], "Facens": ["fablabfacens"], "Gearbox": ["fablabgearbox"], "Isafjorour": ["fablabisafjorour", "isafjorour"], "KromLaboro": ["fablabkromlaboro"], "Madrid CEU": ["fablabmadridceu"], "Odessa": ["fablabodessa"], "Tembisa": ["fablabtembisa"], "Wgtn": ["fablabwgtn"], "Yachay": ["fablabyachay"], "Yucatán": ["fablabyucatan", "yucatan"], "Formshop Shanghai": ["formshop"], "Hong Kong iSPACE": ["hkispace"], "Ingegno": ["ingegno"], "INP-HB": ["inphb"], "Insper": ["insper"], "Ioannina": ["ioannina"], "Jubail": ["jubail"], "KAUST": ["kaust"], "KeoLAB": ["keolab"], "Kitakagaya": ["kitakagaya"], "Libya": ["libya"], "Napoli": ["napoli"], "Ningbo-NexMaker": ["ningbo"], "PlusX": ["plusx"], "Polytech": ["polytech"], "RIIDL": ["riidl"], "SEDI-Cup-ct": ["sedi"], "St. Jude": ["stjude"], "Tianhe Lab": ["tianhelab"], "Tinkerers": ["tinkerers"], "Twarda": ["twarda"], "UCAL": ["ucal"], "Universidad Europea": ["uemadrid"], "Ulima": ["ulima"], "SOCOM": ["fablabsocom"], "Isafjordur": ["isafjordur"]};
+
+// dictionary with keys of URL codes and values of a list of the corresponding lab names
+const namesFromCodes = {"talents": "Talents", "agrilab": "AgriLab", "fablabamsterdam": "Amsterdam", "ied": "IED Madrid", "bhutan": "Bhutan", "fablabsorbonne": "Sorbonne University", "sorbonne": "Sorbonne University", "fablabulb": "ULB", "ulb": "ULB", "fablableon": "Leon", "leon": "Leon", "dilijan": "Dilijan", "cidi": "Universitario CIDi", "falabvestmannaeyjar": "Vestmannaeyjar", "vestmannaeyjar": "Vestmannaeyjar", "vancouver": "Vancouver", "waag": "Waag", "energylab": "EnergyLab-Lomé", "fablabspinderihallerne": "Spinderihallerne", "newcairo": "New Cairo", "echofab": "EchoFab", "fablabechofab": "EchoFab", "cept": "CEPT", "fablabcept": "CEPT", "fablabkhairpur": "Khairpur", "khairpur": "Khairpur", "fablabreykjavik": "Reykjavik", "reykjavik": "Reykjavik", "egypt": "Egypt", "fablabegypt": "Egypt", "fablaboulu": "Oulu", "oulu": "Oulu", "berytech": "Berytech", "fablabberytech": "Berytech", "bahrain": "Bahrain", "fablabbahrain": "Bahrain", "charlotte": "Charlotte Latin", "fablabcharlottelatin": "Charlotte Latin", "fablabsiena": "Santa Chiara", "santachiara": "Santa Chiara", "digiscope": "Digiscope", "fablabdigiscope": "Digiscope", "seoul": "BoldLab", "fablabseoul": "BoldLab", "fablabseoulinnovation": "BoldLab", "boldseoul": "BoldLab", "seoulinnovation": "BoldLab", "fablabbeijing": "Beijing", "fablaboshanghai": "O Shanghai", "oshanghai": "O Shanghai", "aalto": "Aalto", "fablabaalto": "Aalto", "lamachinerie": "La Machinerie", "dassault": "Dassault Systemes", "fablabdassault": "Dassault Systemes", "kannai": "Kannai", "fablabzoi": "ZOI", "zoi": "ZOI", "fablabirbid": "Irbid", "irbid": "Irbid", "fablabkamakura": "Kamakura", "kamakura": "Kamakura", "brighton": "Brighton", "fablabbrighton": "Brighton", "akgec": "AKGEC", "fablabakgec": "AKGEC", "fablabopendot": "Opendot", "opendot": "Opendot", "ecostudio": "EcoStudio", "fablabecostudio": "EcoStudio", "fct": "FCT", "fablabfct": "FCT", "bottrop": "Bottrop", "fablabbottrop": "Bottrop", "aachen": "Aachen", "fablabaachen": "Aachen", "fablabtrivandrum": "Trivandrum", "trivandrum": "Trivandrum", "fablabuae": "UAE", "uae": "UAE", "fablabkochi": "Kochi", "kochi": "Kochi", "fablabtechworks": "TechWorks Amman", "techworks": "TechWorks Amman", "singapore": "Singapore", "lakazlab": "LazLab", "fablabvigyanasharm": "Vigyan Asharm", "vigyanashram": "Vigyan Asharm", "fablabpuebla": "Puebla", "puebla": "Puebla", "wheaton": "Wheaton", "ciudadmexico": "Ciudad Mexico", "fablabmexico": "Ciudad Mexico", "barcelona": "Barcelona", "incitefocus": "Incite Focus", "fablabincitefocus": "Incite Focus", "winam": "Winam", "fablabkamplintfort": "Kamp-Lintfort", "kamplintfort": "Kamp-Lintfort", "fablabtecsup": "TECSUP", "tecsup": "TECSUP", "tecsupaqp": "TECSUP", "qbic": "QBIC", "esan": "ESAN", "fablabesan": "ESAN", "fablabrwanda": "Rwanda", "rwanda": "Rwanda", "fablablccc": "Lorain College", "lccc": "Lorain College", "bhubaneswar": "Bhubaneswar", "fablabszoil": "SZOIL", "szoil": "SZOIL", "fablabutec": "UTEC", "utec": "UTEC", "lima": "Lima", "taipei": "Taipei", "ucontinental": "Ucontinental", "akureyri": "Akureyri", "algarve": "Algarve", "farmlabalgarve": "Algarve", "bangalore": "Bangalore", "benfica": "Benfica", "chaihuo": "Chaihuo", "chandigarh": "Chandigarh", "cit": "CIT", "cpcc": "CPCC", "crunchlab": "Crunchlab", "deusto": "Deusto", "falabdeusto": "Deusto", "dhahran": "Dhahran", "ecae": "ECAE", "esne": "ESNE", "fablabat3flo": "At3flo", "fablaberfindergarden": "Erfindergarden", "fablabfacens": "Facens", "fablabgearbox": "Gearbox", "fablabisafjorour": "Isafjorour", "isafjorour": "Isafjorour", "fablabkromlaboro": "KromLaboro", "fablabmadridceu": "Madrid CEU", "fablabodessa": "Odessa", "fablabtembisa": "Tembisa", "fablabwgtn": "Wgtn", "fablabyachay": "Yachay", "fablabyucatan": "Yucatán", "yucatan": "Yucatán", "formshop": "Formshop Shanghai", "hkispace": "Hong Kong iSPACE", "ingegno": "Ingegno", "inphb": "INP-HB", "insper": "Insper", "ioannina": "Ioannina", "jubail": "Jubail", "kaust": "KAUST", "keolab": "KeoLAB", "kitakagaya": "Kitakagaya", "libya": "Libya", "napoli": "Napoli", "ningbo": "Ningbo-NexMaker", "plusx": "PlusX", "polytech": "Polytech", "riidl": "RIIDL", "sedi": "SEDI-Cup-ct", "stjude": "St. Jude", "tianhelab": "Tianhe Lab", "tinkerers": "Tinkerers", "twarda": "Twarda", "ucal": "UCAL", "uemadrid": "Universidad Europea", "ulima": "Ulima", "fablabsantiago": "Santiago", "fablabsocom": "SOCOM", "isafjordur": "Isafjordur"};
+
 const nonDiacriticLetters = "abcdefghijklmnopqrstuvwxyz";
 
 // simulation dimensions
@@ -3608,7 +3614,7 @@ const tooltipMouseover = function(event, d) {
 
 var tooltipMousemove = function(event, d) {
     Tooltip
-        .html("<span>Student: " + d.id.split(";")[0] + "<br>Year: " + d.id.split(";")[1].split("/")[3] + "<br>Lab: " + d.id.split(";")[1].split("/")[5] + "<br>Region: <span style=\"color:" + colorRegion(LABS_CONTINENT[d.id.split(";")[1].split("/")[5]]) + ";\">" + LABS_CONTINENT[d.id.split(";")[1].split("/")[5]] + "</span></span>");
+        .html("<span>Student: " + d.id.split(";")[0] + "<br>Year: " + d.id.split(";")[1].split("/")[3] + "<br>Lab: " + namesFromCodes[d.id.split(";")[1].split("/")[5]] + "<br>Region: <span style=\"color:" + colorRegion(LABS_CONTINENT[d.id.split(";")[1].split("/")[5]]) + ";\">" + LABS_CONTINENT[d.id.split(";")[1].split("/")[5]] + "</span></span>");
 };
 
 var tooltipMouseleave = function(event, d, obj = null) {
@@ -4206,8 +4212,21 @@ const initializeLabMultiselect = (labs, callback) => {
 
     const select = d3.select("#my_dataviz").select("div div.container");
 
+    let labNamesToDisplay = [];
+
+    labs.forEach(l => {
+        if (Object.keys(namesFromCodes).includes(l) && !labNamesToDisplay.includes(namesFromCodes[l])) {
+            labNamesToDisplay.push(namesFromCodes[l]);
+        }
+        else if (!Object.keys(namesFromCodes).includes(l)){
+            labNamesToDisplay.push(l);
+        }
+    });
+
+    labNamesToDisplay.sort();
+
     select.selectAll("option")
-        .data(["All"].concat(labs)) // Add "All" option to the start of the list
+        .data(["All"].concat(labNamesToDisplay)) // Add "All" option to the start of the list
         .join("option")
         .attr("value", d => d)
         .html(d => d);
@@ -4286,9 +4305,11 @@ Multiselect.prototype = {
                     that.selections = [];
                 }
             } else {
+                
                 var io = that.selections.search(selection);
-                if (io < 0) that.selections.push(selection);
+                if (io < 0) that.selections.push(selection)
                 else that.selections.splice(io, 1);
+
                 // If not all options are selected, deselect "All"
                 if (that.selections.length !== optionsCount && that.selections.search("All") >= 0) {
                     const res = that.selections.search("All");
@@ -4303,7 +4324,16 @@ Multiselect.prototype = {
             that.selectionStatus();
             that.setSelectionsString();
             if (typeof callback === "function") {
-                callback(that.selections);
+                let selectionCodes = []; 
+                that.selections.forEach(s => {
+                    if (s in codesFromNames) {
+                        codesFromNames[s].forEach(c => {
+                            selectionCodes.push(c);
+                        })
+                    }
+                    else selectionCodes.push(s);
+                });
+                callback(selectionCodes);
             }
         });
     },
@@ -4382,8 +4412,21 @@ const initializeLabMultiselect = (labs, callback) => {
 
     const select = d3.select("#my_dataviz").select("div div.container");
 
+    let labNamesToDisplay = [];
+
+    labs.forEach(l => {
+        if (Object.keys(namesFromCodes).includes(l) && !labNamesToDisplay.includes(namesFromCodes[l])) {
+            labNamesToDisplay.push(namesFromCodes[l]);
+        }
+        else if (!Object.keys(namesFromCodes).includes(l)){
+            labNamesToDisplay.push(l);
+        }
+    });
+
+    labNamesToDisplay.sort();
+
     select.selectAll("option")
-        .data(["All"].concat(labs)) // Add "All" option to the start of the list
+        .data(["All"].concat(labNamesToDisplay)) // Add "All" option to the start of the list
         .join("option")
         .attr("value", d => d)
         .html(d => d);
