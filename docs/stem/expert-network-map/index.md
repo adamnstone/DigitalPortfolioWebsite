@@ -1378,13 +1378,11 @@ def get_file_repo_list(id):
     all_file_paths = []
     project = GL.projects.get(id)
     all_directories = project.repository_tree(recursive=True, all=True, per_page=200) # pagination bug patched
-    print("Where")
     for item in all_directories:
         print(item)
         path = item['path']
         if path.split('.')[-1].lower().strip() in VALID_EXTENSOINS:
             all_file_paths.append(path)
-    print("here")
     return all_file_paths
 
 # get the IDs of the subgroups of a GitLab project
@@ -5253,3 +5251,13 @@ option[value=All] {
     font-family: Arial, sans-serif;
 }
 ```
+
+### Notes and Updates
+
+#### Updated Data
+
+All of the data used in the network analysis were recorded as of `June 2023`. The `Expert Network Map` website data will be updated to reflect recent changes in students' repos. Similarly, `lab_region.js`, as well as `namesFromCodes` and `codesFromNames` in `constants.js`, will be updated to include new labs.
+
+#### Search Terms Modified
+
+Moving forward, I decided to remove `copyright` from the `TOPIC_SEARCH_TERMS` array of subject area keywords as it was observed that a few student websites have a footer that says `copyright` on every page, leading to links near the bottom of a page that were classified into `Invention, Intellectual Property and Business Models`.
