@@ -5251,3 +5251,116 @@ option[value=All] {
     font-family: Arial, sans-serif;
 }
 ```
+
+## Updates
+
+Since the [initial presentation of the project in Bhutan](#introduction), I have updated the codebase to scrape and classify new references between student documentation every week. Throughout [the 2024 Fab Academy cycle](https://fabacademy.org/2024/), the map successfully evolved as new students made references to one another and to previous students in their documentation.
+
+### High-Level Overview
+
+On the [`pipeline_testing` branch of the GitLab Repo](https://gitlab.fabcloud.org/pub/project/expert-network-map/-/tree/pipeline_testing?ref_type=heads), at 3:00am every Wednesday, two [Pipeline Schedules](https://gitlab.fabcloud.org/pub/project/expert-network-map/-/pipeline_schedules) are run. Below is the `.gitlab-ci.yml` file in the `pipeline_testing` branch that contains the functionality for the two pipelines. The first pipeline runs the `update_data` job, and the second pipeline runs the `format_data` job. All of the code being run in these jobs can be found in the [`update-data` directory of the `pipeline_testing` branch of the repo](https://gitlab.fabcloud.org/pub/project/expert-network-map/-/tree/pipeline_testing/update-data?ref_type=heads).
+
+```yml
+# Functions that should be executed before the build script is run
+before_script: []
+
+stages:
+  - collect
+  - format
+  - production
+
+update_data:
+  stage: collect
+  image: python:3.9
+  script:
+    - cd update-data
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - echo "Running update-data/main.py"
+    - python main.py
+    - cd ..
+    - echo "Running update_data complete, now committing!"
+    - git config --global user.email "ci-cd-bot@example.com"
+    - git config --global user.name "CI/CD Bot"
+    - git remote set-url origin https://oauth2:${CI_ACCESS_TOKEN}@gitlab.fabcloud.org/pub/project/expert-network-map.git
+    - git add update-data/final_data.csv update-data/student_repo_id_saves/*.obj
+    - git commit -m "update-data ran and final_data.csv updated"
+    - git push origin HEAD:pipeline_testing
+  timeout: 2 hours
+  rules:
+    - if: $TRIGGER_CONTEXT == "pipeline_test"
+  tags:
+    - longer
+
+format_data:
+  stage: format
+  image: python:3.9
+  script:
+    - cd update-data
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - echo "Running update-data/matrix2d3js.py"
+    - python matrix2d3js.py
+    - echo "Running update-data/resolve_name_conflicts.py"
+    - python resolve_name_conflicts.py
+    - cat final_data_name_fixed.json > ./final_data.json
+    - cd ..
+    - echo "Running format_data complete, now committing!"
+    - git config --global user.email "ci-cd-bot@example.com"
+    - git config --global user.name "CI/CD Bot"
+    - git remote set-url origin https://oauth2:${CI_ACCESS_TOKEN}@gitlab.fabcloud.org/pub/project/expert-network-map.git
+    - mv update-data/final_data.json public/final_data.json
+    - git add public/final_data.json
+    - git commit -m "format_data ran and final_data.json updated"
+    - git push origin HEAD:pipeline_testing
+    - git fetch origin main
+    - git stash
+    - git switch main
+    - curl https://gitlab.fabcloud.org/pub/project/expert-network-map/-/raw/pipeline_testing/public/final_data.json?ref_type=heads -o public/final_data.json
+    - git add public/final_data.json
+    - git commit -m "copied public/final_data.json from pipeline_testing branch after format_data ran"
+    - git push origin HEAD:main
+  timeout: 2 hours
+  rules:
+    - if: $TRIGGER_CONTEXT == "pipeline_test_2"
+  tags:
+    - longer 
+
+pages:
+  stage: production
+  image: busybox
+  script:
+    - echo "The site will be deployed to $CI_PAGES_URL"
+  artifacts:
+    paths:
+      # The folder that contains the files to be exposed at the Page URL
+      - public
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+```
+
+#### Update Data
+
+The `update_data` job runs `main.py`, which scrapes all of the references between student repo, classified the references using the [text-classification neural network](#classifying-references), then creates a commit on the `pipeline_testing` branch that stores the exported `.csv` and `.obj` files created.
+
+#### Format Data
+
+The `format_data` job then runs `matrix2d3js.py` and `resolve_name_conflicts.py`, which convert and format the `CSV` data as a `JSON`, then commits the data to the `main` and `pipeline_testing` branches. The commit on hte `main` branch then triggers the [`GitLab Pages`](https://docs.gitlab.com/ee/user/project/pages/) pipeline which automatically updates the live site with the new data.
+
+#### Examples of Automated Commits
+
+[Click here to see examples of the automated commits on the `main` branch!](https://gitlab.fabcloud.org/pub/project/expert-network-map/-/commits/main)
+
+[Click here to see examples of the automated commits on the `pipeline_testing` branch!](https://gitlab.fabcloud.org/pub/project/expert-network-map/-/commits/pipeline_testing)
+
+## Offshoot Projects
+
+[`César García`](https://www.cesargarciasaez.com/), Technical Systems Engineer and a member of the 52-person [`Mattermost`](https://mattermost.com/) channel dedicated to the `Expert Network Map`, created the [`Fab Academy Retrieval-Augmented Generation (FabRAG)`](https://github.com/lahoramaker/FabRAG), a AI-powered system that uses expert documentation identified by the `Expert Network Map` to help further democratize access to education in the Fab Academy network. The project enables students to talk to the AI model with text, and the AI has access to all of the expertise of the most helpful documentation websties. Here is an example of the project's usage, which pulls information from the most referenced student during `Moulding and Casting` week, [`Adrián Torres`](https://fabacademy.org/2020/labs/leon/students/adrian-torres/week15.html):
+
+![Offshoot Usage Example](../../assets/images/stem/expert-network-map/offshoot.png)
+
+---
+
+*Updated as of November 1st, 2024*
