@@ -73,7 +73,7 @@ def mutate(bridge):
     return mutated_bridge
 
 # Function to run the evolutionary simulation
-def run_evo_sim(population_size, fig,line1, NUM_GENS):
+def run_evo_sim(population_size, fig, line1, NUM_GENS):
     population = initialize_population(population_size)
     generation = 1
     highest_fitness_score_over_gen = [0]*(NUM_GENS)

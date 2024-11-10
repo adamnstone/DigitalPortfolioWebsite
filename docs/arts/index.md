@@ -2,7 +2,7 @@
 
 From the moment I first stepped on stage, I felt the exhilaration of persuading an audience to believe in my story. Motivated to capture the audience’s imagination, I’ve invested a great deal of time honing my dancing, acting, and singing skills. 
 
-Being a third-degree black belt in Taekwondo has helped my physicality on stage, but several years ago I wanted to get more formal training. I auditioned for the [Charlotte Ballet’s Summer Workshop](https://charlotteballet.org/) and had the opportunity to spend six weeks learning from esteemed faculty in multiple genres of dance. I’ve also been fortunate to have studied acting and singing with incredible coaches. 
+Being a third-degree black belt in Taekwondo has helped my physicality on stage, but several years ago I wanted to get more formal training. I had the opportunity to spend six weeks studying dance at the [Charlotte Ballet](https://charlotteballet.org/). I’ve also been fortunate to have studied acting and singing with incredible coaches. 
 
 I’ve performed in 11 productions in the past six years and was extremely honored to be a Best Actor Nominee at the [Blumey Awards](https://www.blumenthalarts.org/blumey-awards) two years in a row for my roles as [Billy Cane in *Bright Star*](#billy-cane-bright-star) and [Lord Farquaad in *Shrek the Musical.*](#lord-farquaad-shrek-the-musical) The Blumey Awards recognizes exceptional achievements in high school musical theater and is a regional qualifier to the [Jimmy Awards](https://www.jimmyawards.com/), a Broadway program for top talent in musical theater.
 
@@ -48,7 +48,7 @@ I enjoyed this role so much that during [Fab Academy](../stem/disability-forewar
 
 In 2022, I played **Billy Cane** in *Bright Star* at Charlotte Latin School. I was a [*Blumey Awards Best Actor Nominee*](https://www.blumenthalarts.org/assets/doc/2022-Blumey-Awards-Finalists-2242ca9e68.pdf#page=3) for my performance.
 
-*Bright Star*, a musical written by Steve Martin and Edie Brickell, is set in Blue Ridge Mountains of North Carolina during the 1940s with flashbacks to 1923. It is a powerful story of love, loss, and redemption. Billy Cane is an aspiring young writer who embodies the themes of hope, new beginnings, and the power of dreams. 
+*Bright Star*, a musical written by Steve Martin and Edie Brickell, is set in Blue Ridge Mountains of North Carolina during the 1940s with flashbacks to 1923. Billy Cane is an aspiring young writer who embodies the themes of hope, new beginnings, and the power of dreams. 
 
 <div style="display:flex;">
     <div style="flex:0.66666666666; margin:2px;">
