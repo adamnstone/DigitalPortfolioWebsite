@@ -5251,3 +5251,19 @@ option[value=All] {
     font-family: Arial, sans-serif;
 }
 ```
+
+### Notes and Updates
+
+#### Updated Data
+
+All of the data used in the network analysis were recorded as of `June 2023`. The `Expert Network Map` website data will be updated to reflect recent changes in students' repos. Similarly, `lab_region.js`, as well as `namesFromCodes` and `codesFromNames` in `constants.js`, will be updated to include new labs.
+
+#### Search Terms Modified
+
+Moving forward, I decided to remove `copyright` from the `TOPIC_SEARCH_TERMS` array of subject area keywords as it was observed that a few student websites have a footer that says `copyright` on every page, leading to links near the bottom of a page that were classified into `Invention, Intellectual Property and Business Models`.
+
+weekly updates: had to increase timeout bc `ERROR: Job failed: execution took longer than 10m0s seconds` so added this: `timeout: 3h 30m`
+
+3.8hrs main.py on my computer
+32min matrix2d3js.py
+2min resolve_name_conflicts.py
