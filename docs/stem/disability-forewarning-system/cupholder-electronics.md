@@ -60,9 +60,9 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("Snew tatus?");
+  Serial.println("Status?");
   if (digitalRead(10) == LOW) {
-    Serial.println("YAYYYYYY!!!!!! :):):)");
+    Serial.println("Success!");
   }
 }
 ```
