@@ -40,6 +40,8 @@ nav:
         - "Final Project: Reflection": stem/disability-forewarning-system/project-reflection.md
       - "Fab Academy":
         - stem/fab-academy/index.md
+      - "Panopticom":
+        - stem/panopticom/index.md
       - "Bridge Builder":
         - stem/bridge-builder/index.md
       - "Test Generator":

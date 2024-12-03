@@ -47,7 +47,7 @@ The `query` function sends an API request to OpenAI. It uses the model `gpt-3.5-
 ```py
 def query(txt):
     return openai.ChatCompletion.create(
-        model= "gpt-3.5-turbo", # this is "ChatGPT" $0.002 per 1k tokens
+        model= "gpt-3.5-turbo",
         messages=[{"role": "user", "content": txt}]
     ).choices[0].message.content
 ```
@@ -168,7 +168,7 @@ class Answer(object):
 
 def query(txt):
     return openai.ChatCompletion.create(
-        model= "gpt-3.5-turbo", # this is "ChatGPT" $0.002 per 1k tokens
+        model= "gpt-3.5-turbo",
         messages=[{"role": "user", "content": txt}]
     ).choices[0].message.content
 
@@ -273,7 +273,7 @@ def create_form(creds, form_title, _questions):
     
     form_service = discovery.build('forms', 'v1', credentials=creds, discoveryServiceUrl=DISCOVERY_DOC, static_discovery=False)
     
-    # Request body for creating a form
+    # the request body for creating a form
     NEW_FORM = {
         "info": {
             "title": form_title,
@@ -309,7 +309,7 @@ def create_form(creds, form_title, _questions):
                         }
                     }
 
-    # Request body to add a multiple-choice question
+    # the request body to add a multiple-choice question
     question_requests = [ {
         "requests": [{
             "createItem": {
@@ -324,7 +324,7 @@ def create_form(creds, form_title, _questions):
     in enumerate(questions)
     ]
 
-    # Creates the initial form
+    # creates the blank form
     result = form_service.forms().create(body=NEW_FORM).execute()
 
     update = {
@@ -342,15 +342,15 @@ def create_form(creds, form_title, _questions):
         ]
     }
 
-    # Converts the form into a quiz
+    # converts the form into a quiz
     question_setting = form_service.forms().batchUpdate(formId=result["formId"],
                                                         body=update).execute()
 
-    # Adds the question to the form
+    # adds the questions to the form
     for qr in question_requests:
         question_setting = form_service.forms().batchUpdate(formId=result["formId"], body=qr).execute()
 
-    # Store result from the API
+    # stores result from the API
     get_result = form_service.forms().get(formId=result["formId"]).execute()
 
     url = f"https://docs.google.com/forms/d/{result['formId']}/edit"
