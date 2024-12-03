@@ -2,7 +2,7 @@
 
 ## Final Project Demonstration
 
-<video src="../../assets/images/stem/disability-forewarning-system/final-project.mp4" controls="controls" style="max-width: 730px;">
+<video src="../../../assets/images/stem/disability-forewarning-system/final-project.mp4" controls="controls" style="max-width: 700px;">
 </video>
 
 ![Final Project Slide](../../assets/images/stem/disability-forewarning-system/presentation.png)
