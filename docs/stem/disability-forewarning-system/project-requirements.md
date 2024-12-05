@@ -99,11 +99,11 @@ See the Bill-Of-Materials [here](https://fabacademy.org/2023/labs/charlotte/stud
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 <!-- Use it like any other HTML element -->
-<model-viewer id="mv-demo" shadow-intensity="1" src="../../../3d-viewer-files/cupholder.glb"
+<model-viewer id="mv-demo" shadow-intensity="1" src="../../../assets/3d-viewer-files/stem/disability-forewarning-system/cupholder.glb"
 alt="A 3D model of an astronaut" auto-rotate camera-controls
 poster="./spacesuit.jpg"></model-viewer>
 
-<model-viewer id="mv-demo" shadow-intensity="1" src="../../../3d-viewer-files/display.glb"
+<model-viewer id="mv-demo" shadow-intensity="1" src="../../../assets/3d-viewer-files/stem/disability-forewarning-system/display.glb"
 alt="A 3D model of an astronaut" auto-rotate camera-controls
 poster="./spacesuit.jpg"></model-viewer>
 

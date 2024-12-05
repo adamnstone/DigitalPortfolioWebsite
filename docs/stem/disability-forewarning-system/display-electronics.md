@@ -70,7 +70,7 @@ It didn't finish its response for the last prompt, but that's fine since it advi
 
 The responses for the microcontroller suggestion were helpful, though.
 
-I took a look at [Florian Becker](https://fabacademy.org/2022/labs/digiscope/students/florian-becker/assignments/week11/) and asked ChatGPT 4.0 somre more questions.
+I took a look at [Florian Becker](https://fabacademy.org/2022/labs/digiscope/students/florian-becker/assignments/week11/) and asked ChatGPT 4.0 several other questions.
 
 **Prompt**
 
