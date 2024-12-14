@@ -10,11 +10,11 @@ I wrote all of the code for the Panopticom demo website. I scraped and formatted
 
 ## Demo Website
 
-[Click here to see the live site! (panopticom.fabcloud.io)](https://panopticom.fabcloud.io)
+[Click here to see the live site!](https://adamnstone.github.io/Panopticom-ANS/index.html)
 
-[Click here to see the project's GitLab repo!](https://gitlab.fabcloud.org/panopticom/panopticom.fabcloud.io)
+[Click here to see the project's code!](https://github.com/adamnstone/Panopticom-ANS)
 
-[Click here to see the human-readable JSONL Schema!](https://gitlab.fabcloud.org/panopticom/panopticom.fabcloud.io/-/blob/master/standardized_json.md)
+[Click here to see the human-readable JSONL Schema!](https://github.com/adamnstone/Panopticom-ANS/blob/master/standardized_json.md)
 
 ![Panopticom Website Hero Shot](../../assets/images/stem/panopticom/panop-web-hero.png)
 

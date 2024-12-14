@@ -2,11 +2,11 @@
 
 ## Introduction
 
-While enrolled in [Fab Academy](../fab-academy/index.md), I could easily identify experts within the Charlotte Fab Lab when I faced technical roadblocks. However, subject area experts were difficult to locate beyond my local lab, and vast amounts of helpful documentation shared by the global Fab community were hard to find. To resolve this problem, I created the `Expert Network Map`, a research project consisting of two components: a network analysis of the Fab Academy community and an interactive visualization of the network. 
+While enrolled in [Fab Academy](../fab-academy/index.md), I could easily identify experts within the Charlotte Fab Lab when I faced technical roadblocks. However, subject area experts were difficult to locate beyond my local lab, and vast amounts of helpful documentation shared by the global Fab community were hard to find. To resolve this problem, I created the `Expert Network Map`, a software project consisting of two components: a network analysis of the Fab Academy community and an interactive visualization of the network. 
 
 I executed the project in three distinct phases: I wrote a script to collect the data, designed a text-classification AI model to sort links by subject area for analysis, and utilized D3JS to present the findings in an interactive visualization.
 
-[Here is a link to the `Expert Network Map`!](https://pub.fabcloud.io/project/expert-network-map/) *(be sure to use Chrome on a computer)*
+[Here is a link to the `Expert Network Map`!](https://adamnstone.github.io/ExpertNetworkMap-ANS/public/) *(be sure to use Chrome on a computer)*
 
 In July 2023, I virtually presented the `Expert Network Map` at the [International Fab Lab Conference and Symposium](https://fab23.fabevent.org/), the largest digital fabrication event in the world. The Expert Network Map is live and used by over 500 students. Find my presentation below.
 
@@ -20,13 +20,13 @@ Thank you very much to [Francisco Sanchez Arroyo](https://fabacademy.org/archive
 
 ### Background
 
-The `Expert Network Map` is an analysis of 1000+ members of the Fab Academy community to locate hidden expertise in 17 subject areas and an interactive visualization of the network. Fab Academy is a digital fabrication course focused on rapid-prototyping led by MIT Professor Neil Gershenfeld. All Fab Academy students keep a documentation website detailing the process of completing projects, and students are encouraged to seek out others’ documentation to navigate technical roadblocks. For an example of a documentation website, see mine [here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/). To give credit to content referenced, students add links in their own websites to the documentation websites they found helpful. See the box below for an example in my documentation website where I link to [Nidhie Dhiman](https://fabacademy.org/2022/labs/charlotte/students/nidhie-dhiman/)'s documentation to give her credit.
+The `Expert Network Map` is an analysis of 1,000+ members of the Fab Academy community to locate hidden expertise in 17 subject areas and an interactive visualization of the network. Fab Academy is a digital fabrication course focused on rapid-prototyping led by MIT Professor Neil Gershenfeld. All Fab Academy students keep a documentation website detailing the process of completing projects, and students are encouraged to seek out others’ documentation to navigate technical roadblocks. For an example of a documentation website, see mine [here](https://fabacademy.org/2023/labs/charlotte/students/adam-stone/). To give credit to content referenced, students add links in their own websites to the documentation websites they found helpful. See the box below for an example in my documentation website where I link to [Nidhie Dhiman](https://fabacademy.org/2022/labs/charlotte/students/nidhie-dhiman/)'s documentation to give her credit.
 
 ![Reference Example](../../assets/images/stem/expert-network-map/reference-example.jpg){: style="border-style: solid;"}
 
 ### Problem, Hypothesis, and Prototype
 
-While I knew who had helpful documentation in my Charlotte Fab community, with over 1000 documentation websites globally, there was a lot of untapped expertise I couldn’t locate. I recognized that if expert documentation could quickly be identified, all students would be able to work more efficiently. 
+While I knew who had helpful documentation in my Charlotte Fab community, with over 1,000 documentation websites globally, there was a lot of untapped expertise I couldn’t locate. I recognized that if expert documentation could quickly be identified, all students would be able to work more efficiently. 
 
 I hypothesized that the more times students’ documentation websites were referenced by their peers in a subject area, the more expertise they possessed. As a test, I ran a network analysis of the 13 students in the Charlotte Fab community, quantifying the number of times each student’s documentation website was referenced by their peers. The analysis yielded promising results: some students had significantly more references than the rest of the peer group, and student were frequently linking each other's websites. 
 
@@ -178,7 +178,7 @@ After the data were collected, I knew I had a significant challenge. For the net
 }
 ```
 
-To classify the remaining ~16,000 references, I trained my own text-classification neural network off of the 1,000 characters before and after each of the ~13,000 already classified references using `Python` and [`PyTorch`](https://pytorch.org/). I designed the neural network with 5,000 input nodes, a hidden layer of 200 nodes, and 18 output nodes (one for each Fab Academy subject area). To format the data for the neural network, I used the [`Sci-Kit Learn CountVectorizer`](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) to tokenize the text surrounding each URL, and the resulting matrix was converted to a [`NumPy`](https://numpy.org/) array and then to a [`PyTorch tensor`](https://pytorch.org/docs/stable/tensors.html). To train the neural network, I implemented [`Cross-Entropy Loss`](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) as the loss function to measure the model's performance in predicting the correct subject-area, and I employed the [`Adam optimizer`](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) to adjust the model's weights. After [hyperparameter tuning](https://aws.amazon.com/what-is/hyperparameter-tuning/#:~:text=Hyperparameter%20tuning%20allows%20data%20scientists,the%20model%20as%20a%20hyperparameter.) using a grid-search algorithm, the model achieved its best accuracy of **86.3%** using a *learning rate of 0.01* and *dropout rate of 0.1*. You can see the gridsearch algorithm below.
+To classify the remaining ~19,500 references, I trained my own text-classification neural network off of the 1,000 characters before and after each of the ~13,000 already classified references using `Python` and [`PyTorch`](https://pytorch.org/). I designed the neural network with 5,000 input nodes, a hidden layer of 200 nodes, and 18 output nodes (one for each Fab Academy subject area). To format the data for the neural network, I used the [`Sci-Kit Learn CountVectorizer`](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) to tokenize the text surrounding each URL, and the resulting matrix was converted to a [`NumPy`](https://numpy.org/) array and then to a [`PyTorch tensor`](https://pytorch.org/docs/stable/tensors.html). To train the neural network, I implemented [`Cross-Entropy Loss`](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) as the loss function to measure the model's performance in predicting the correct subject-area, and I employed the [`Adam optimizer`](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) to adjust the model's weights. After [hyperparameter tuning](https://aws.amazon.com/what-is/hyperparameter-tuning/#:~:text=Hyperparameter%20tuning%20allows%20data%20scientists,the%20model%20as%20a%20hyperparameter.) using a grid-search algorithm, the model achieved its best accuracy of **86.3%** using a *learning rate of 0.01* and *dropout rate of 0.1*. You can see the gridsearch algorithm below.
 
 ```py
 # Define grid of hyperparameters
@@ -204,7 +204,7 @@ for lr in learning_rates:
             best_model = model
 ```
 
-The model successfully classified the remaining ~16,000 references. 
+The model successfully classified the remaining ~19,500 references. 
 
 After the data were collected, I ran a network density analysis for the global community, as well as each individual lab that had more than five members. The global network density was `~0.0024`, while `~91.3%` of the individual labs had a higher density than this, ranging from approximately `0.03` to `0.45` (with the exception of the `Rwanda` network density of `~0.013`), supporting my hypothesis that students frequently connected with experts in their own lab, but not in the global community. Next, for the network analysis to be useful, I calculated each student's in-degree centrality by subject area. Read more about this process [below](#network-analysis).
 
