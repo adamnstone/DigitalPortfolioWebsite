@@ -10,7 +10,7 @@ I wrote all of the code for the Panopticom demo website. I scraped and formatted
 
 ## Demo Website
 
-[Click here to see the live site!](https://adamnstone.github.io/Panopticom-ANS/index.html)
+[Click here to see the live site!](https://adamnstone.github.io/Panopticom-ANS/)
 
 [Click here to see the project's code!](https://github.com/adamnstone/Panopticom-ANS)
 

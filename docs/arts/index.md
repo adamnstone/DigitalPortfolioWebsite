@@ -4,23 +4,23 @@ From the moment I first stepped on stage, I felt the exhilaration of persuading 
 
 Being a third-degree black belt in Taekwondo has helped my physicality on stage, but several years ago I wanted to get more formal training. I had the opportunity to spend six weeks studying dance at the [Charlotte Ballet](https://charlotteballet.org/). I’ve also been fortunate to have studied acting and singing with incredible coaches. 
 
-I’ve performed in 11 productions in the past six years and was extremely honored to be a Best Actor Nominee at the [Blumey Awards](https://www.blumenthalarts.org/blumey-awards) two years in a row for my roles as [Billy Cane in *Bright Star*](#billy-cane-bright-star) and [Lord Farquaad in *Shrek the Musical.*](#lord-farquaad-shrek-the-musical) The Blumey Awards recognizes exceptional achievements in high school musical theater and is a regional qualifier to the [Jimmy Awards](https://www.jimmyawards.com/), a Broadway program for top talent in musical theater.
+I’ve performed in 11 productions and was extremely honored to be a Best Actor Finalist at the [Blumey Awards](https://www.blumenthalarts.org/blumey-awards) two years in a row for my roles as [Billy Cane in *Bright Star*](#billy-cane-bright-star) and [Lord Farquaad in *Shrek the Musical.*](#lord-farquaad-shrek-the-musical) The Blumey Awards recognizes exceptional achievements in high school musical theater and is a regional qualifier to the [Jimmy Awards](https://www.jimmyawards.com/), a Broadway program for top talent in musical theater.
 
 ## Lord Farquaad, *Shrek the Musical*
 
-In 2023, I played **Lord Farquaad** in *Shrek the Musical* at Charlotte Latin School. I was a [*Blumey Awards Best Actor Nominee*](https://www.blumenthalarts.org/assets/doc/2023-Blumey-Nominees-and-Finalists-dc56d4a6fb.pdf#page=3) for my performance.
+In 2023, I played **Lord Farquaad** in *Shrek the Musical* at Charlotte Latin School. I was a [*Blumey Awards Best Actor Finalist*](https://www.blumenthalarts.org/assets/doc/2023-Blumey-Nominees-and-Finalists-dc56d4a6fb.pdf#page=3) for my performance.
 
 When I embraced the character of Lord Farquaad, an extremely insecure villain whose distain for uniqueness and diversity drives him to terrorize his kingdom in the name of conformity, every laugh at his expense and applause at his failures showed me that the audience understood that intolerance was detrimental and ridiculous. As an advocate for people with disabilities, I clearly understand the dangers of limiting acceptance to only those who fit a certain norm. I was thrilled to be able to share the message of inclusion in an entertaining way that resonated with audience members of all ages in the Charlotte community.
 
 In addition to playing Lord Farquaad, I was the Dance Captain for the production.
 
-Here's a video of the musical number *"What's Up Duloc?"* (I'm the short king who comes down the elevator!)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dV7Y7Av7lR0?si=AIf-I3UGVPnoOXSs&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 Here's a video of the musical number *"The Ballad of Farquaad"*
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lRGHWJbHD0k?si=i8uLEoHSsgQpNkBx&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Here's a video of the musical number *"What's Up Duloc?"*
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dV7Y7Av7lR0?si=AIf-I3UGVPnoOXSs&hd=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ![Farquaad Still 1](../assets/images/arts/farquaad/farquaad-still-1.png)
 
@@ -46,16 +46,16 @@ I enjoyed this role so much that during [Fab Academy](../stem/disability-forewar
 
 ## Billy Cane, *Bright Star*
 
-In 2022, I played **Billy Cane** in *Bright Star* at Charlotte Latin School. I was a [*Blumey Awards Best Actor Nominee*](https://www.blumenthalarts.org/assets/doc/2022-Blumey-Awards-Finalists-2242ca9e68.pdf#page=3) for my performance.
+In 2022, I played **Billy Cane** in *Bright Star* at Charlotte Latin School. I was a [*Blumey Awards Best Actor Finalist*](https://www.blumenthalarts.org/assets/doc/2022-Blumey-Awards-Finalists-2242ca9e68.pdf#page=3) for my performance.
 
 *Bright Star*, a musical written by Steve Martin and Edie Brickell, is set in Blue Ridge Mountains of North Carolina during the 1940s with flashbacks to 1923. Billy Cane is an aspiring young writer who embodies the themes of hope, new beginnings, and the power of dreams. 
 
 <div style="display:flex;">
     <div style="flex:0.66666666666; margin:2px;">
-        <img alt="Billy Cane Still 2" src="../assets/images/arts/billy-cane/rbilly-still-3.jpg" >
+        <img alt="Billy Cane Still 1" src="../assets/images/arts/billy-cane/rbilly-still-3.jpg" >
     </div>
     <div style="flex:0.66666666666;margin:2px;">
-        <img alt="Billy Cane Still 3" src="../../assets/images/arts/billy-cane/rbilly-still-1.jpg">
+        <img alt="Billy Cane Still 2" src="../../assets/images/arts/billy-cane/rbilly-still-1.jpg">
     </div>
     <div style="flex:0.66666666666;margin:2px;">
         <img alt="Billy Cane Still 3" src="../../assets/images/arts/billy-cane/rbilly-still-2.jpg">
