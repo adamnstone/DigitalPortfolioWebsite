@@ -62,6 +62,24 @@ In 2022, I played **Billy Cane** in *Bright Star* at Charlotte Latin School. I w
     </div>
 </div>
 
+## Admetos, *Alkestis*
+
+In 2024, I played **Admetos** in *Alkestis* at Charlotte Latin School.
+
+[*Alkestis* by Euripides](https://www.britannica.com/topic/Alcestis-play-by-Euripides) is a Greek Tragedy that follows the story of King Admetos who faces immense grief and regret after his wife, Alkestis, dies in his place to grant him immortality. The play explores the conflict between Admetos' duties to his kingdom and outward perception of hospitality and his familial responsibilities and strenuous relationships.
+
+<div style="display:flex;">
+    <div style="flex:0.49965; margin:2px;">
+        <img alt="Admetos Still 1" src="../../assets/images/arts/alkestis/alk-standing-pic.jpg" >
+    </div>
+    <div style="flex:0.5048;margin:2px;">
+        <img alt="Admetos Still 2" src="../../assets/images/arts/alkestis/alk-back-pic.jpg">
+    </div>
+    <div style="flex:0.52701;margin:2px;">
+        <img alt="Admetos Still 3" src="../../assets/images/arts/alkestis/alk-point-pic.jpg">
+    </div>
+</div>
+
 ## Adam Stone Theatre Résumé
 
 <object data="../assets/other/resume.pdf" type="application/pdf" width="700px" height="700px">
