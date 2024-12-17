@@ -1,0 +1,1479 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../final-project-planning/">
+      
+      
+        <link rel="next" href="../cupholder-electronics/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Cupholder Mechanism - Adam Stone Digital Portfoio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-Z0ZXQ8VL5C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-Z0ZXQ8VL5C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-Z0ZXQ8VL5C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#designing-the-mold" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Adam Stone Digital Portfoio" class="md-header__button md-logo" aria-label="Adam Stone Digital Portfoio" data-md-component="logo">
+      
+  <img src="../../../assets/images/favicon/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Adam Stone Digital Portfoio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cupholder Mechanism
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/adamnstone/DigitalPortfolioWebsite" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    adamnstone/DigitalPortfolioWebsite
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  STEM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../arts/" class="md-tabs__link">
+          
+  
+    
+  
+  Arts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../advocacy/" class="md-tabs__link">
+          
+  
+    
+  
+  Advocacy
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Adam Stone Digital Portfoio" class="md-nav__button md-logo" aria-label="Adam Stone Digital Portfoio" data-md-component="logo">
+      
+  <img src="../../../assets/images/favicon/logo.png" alt="logo">
+
+    </a>
+    Adam Stone Digital Portfoio
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/adamnstone/DigitalPortfolioWebsite" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    adamnstone/DigitalPortfolioWebsite
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    STEM
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            STEM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../expert-network-map/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Expert Network Map
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Expert Network Map
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Disability Forewarning System
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Disability Forewarning System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../final-project-planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cupholder Mechanism
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cupholder Mechanism
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overall-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overall Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overall-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overall Planning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#looking-at-past-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Looking At Past Projects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-the-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making The Design
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cupholder-electronics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cupholder Electronics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-mechanics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Mechanism
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-electronics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Electronics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../motor-calculations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motor Calculations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wireless-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wireless Communication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combining-electronics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Combining Electronics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Summary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-reflection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Final Project: Reflection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fab-academy/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Fab Academy
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Fab Academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../panopticom/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Panopticom
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Panopticom
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../bridge-builder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Bridge Builder
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Bridge Builder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../test-generator/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Test Generator
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Test Generator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../arts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Arts
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Arts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../advocacy/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Advocacy
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Advocacy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overall-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overall Understanding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overall-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overall Planning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#looking-at-past-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Looking At Past Projects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-the-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making The Design
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<div><h1 id="designing-the-mold">Designing The Mold</h1>
+<h2 id="overall-understanding">Overall Understanding</h2>
+<p><a href="https://teddywarner.org/">Teddy Warner</a> taught us about different molding processes.</p>
+<ul>
+<li>for hard parts, mold from a milled or 3d-printed design then use the casted mold for the final part</li>
+<li>for soft parts, mill or 3d-print the mold</li>
+</ul>
+<p><a href="https://drive.google.com/file/d/15WG37wllee9nYw6mErCxjOvl8EG92EWD/view">Ms. Morrow's Tutorial</a> (~13:40) explains that this is because a hard substance won't pull out of another hard substance well.</p>
+<p><a href="https://fabacademy.org/2023/labs/charlotte/students/zack-budzichowski/">Mr. Budzichowski</a> said our machines have <code>5/8"</code> depth of cut.</p>
+<h2 id="overall-planning">Overall Planning</h2>
+<p>Here's my plan for this week.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- watch the lecture
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- look at past documentation
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- make the design
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- mill the mold
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>- carry out the mold
+</span></code></pre></div>
+<h2 id="looking-at-past-projects">Looking At Past Projects</h2>
+<h2 id="making-the-design">Making The Design</h2>
+<p>I decided I'll mold the lid of the trigger mechanism for my final project. Due to the shape of the design and overhangs, it will need to be a three part mold. I used Fusion 360 to make the design. The first step was to make extrusions larger than the part then use the <code>Combine</code> tool with the <code>Cut</code> setting. After making different pieces in such a way that they'll fit onto one another, I made another box and used the <code>Combine</code> tool to simulate the mold to make sure it would work, and after some adjustments, I made a design I was happy with. I then made molds for the molds in the same way, adding extruded holes in the top piece for a place to pour and a place for trapped air to be released. I also added <code>1 deg</code> drafts to most of the pieces (not in the final mold but in the rubber mold) that way I could easily remove the pieces, but I didn't stress about making them for all pieces since having a soft component of every cast will make it easier to separate pieces.</p>
+<p>I also decided I wouldn't need any tolerance since the pieces casted from the milled wax would be soft.</p>
+<p><img alt="Fuson Soft 1" src="../../../assets/images/stem/disability-forewarning-system/fusion-soft-1.jpg"></p>
+<p><img alt="Fuson Soft 2" src="../../../assets/images/stem/disability-forewarning-system/fusion-soft-2.jpg"></p>
+<p><img alt="Fusion 3" src="../../../assets/images/stem/disability-forewarning-system/setup-modeling-tab-1.jpg"></p>
+<p><img alt="Fusion 4" src="../../../assets/images/stem/disability-forewarning-system/setup-modeling-aligned-2.jpg"></p>
+<h1 id="milling-the-mold">Milling The Mold</h1>
+<h2 id="exporting-the-files">Exporting The Files</h2>
+<p>I followed Dr. Taylor's Workflow (<em>included in weekly files</em>) for using the <code>Manufacturing</code> workspace in Fusion 360. I used <code>Pocket</code> cuts as a <strong>roughing pass</strong>, set the feed rate to <code>750 mm/min</code> and set the maximum roughing stepdown to <code>0.75mm</code> (for the top and bottom molds). I used the 1/8" ball end mill wax bit for both the roughing and finishing pass, although I later learned that a flat end mill is more appropriate for the roughing pass as it will drastically reduce the job time, and I will be sure to use this for future milling endeavors. I also did a <code>Parallel</code> toolpath as a <strong>finishing pass</strong> for the ramps on the middle mold. I also used a top offset of <code>0.75 mm</code> for the middle mold  to account for uneveness in the top face of the wax. If any of this is unclear, please see the <code>Setup</code>s and timeline in the Fusion 360 files for Week 12 on the <a href="https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week12/week12-reflection/">Reflection Page</a>. </p>
+<h2 id="preparing-the-wax">Preparing The Wax</h2>
+<p>I used the video on <a href="https://fabacademy.org/2022/labs/charlotte/students/barbara-morrow/assignments/week09a/#milling-the-mold">Ms. Morrow's Documentation</a> as a basis for fusing wax blocks together, as I needed more width than was available on one wax block. After a couple of failed attempts, I learned that heating one side really hot until its very melty, while having the other slide a little shiny, works very well. I used the highest setting on the heat gun for everything. After they were somewhat stuck together, I used the heat gun to melt all of the creases between the two blocks. I learned that holding the heat gun at a 45 degree angle and then flipping it to the other side help make the wax one cohesive piece once it rehardened. I right-clicked on the setup and clicked <code>Machining Time</code> as well as <code>Simulate</code> to make sure the result was what I wanted.</p>
+<video src="../../../assets/images/stem/disability-forewarning-system/heat-fusion-timelapse.mp4" controls="controls" style="max-width: 730px;">
+</video>
+
+<p>After I had made the first mold (<a href="#top-mold">documented below</a>), <a href="https://fabacademy.org/2023/labs/charlotte/students/zack-budzichowski/">Mr. Budzichowski</a> helped me use the Bandsaw to cut away the excess mold from my first piece I milled. I used this wax, as well as other wax, to make two more wide enough pieces for the top and bottom molds.</p>
+<p>I also copied the tool from the <code>Othermill</code> library and modified the values as follows to fit with the longer bit the lab ordered.</p>
+<p><img alt="new bit settings" src="../../../assets/images/stem/disability-forewarning-system/fusion-tool.jpg"></p>
+<h2 id="milling">Milling</h2>
+<p>I used the Bantam Milling Machine which followed the same procedure as my <a href="https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week8/milling-the-pcb/">other times milling</a>. It was a very smooth process.</p>
+<h3 id="middle-mold">Middle Mold</h3>
+<p>This piece worked first try. I slightly underestimated the y-offset (even though I used calipers), but it didn't affect the final cast whatsoever.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/rubber-band-middle-mold.jpg"></p>
+<h3 id="top-mold">Top Mold</h3>
+<p>This piece was also very smooth. I used a large block of wax that the lab melted down from scaps and used the bandsaw to remove excess, reusable wax. Because the shape of the top face of the large block was slightly concave, I had to remove my nitto tape and put it on the other side (it wouldn't contact with the bed of the milling machine).</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/nitto-tape-trouble.jpeg"></p>
+<p>The only problem is that the cut was very thin on the bottom since the toolpath was so close to the bottom of the wax. I learned that I not only need to check that the toolpath doesn't give any errors, but also give several millimeters of extra room at the bottom of the cut.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/mold-top-milling-done.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/thin-bottom.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/thin-finished-mill.jpeg"></p>
+<p>Additionally, I gathered much of the sawdust (or <em>wax</em>dust) by hand and put it in a ziploc bag to be melted down and reused by other students.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/bag-wax.jpeg"></p>
+<h3 id="bottom-mold">Bottom Mold</h3>
+<p>This piece also worked on the first try. The piece of wax I used was fiver other smaller pieces heat-welded together, so I was nervous about it sticking together. In the end, it did, but the only trouble spot was an uneven top surface. One wax piece was higher than the rest and the bit, for the first layer, cut through significantly more wax when cutting through that block and made an unpleasant sound. I watched it through the first layer and it didn't melt or cause other issues, and from that point on, the rest of the process was smooth.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/about-to-mill-bottom.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/milling-bottom--1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/milling-bottom.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/milling-bottom-1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/finished-bottom-mill.jpeg"></p>
+<h1 id="casting">Casting</h1>
+<p>I refered to the <a href="https://www.smooth-on.com/products/mold-star-16-fast/">datasheet for Mold Star 16 Platinum Silicone Rubber</a> and the <a href="https://www.smooth-on.com/products/task-8/">datasheet for Task 8 Heat Resistant Polyurethane Resin</a> before opening the containers.</p>
+<h2 id="soft">Soft</h2>
+<h3 id="middle">Middle</h3>
+<p>When I was <a href="https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week12/milling-the-mold/#preparing-the-wax">using the Bandsaw to cut away excess wax</a>, the mold split apart along the two pieces of was I had fused together. I used a double-folded rubber band to hold it together. </p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/rubber-band-middle-mold.jpg"></p>
+<p>I mixed <code>20oz</code> Part A and <code>20oz</code> Part B of <code>Platinum Silicone Rubber</code> (<a href="https://fabacademy.org/2023/labs/charlotte/students/ryan-kim/">Ryan Kim</a> and I were casting together - it was more than necessary for my part). </p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/silicone-rubber.jpeg"></p>
+<p>We poured the parts into separate plastic cups then slowly poured them together and mixed for ~45sec. I then poured it into my mold and used a popsickle stick to remove excess material from the top (I was especially worried about this since this rubber piece will be the middle part of the three-part mold). I then gently but firmly slammed the cast into the table ~10 times to remove air bubbles. One time the mold slipped apart, but I quickly put it back together. </p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/middle-poured.jpg"></p>
+<p>When I removed the mold, it worked very well! For the first protruding bit I needed to use an exacto knife to remove it without ripping, but I was able to carefully remove the rest of it with my fingers. The only problem was that, around the areas where the two wax pieces were held together, there were very thin pieces of rubber that couldn't be easily ripped off. I carefully removed the parts I could by ripping, but I used scissors for the other parts.</p>
+<p><img alt="imgs" src="../../../assets/images/stem/disability-forewarning-system/middle-removed-initially.jpg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/middle-trimmer.jpg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/middle-shot-2.jpg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/s-3.jpg"></p>
+<p>Also the bottom side of the rubber allowed me to see how many bubbles were still in the material (my <a href="#top">other silicone casts</a> below looked similar on the bottom).</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/middle-bottom-side.jpg"></p>
+<p>This piece really allowed me to see how much of an impact the finishing pass made.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/finishing-pass-result-cast.jpg"></p>
+<h3 id="top">Top</h3>
+<p>I followed the same process as the middle soft cast, and it was relatively smooth. The first time I had slightly too little material so I let the cast set for <code>30min</code> then removed it.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/top-mold-not-enough.jpeg"></p>
+<p>I then redid it and mixed excess material (I would measure using water first but since the bottom layer of the wax was very this and partially breaking the water would have simply leaked out). I had some leakage on the bottom of the cast, but it was still successful and I used a razor blade to cut off the excess as well as I could.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/top-mold-hero-1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/top-mold-hero-2.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/top-mold-hero-3.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/top-mold-hero-4.jpeg"></p>
+<p>Also when I casted the <a href="#bottom">bottom piece</a> (see below) I had accidentally poured way too much so I poured the rest back into the top mold since I didn't want to waste the mixed material, but I again had just too little so I ended up scraping this other mold.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/bottom-and-extra-top-cast-just-poured.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/failed-extra-top-cast.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/failed-extra-top-cast-img-2.jpeg"></p>
+<p>It leaked a lot and when removing the cast the mold broke (I think I was too generous when using the bandsaw to cut off excess material, sacrificing structural integrity; I also had to eyeball the position of the middle piece with the thin connection, which had broken; the middle piece also had pieces chip off of the bottom, slightly thicker square).</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/removed-failed-leaked-top-2.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/extra-top-leaking.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/thin-leak-top.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/x2-2.jpeg"></p>
+<h3 id="bottom">Bottom</h3>
+<p>I followed the same process as the previous two soft casts. This one worked first try, although there was some leaking, so I tried my best to take up the edge, and this was somewhat successful for the vertical edges but relatively ineffective for the bottom of the mold (the part touching the carboard on the table).</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/bottom-taped-for-cast.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/bottom-and-extra-top-cast-just-poured.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/bottom-done-pouring-cured.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/bottom-bird-new.jpeg"></p>
+<h2 id="hard">Hard</h2>
+<p>I aligned the three rubber molds together to make the final hard mold. I was very satisfied with the first of the bottom and middle pieces, although I wish it was tighter.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/first-two-parts.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/three-parts-assembled.jpeg"></p>
+<p>I tried filling it up with water to measure the exact volume, but it spilled out of a thin slice that had ruptured in the bottom piece. </p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/bottom-thin-removed-cast.jpeg"></p>
+<p>I simply filled it up with the mixed hard material (I poured slightly too much, but I aimed to overestimate which worked well). I then realized it started leaking (even though I had put tape in that spot) so I pushed down on the rubber to try to stop it and also poured more to make sure the mold was full. I then waited until the casting material was more viscous and moved it away from the spilled material. I noticed that the cast got fairly hot, and at one point, it quickly changed to a whiter color. The cast worked faily well, especially for my first time casting plastic being a 3-part mold out of other casted silicone pieces. I used wire cutters and a chisel to remove excess material that had gotten in cracks and noticed that it's very hard to get a 3-part mold to be water-tight, so I'm considering 3D-printing this part for my final project, instead. Also, the small middle mold piece had been coated in a thin layer of plastic, but I couldn't remove it by hand, so I used a wire cutter to cut away at the plastic, and with <a href="http://archive.fabacademy.org/fabacademy2016/charlottelatin/students/999/about.html">Mr. Dubick</a>'s help, I removed the mold, but unfortunately it had broken.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/all-materials-final.jpeg"></p>
+<p>Here's the final result!</p>
+<p><img alt="imgs" src="../../../assets/images/stem/disability-forewarning-system/hero-shot-1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/hero-shot-.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/hero-shot-2-5.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/hero-shot-3.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/hero-shot-4.jpeg"></p>
+<h2 id="result-design-shift">Result &amp; Design Shift</h2>
+<p>Since this mold didn't turn out wonderfully and has many chipped pieces, as well as considering the complexity of making an air-tight 3-part silicone mold, I've decided to 3D print the lid instead.</p>
+<h2 id="3d-printing">3D Printing</h2>
+<p>I set <code>Supports</code> to <code>Everywhere</code> and <code>Infill</code> to <code>20%</code> in Prusa slicer for both the lid and the container. To export only the <code>STL</code> of those components, I clicked the eye icon on the other components to hide them then exported the entire model, and this wokred. Both of the prints were very smooth; here are images of the results.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/lid-print-started.jpg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/lid-print-finished.jpg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/lid-print-supports-removed.jpg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/container-hero-shot-1.jpg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/container-hero-shot-2.jpg"></p>
+<p>Removing the supports was surprisingly easy. The pieces fit together perfectly! It tightens enough where it is difficult, but still possible, to take apart!</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/lid-and-container-hero-1.jpg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/lid-and-container-hero-2.jpg"></p></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.indexes", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,105 @@
+.center {
+    margin: auto;
+    width: 50%;
+  }
+
+  body {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column; /* Changes the flex direction to column */
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: flex-start; /* Aligns items to start from the top */
+}
+
+/* Hiding scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hiding scrollbar for IE, Edge and Firefox */
+body {
+  margin:0;
+scrollbar-width: none;  /* Firefox */
+-ms-overflow-style: none;  /* IE and Edge */
+
+}
+
+#background-video {
+  position: absolute;
+  right: -10%;
+  bottom: 0;
+  width: 120%;
+  height: 120%;
+  z-index: -1; 
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+
+#left-image, #right-image {
+  position: absolute;
+  align-self: flex-start; /* Aligns left image to the left side */
+  margin: 0px; /* Adds some space between the video and the images */
+  width:50%;
+  height: 100vh;
+  transform: translateY(100vh);
+}
+
+#left-image {
+  outline-width: 1px;
+  outline-color: black;
+}
+
+#right-image {
+  align-self: flex-end; /* Aligns right image to the right side */
+  outline-width: 1px;
+  outline-color: black;
+}
+
+#down-arrow-left, #down-arrow-right {
+  position: absolute;
+  bottom: 3%;
+  width:10%;
+  height: auto;
+  animation: up 0.3s ease both infinite alternate,
+                down 0.3s ease; 
+}
+
+#down-arrow-left {
+  left: 10%;
+}
+
+#down-arrow-right {
+  right: 10%;
+  /*animation: down 0.3s ease both infinite alternate,
+                up 0.3s ease; */
+}
+
+@keyframes up{
+  from{transform: translateY(10px);}
+  to{transform: translateY(0px);}
+}
+
+@keyframes down{
+  from{transform: translateY(0px);}
+  to{transform: translateY(10px);}
+}
+
+#name-1, #name-2 {
+  font-family: serif;
+  position: absolute;
+  font-size: 8rem;
+  top: 40%;
+  font-weight: bolder;
+}
+
+#name-1 {
+  left: 15%;
+}
+
+#name-2 {
+  right: 15%;
+}

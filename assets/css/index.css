@@ -1,0 +1,330 @@
+#down-arrow-left, #down-arrow-right {
+    width:10%;
+    height: auto;
+    animation: up 0.3s ease both infinite alternate,
+                  down 0.3s ease; 
+  }
+
+  @keyframes up{
+    from{transform: translateY(10px);}
+    to{transform: translateY(0px);}
+  }
+  
+  @keyframes down{
+    from{transform: translateY(0px);}
+    to{transform: translateY(10px);}
+  }
+
+span {
+  font-family: serif;
+}
+
+@keyframes fade-to-black-1 {
+  from{
+    /*color: white;*/
+    transform: translateX(calc(-100% - 2vw)) translateY(calc(-50% - 8vh));
+  }
+  to{
+    /*color: black;*/
+    transform: translateX(calc(-50% - 23vw)) translateY(calc(-50% - 8vh));
+  }
+}
+
+@keyframes fade-to-black-2 {
+  from{
+    /*color: white;*/
+    transform: translateX(2vw) translateY(calc(-50% - 8vh));
+  }
+  to{
+    /*color: black;*/
+    transform: translateX(calc(-50% + 23vw)) translateY(calc(-50% - 8vh));
+  }
+}
+
+@keyframes loading-rotate-1 {
+  50% {
+    transform: translateX(calc(-100% - 2vw)) translateY(calc(-50% - 8vh)) rotate(0deg);
+  }
+  100% {
+    transform: translateX(calc(-100% - 2vw)) translateY(calc(-50% - 8vh)) rotate(360deg);
+  }
+}
+
+@keyframes loading-rotate-2 {
+  50% {
+    transform: translateX(2vw) translateY(calc(-50% - 8vh)) rotate(0deg);
+  }
+  100% {
+    transform: translateX(2vw) translateY(calc(-50% - 8vh)) rotate(360deg);
+  }
+}
+
+#name-1, #name-2 {
+    z-index: 3;
+    color: black;
+    font-size: 8.5vw;
+    font-weight: bolder;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+  #name-1 {
+    transform: translateX(calc(-100% - 2vw)) translateY(calc(-50% - 8vh));
+  }
+
+  #name-2 {
+    transform: translateX(2vw) translateY(calc(-50% - 8vh)); 
+  }
+
+  #avatar {
+    /*width: 50%;*/
+    height: 100vh;
+    opacity: 0.5;
+  }
+
+  #background-video {
+    position: absolute;
+    /*right: -10%;
+    bottom: 0;*/
+    left: -10%;
+    top: 0;
+    /*width: 120vw;*/
+    width: 120vw;
+    height: 100vh;
+    object-fit: cover;
+    /*transform: translateX(-10%);*/
+    z-index: -1; 
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+  }
+
+
+  @media (max-width: 1154px) {
+    #avatar {
+        width: 50%;
+        height: auto;
+    }
+    #background-video {
+      height: auto;
+      left: 0;
+      width: 100vw;
+    }
+  }
+
+  
+/* Hiding scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hiding scrollbar for IE, Edge and Firefox */
+  body {
+    margin:0;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  overflow-x:hidden;
+  overflow-y:hidden; /* removed by index.js */
+  }
+
+.container {
+    width: 100vw;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+  .row {
+    width: 100vw;
+    padding-left:0;
+    margin-left:0;
+  }
+
+  #down-arrow-left, #down-arrow-right {
+    position: absolute;
+    bottom: 3%;
+    width: 10vw;
+    height: auto;
+    animation: up 0.3s ease both infinite alternate,
+                  down 0.3s ease; 
+  }
+  
+  #down-arrow-left {
+    left: 10%;
+  }
+  
+  #down-arrow-right {
+    right: 10%;
+    /*animation: down 0.3s ease both infinite alternate,
+                  up 0.3s ease; */
+  }
+/*
+ #quote-row {
+    margin-top: 10%;
+    transform: translateY(-5%);
+ }
+
+  #vg-quote, #vg-quote-name {
+    font-size: 3vw;
+    font-weight: bold;
+  }
+  */
+
+  .card {
+    width: 80%;
+    /*height: 80vh;*/
+  }
+
+  .card-img-top {
+    object-fit: cover;
+    height: 80%;
+  }
+
+  .card-img-top-tall {
+    object-fit: scale-down;
+    height: 80%;
+  }
+
+  .project-rounded {
+    border-radius: 4rem;
+  }
+
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#loading-screen { 
+  width:100vw;
+  height:100vh;
+  background-color: white;
+  position:fixed;
+  z-index:2;
+  left:0;
+  top:0;
+}
+
+.menu-btn {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  transition: all .5s ease-in-out;
+  /* border: 3px solid #fff; */
+}
+.menu-btn__burger {
+  width: 50px;
+  height: 6px;
+  background: grey;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background: grey;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+.menu-btn__burger::before {
+  transform: translateY(-16px);
+}
+.menu-btn__burger::after {
+  transform: translateY(16px);
+}
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+@keyframes menu-fade-in {
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+@keyframes menu-fade-out {
+  from{
+    opacity:1;
+  }
+  to{
+    opacity:0;
+  }
+}
+
+#menu {
+  position:fixed;
+  left:0;
+  top:50%;
+  transform: translateY(-50%);
+  animation: none;
+}
+
+#menu-container {
+  position: fixed;
+  z-index:5;
+  display:none;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background-color: black;
+}
+
+#van-gogh-text {
+  /*color: #fff;*/
+  padding-bottom: 100px;
+  padding-top: 100px;
+  padding-left: 20%;
+  padding-right: 20%;
+  font-size: 2rem;
+  /*text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #e60073, 0 0 12px #e60073, 0 0 15px #e60073, 0 0 18px #e60073, 0 0 21px #e60073;
+*/}
+
+.header-text {
+  /*color: #fff;*/
+  font-size: 2rem;
+  font-weight: bold;
+  /*text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #e60073, 0 0 12px #e60073, 0 0 15px #e60073, 0 0 18px #e60073, 0 0 21px #e60073;
+*/}
+
+.vl {
+  border-left: 6px solid black;
+  height: 500px;
+  height:100%;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+
+#no-bottom {
+  margin-bottom: 0px;
+}

@@ -1,0 +1,2354 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../cupholder-electronics/">
+      
+      
+        <link rel="next" href="../display-electronics/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Display Mechanism - Adam Stone Digital Portfoio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-Z0ZXQ8VL5C"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-Z0ZXQ8VL5C",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-Z0ZXQ8VL5C",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#display-mechanics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Adam Stone Digital Portfoio" class="md-header__button md-logo" aria-label="Adam Stone Digital Portfoio" data-md-component="logo">
+      
+  <img src="../../../assets/images/favicon/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Adam Stone Digital Portfoio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Display Mechanism
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/adamnstone/DigitalPortfolioWebsite" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    adamnstone/DigitalPortfolioWebsite
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  STEM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../arts/" class="md-tabs__link">
+          
+  
+    
+  
+  Arts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../advocacy/" class="md-tabs__link">
+          
+  
+    
+  
+  Advocacy
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Adam Stone Digital Portfoio" class="md-nav__button md-logo" aria-label="Adam Stone Digital Portfoio" data-md-component="logo">
+      
+  <img src="../../../assets/images/favicon/logo.png" alt="logo">
+
+    </a>
+    Adam Stone Digital Portfoio
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/adamnstone/DigitalPortfolioWebsite" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    adamnstone/DigitalPortfolioWebsite
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    STEM
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            STEM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../expert-network-map/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Expert Network Map
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Expert Network Map
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Disability Forewarning System
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Disability Forewarning System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../final-project-planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cupholder-mechanism/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cupholder Mechanism
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cupholder-electronics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cupholder Electronics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Display Mechanism
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Display Mechanism
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#finding-similar-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Similar Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display Case
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display Case">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteration 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#laser-cutting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laser Cutting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#didnt-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Didn't Fit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteration 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Adjustments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit-perfectly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fit Perfectly
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteration 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-adjustments_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Adjustments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Result
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frame-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frame Mechanism
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frame Mechanism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-design-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Design Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servo-arm-attachment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servo Arm Attachment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servo Arm Attachment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-attachment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Case Attachment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Case Attachment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 4
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frame
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frame">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servo-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servo Mount
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servo Mount">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suction-cup-attachment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suction Cup Attachment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Suction Cup Attachment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putting-it-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It Together
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It Together">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#electronics-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electronics Case
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Electronics Case">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 6
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cutting-acryllic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cutting Acryllic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cutting Acryllic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-electronics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Electronics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../motor-calculations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motor Calculations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wireless-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wireless Communication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combining-electronics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Combining Electronics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Summary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-reflection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Final Project: Reflection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fab-academy/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Fab Academy
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Fab Academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../panopticom/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Panopticom
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Panopticom
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../bridge-builder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Bridge Builder
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Bridge Builder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../test-generator/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Test Generator
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Test Generator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../arts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Arts
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Arts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../advocacy/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Advocacy
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Advocacy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#finding-similar-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Similar Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display Case
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display Case">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteration 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#laser-cutting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laser Cutting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#didnt-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Didn't Fit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteration 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Adjustments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit-perfectly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fit Perfectly
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteration 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-adjustments_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Adjustments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Result
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frame-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frame Mechanism
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frame Mechanism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-design-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Design Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servo-arm-attachment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servo Arm Attachment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servo Arm Attachment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-attachment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Case Attachment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Case Attachment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 4
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frame
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frame">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servo-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servo Mount
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servo Mount">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suction-cup-attachment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suction Cup Attachment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Suction Cup Attachment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putting-it-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It Together
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It Together">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#electronics-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electronics Case
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Electronics Case">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 6
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cutting-acryllic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cutting Acryllic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cutting Acryllic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iteration-1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteration 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<div><h1 id="display-mechanics">Display Mechanics</h1>
+<h2 id="finding-similar-examples">Finding Similar Examples</h2>
+<p>Here are different projects I've found that have a similar e-paper display so that I can have a starting place for the mounting desing.</p>
+<ul>
+<li><a href="https://www.instructables.com/YouTube-Subscriber-Counter-Using-an-E-Paper-Displa/">Instructable YouTube Subscriber Counter</a></li>
+<li><a href="https://www.instructables.com/E-paper-Picture-Frame/">E-paper Picture Frame</a></li>
+<li><a href="https://github.com/drtonis/5.65inch-E-ink-Photoframe/tree/main/STL">Design Files for the Picture Frame</a></li>
+</ul>
+<p>Here's my <a href="https://cuttle.xyz/@AdamStone/Final-Project-Epaper-Display-vBQBBbOdWO3t">Cuttle Project</a>. For all of the iterations, the only changes I made were adjusting the parameter values of my parametric design.</p>
+<h2 id="display-case">Display Case</h2>
+<h3 id="iteration-1">Iteration 1</h3>
+<h4 id="laser-cutting">Laser Cutting</h4>
+<p>I used cardboard to test the design.</p>
+<p><img alt="imgs" src="../../../assets/images/stem/disability-forewarning-system/card-it-1-5.jpeg"></p>
+<p><img alt="imgs" src="../../../assets/images/stem/disability-forewarning-system/card-it-1-4.jpeg"></p>
+<h4 id="didnt-fit">Didn't Fit</h4>
+<p><img alt="imgs" src="../../../assets/images/stem/disability-forewarning-system/card-it-1-3.jpeg"></p>
+<p><img alt="imgs" src="../../../assets/images/stem/disability-forewarning-system/card-it-1-2.jpeg"></p>
+<p><img alt="imgs" src="../../../assets/images/stem/disability-forewarning-system/card-it-1-1.jpeg"></p>
+<h3 id="iteration-2">Iteration 2</h3>
+<h4 id="design-adjustments">Design Adjustments</h4>
+<p>Ribbon cable hole moved so it's not covered up. Sizing slightly adjusted.</p>
+<h4 id="fit-perfectly">Fit Perfectly</h4>
+<p>It fit perfectly! Now I need to add screwholes.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/display-case-v2.jpeg"></p>
+<h3 id="iteration-3">Iteration 3</h3>
+<h4 id="design-adjustments_1">Design Adjustments</h4>
+<p>I decided to use <code>M4X12</code> screws. I referenced <a href="https://fabacademy.org/2023/labs/charlotte/students/adam-stone/lessons/week2/cuttle/#using-cuttle">Week 2</a> when I learned about screw naming conventions. I chose a nominal diameter of <code>4mm</code> somewhat arbitrarily, but chose <code>12mm</code> length specifically because the material is about <code>0.125in</code> wide which is <code>3.175mm</code>, and three pieces is <code>~10mm</code>, and when I incorporate attachment to the servo, some extra screw length will be necessary.</p>
+<h4 id="result">Result</h4>
+<p>I had to switch to <code>M4X16</code> screws as the <code>M4X12</code> screws weren't long enough. These worked but I may end up using <code>M4X20</code> screws in the final project. The case sometimes shifts a little bit, but adjusting the middle size slightly or have little pieces of rubber or dabs of hot glue should fix the problem.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/case-pre-finished.jpeg"></p>
+<h2 id="frame-mechanism">Frame Mechanism</h2>
+<h3 id="new-design-idea">New Design Idea</h3>
+<p><img alt="drawings make again" src="../../../assets/images/stem/disability-forewarning-system/whi.jpg"></p>
+<h3 id="servo-arm-attachment">Servo Arm Attachment</h3>
+<h4 id="iteration-1_1">Iteration 1</h4>
+<p>Servo attachment screws are M3 so <code>3mm</code> nominal diameter. Centers of two holes are <code>4mm</code> apart.</p>
+<p>First draft of the design - realized can't have two screws. Still held fairly straight but wanted to be sure. I printed it on 100% infill. I oriented it flat so that I don't have to use supports, and it will be less likely to break from torque from the motor.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/it1-3d.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/it1-3da.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/it1-3db.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/it1-3dc.jpeg"></p>
+<h4 id="iteration-2_1">Iteration 2</h4>
+<p>Found <a href="https://grabcad.com/library/servo-ds3218mg-1">this design</a>. I first set the tolerance for the fit to <code>0.25mm</code> parametrically. I also just left both screwholes for now as I'm not sure which one is optimal to use. I printed it on 100% infill. I'm also considering printing in Nylon for the final piece to make it stronger. I'm considering adding more area around the sides that are cut thin because of the fit onto the motor.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/it2-arm.jpg"></p>
+<p>Huge success!</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/it2-3d.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/it2-3da.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/it2-3db.jpeg"></p>
+<h3 id="case-attachment">Case Attachment</h3>
+<h4 id="iteration-1_2">Iteration 1</h4>
+<p>https://grabcad.com/library/m4-hex-nut-1</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/ca-it1.jpg"></p>
+<p>I also updated the case design to include another screwhole. I forgot to add an offset or tolerance from the 3D-printed piece to the case.</p>
+<p>The piece fit snugly and the hex nut fit. I decreased the tolerance slightly from <code>0.4mm</code> to <code>0.2mm</code>.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/attch-it-1-3d.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/attch-it-1-3da.jpeg"></p>
+<p>Here's the first iteration case attachment on the old version of the case without the screwhole.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/attch-it-1-3d-on.jpeg"></p>
+<h4 id="iteration-2_2">Iteration 2</h4>
+<p>This iteration was an improvement, however the fit was still small around the case, possibly an error in the manufacturing of the cardboard I was using. The PLA flexes slightly so this shouldn't end up being a problem. The larger issue is that the hex bolt hole is still too large, and it's very hard to tighten the screw. I changed the tolerance to <code>0mm</code> since maybe the CAD model of the hex bolt I had found was problematic.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/new-3d.jpeg"></p>
+<p>Here's the updated case.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/new-it-lsr.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/new-on-case.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/new-on-case-.jpeg"></p>
+<h4 id="iteration-3_1">Iteration 3</h4>
+<p>The new tolerance still didn't work. I measured it instead of using the CAD model online and saw the diameter of the hex bolt was <code>2in</code>. Currently it had a radius of <code>3.475mm = 0.1368in</code> which should be <code>1in = 2.54mm</code>. So I changed the offset to <code>2.54mm - 3.475mm</code>. </p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-1.jpeg"></p>
+<h4 id="iteration-4">Iteration 4</h4>
+<p>Now it was too tight of a fit. For the next iteration I added <code>0.5mm</code> to the size.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/new-hex-small.jpg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-2-1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-2-2.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-2-3.jpeg"></p>
+<h3 id="frame">Frame</h3>
+<p><a href="https://www.signazon.com/images/articlepage/contentimages/toyotaheightsbig.jpg">This diagram</a> revealed that my frame can be at most <code>16.75in</code> tall. My current design is approximately <code>10in</code>, so this shouldn't be a problem.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/toyotaheightsbig.jpg"></p>
+<p>I also measured both the distance from the point or rotation of the servo to the end of the arm attachment, which was <code>~65mm</code> and the point of rotation of the case to the case attachment, which was also <code>~65mm</code>, and since the angle where the lines will be parallel and not overlapping will never be achieved with the design, there should be no problem with the arm length.</p>
+<h4 id="servo-mount">Servo Mount</h4>
+<h5 id="iteration-1_3">Iteration 1</h5>
+<p>Found <a href="https://www.thingiverse.com/thing:3351271">this design</a> of a servo. Could also use the one from the <a href="https://grabcad.com/library/servo-ds3218mg-1">other part</a></p>
+<p>I had to make the frame slightly taller so that the suction cup and the servo holder's screws wouldn't overlap.</p>
+<p>I decided to use <code>M4</code> screws for this, as well. For future iterations I may add a hole indent for the head of the screw, but don't feel it's necessary for now, and I don't have this for the case itself since it's laser cut.</p>
+<p>The holes on the servo motor are <code>M3</code> screws. I just projected the holes from the CAD model to create the holes.</p>
+<p>I also noticed that the servo arm was weirdly moved, and I'm not sure why this happened as I don't believe I've moved anything, but I have the STL model saved, so I'm not too concerned. After correcting this because of something that moved (I'm not sure what), the case attachment didn't line up with the hole, but the servo can always be at an angle, so this shouldn't be a problem.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/v1-ser-mnt.jpg"></p>
+<p>I printed this piece with <code>20%</code> infill for now, but will use <code>100%</code> infill for the final part.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-3-1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-3-2.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-3-3.jpeg"></p>
+<p>It worked perfectly!</p>
+<h4 id="suction-cup-attachment">Suction Cup Attachment</h4>
+<h5 id="iteration-1_4">Iteration 1</h5>
+<p>I tested the suction cup screws and found that they are <code>M4</code> screws.</p>
+<p>Since I had the entire frame designed in Fusion 360 and not Cuttle, I followed <a href="https://www.youtube.com/watch?v=eKoJa2913cQ">this tutorial</a> to create a sketch of the vector lines and exported it as a DXF directly from Fusion 360.</p>
+<p>It worked!</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-a-1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-a-2.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-a-3.jpeg"></p>
+<h4 id="pins">Pins</h4>
+<p>I decided to reverse the first design I came up with (pictured below) and have both the pin and the pin hole be 3D-printed. This way I could put the pin and the hole inside of each other before connecting it to the frame and case - otherwise, I would never be able to get the case in the frame.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/reversed.jpg"></p>
+<p>I also realized that, up until now, I've been designing the case on <code>3/8in</code> material. For now I'll change it to <code>1/8in</code> but change to <code>1/4in</code> if it turns out our lab has a greater abundance of that material.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/hinge-cad-1.jpg"></p>
+<h5 id="iteration-1_5">Iteration 1</h5>
+<p>I referenced <a href="https://help.prusa3d.com/article/how-to-lift-object-from-the-print-bed_245192">this article</a> to make "floating" pieces in Prusa by merging the two parts then moving one individually by referencing the hierarchy. I set the print detail to <code>0.1mm</code> and <code>100%</code> infill. I see a blue line on the top of the circle of the outer-hinge, so I'm not sure whether the print will work, but I'll try it.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/pru.jpg"></p>
+<p>The print-in-place design worked first try!</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-4-1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-4-2.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-4-3.jpeg"></p>
+<p>The design worked very well, but the holes were very tight for the screw. It still worked, and I might increase the size of the hole be <code>0.5mm</code> if it causes problems throughout the rest of the prototyping process.</p>
+<p>I re-printed the same piece for the second side.</p>
+<h5 id="iteration-2_3">Iteration 2</h5>
+<p>I increased the hole size by <code>0.5mm</code>, changing the diameter from <code>4mm</code> to <code>4.5mm</code>. I also rotated it temporarily in Fusion 360 before exporting into Prusa so that I wouldn't have to merge and reposition the parts before slicing.</p>
+<h3 id="putting-it-together">Putting It Together</h3>
+<p>I assembled the design and it fit together perfectly!</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-b-6.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-b-5.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-b-4.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-b-3.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-b-2.jpeg"></p>
+<p>The product will not be on the driver-side window in the end, I'm just testing it on a window in the picture below.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/sub-b-1.jpeg"></p>
+<p>When I hooked up the electronics, it worked!</p>
+<video src="../../../assets/images/stem/disability-forewarning-system/vvid.mp4" controls="controls" style="max-width: 730px;">
+</video>
+
+<p>But the 0 wasn't at the correct spot, so I set the servo to 0 in the code, took off the arm, and put it back on at the right spot.</p>
+<p><img alt="imgs" src="../../../assets/images/stem/disability-forewarning-system/0ing-servo.jpeg"></p>
+<p>now it was correct!</p>
+<video src="../../../assets/images/stem/disability-forewarning-system/vvvid.mp4" controls="controls" style="max-width: 730px;">
+</video>
+
+<h4 id="electronics-case">Electronics Case</h4>
+<h5 id="iteration-1_6">Iteration 1</h5>
+<p>The circuit board is slightly less than <code>100mm X 30mm</code>. To account for the <code>43mm</code> long bluetooth module, is should be at least <code>150mm X 30mm</code>. And to give extra room for wires, it should be at least <code>150mm X 50mm</code>. Since the battery is <code>55mm X 5mm X 75mm</code>, the case should be enlarged to <code>150mm X 40mm X 60mm</code>.</p>
+<p>I also added four M3 screwholes for the ribbon cable adaptor. I used measurements of <code>2mm</code> from the outside of the hole to the edge of the board, <code>13.5mm</code> from the outside edges of two holes vertically, and <code>21.5mm</code> between the insides of the holes horizontally to create the deisgn. In the end, this adaptor caused stress on the ribbon cable which ruined another one of the displays. I ended up using adhestive to attach it to the back of the display case.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/c-f.jpeg"></p>
+<p>The 3D-printed threads worked sufficiently, although if tightened too hard, they lose the ability to tighten at all. After experimenting with both hex bolts and 3D-printed threads in my project, I've found that hex bolts tend to work more smoothly.</p>
+<h5 id="iteration-2_4">Iteration 2</h5>
+<p>First iteration - screw holes very tight fit but screwed in tight. The ones without threads couldn't fit an M3 screw in, so increased size by 0.5mm.</p>
+<p>Also realized I forgot the add a hole for the servo motor cables. I used <a href="https://www.engineeringtoolbox.com/smaller-circles-in-larger-circle-d_1849.html">this calculator</a> to figure out the diameter of the hole for three 1.5mm wires, and a 4mm hole worked! However, pulling the heads of the wires through the small hole was not easy, but they never accidentally were pulled back into the electronics case.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/servo-wires.jpeg"></p>
+<h5 id="iteration-3_2">Iteration 3</h5>
+<p>When I cut the lid out of acryllic, the screwholes were too close to the edge and broke, so I redesigned it in the next iteration to have more space around the screwholes. I also added more area around the screwholes in the design of the case, but I never ended up printing it.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/3ti.jpeg"></p>
+<h5 id="iteration-4_1">Iteration 4</h5>
+<p>I implemented the changes described in the previous iteration by adding more area around the screwholes.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/4ti1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/4ti2.jpeg"></p>
+<h5 id="iteration-5">Iteration 5</h5>
+<p>I added a switch in the power wire coming out of the <code>TP4056 Module</code> (not from the battery so that the battery could charge even if the switch isn't turned on). I added a <code>6mm</code> hole for the switch and secured it with a washer and bolt. This worked first try!</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/5ti.jpeg"></p>
+<h5 id="iteration-6">Iteration 6</h5>
+<p>I added a hole for the charger. It took several tried to get the dimensions exactly correct. I temporarily held the charger in place using nitto tape, but I modified the design of the electronics case to include screwholes. Without the screwholes, it is difficult to plug into the charger without it moving, and removing the lid before charging is recommended.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/6it1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/6it2.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/6it3.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/6it4.jpeg"></p>
+<h4 id="cutting-acryllic">Cutting Acryllic</h4>
+<h5 id="iteration-1_7">Iteration 1</h5>
+<p>To cut my <code>1/8"</code> acryllic, I used the <code>Medium (*color*) Acryllic</code> setting in Glowforge. I had to be sure to turn off the custom cardboard setting on the individual SVGs even though I selected the material overall.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/xyz1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/xyz2.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/xyz3.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/xyz4.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/xyz5.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/xyz6.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/yxz7.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/xyz8.jpeg"></p>
+<h5 id="iteration-2_5">Iteration 2</h5>
+<p>I had a problem where, when the screen turned, the bolt on the hinge would collide with the frame. I measured that the distance from the axis of rotation to the end of the bolt is <code>11.5mm</code>, so to be safe, I added a hole that's <code>13mm</code> from the axis of rotation.</p>
+<p>I also noticed that I accidentally moved the frame slightly in Fusion 360 before making the elecrtonics box, so it was sightly off center. I was having trouble correcting this problem it so I just left it, as it didn't make any noticeable difference.</p>
+<p>I also ensured that the new design would preclude collisions in Fusion 360.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/chk.jpg"></p>
+<p>The new design worked well! I had also added fillets.</p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/img1.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/img2.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/img3.jpeg"></p>
+<p><img alt="" src="../../../assets/images/stem/disability-forewarning-system/img4.jpeg"></p>
+<video src="../../../assets/images/stem/disability-forewarning-system/collision-resolved.mp4" controls="controls" style="max-width: 730px;">
+</video></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.indexes", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
