@@ -1,6 +1,6 @@
 # Panopticom
 
-When singer [`Peter Gabriel`](https://petergabriel.com/) (from [Genesis](https://genesis-music.com/)) wanted to create a digital platform based on his song [“Panopticom,”](https://en.wikipedia.org/wiki/Panopticom) his friend [`Professor Gershenfeld`](https://ng.cba.mit.edu/) recommended me as the lead developer based on the success of the [Expert Network Map](../expert-network-map/index.md).
+When singer `Peter Gabriel` (from [Genesis](https://genesis-music.com/)) wanted to create a digital platform based on his song [“Panopticom,”](https://en.wikipedia.org/wiki/Panopticom) his friend [`Professor Gershenfeld`](https://ng.cba.mit.edu/) recommended me as the lead developer based on the success of the [Expert Network Map](../expert-network-map/index.md).
 
 I completed the demo website featuring an interactive globe where users explore multiple data layers by location, including [Expert Network Map](../expert-network-map/index.md) data, sustainability metrics, and radio live streams.
 
@@ -24,7 +24,7 @@ I wrote all of the code for the Panopticom demo website. I scraped and formatted
 
 ## Project Launch at Fab24
 
-[Click here to watch a recording of the Panopticom presentation at the 2024 International Fab Lab Conference and Symposium Presentation in Puebla, Mexico!](https://youtu.be/nbQp-KVpF2M)
+[Click here to watch a recording of the Panopticom presentation at the 2024 International Fab Lab Conference and Symposium Presentation in Puebla, Mexico!](https://youtu.be/6ipERRCcpYo)
 
 ![Panopticom Presentation Image + Label](../../assets/images/stem/panopticom/panop-pres-live-label.png)
 
